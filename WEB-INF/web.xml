@@ -30,4 +30,11 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+
+
+  <listener>
+    <listener-class>
+      DBConnection
+    </listener-class>
+  </listener>
 </web-app>
