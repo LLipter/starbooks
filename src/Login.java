@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -35,6 +36,8 @@ public class Login extends HttpServlet{
 					req.setAttribute("loginResult", 1);
 					req.setAttribute("user_name", userName);
 					req.setAttribute("passwd", passwd);
+					HttpSession session = req.getSession();
+					session.setAttribute("user", new User(userName));
 				}else {
 					req.setAttribute("loginResult", 3); // invalid password
 				}
