@@ -149,3 +149,8 @@ body{
     margin-left: 38%;
     margin-right: 38%
 }
+
+.message{
+    text-align: center;
+    color:red;
+}
