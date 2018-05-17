@@ -50,7 +50,7 @@ public class DatabaseUtility implements ServletContextListener {
 		ps.setString(1, userName);
 		ResultSet rs = ps.executeQuery();
 		if(!rs.next())
-			return null; // no such user;
+			return null; // no such user
 		
 		int user_id = rs.getInt("user_id");
 		String passwd = rs.getString("passwd");
@@ -58,5 +58,13 @@ public class DatabaseUtility implements ServletContextListener {
 		int privilege = rs.getInt("privilege");
 		
 		return new User(user_id,userName,passwd,registerTime,privilege);
+	}
+	
+	public static int updateUser(User user) throws SQLException{
+		PreparedStatement ps = con.prepareStatement("UPDATE user SET passwd=?,privilege=? WHERE user_id=?");
+		ps.setString(1, user.getPasswd());
+		ps.setInt(2, user.getPrivilege());
+		ps.setInt(3, user.getUser_id());
+		return ps.executeUpdate();	// the number of rows that are changed
 	}
 }
