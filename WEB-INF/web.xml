@@ -24,7 +24,7 @@
 
   <servlet>
     <servlet-name>login</servlet-name>
-    <servlet-class>Login</servlet-class>
+    <servlet-class>servlet.Login</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>login</servlet-name>
@@ -34,7 +34,7 @@
 
   <listener>
     <listener-class>
-      DBConnection
+      listener.DBConnection
     </listener-class>
   </listener>
 </web-app>
