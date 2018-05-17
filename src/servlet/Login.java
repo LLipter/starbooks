@@ -1,21 +1,13 @@
 package servlet;
-import java.io.IOException;
-import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import model.User;
-
-import java.sql.Connection;
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
+
+import model.*;
+import listener.DatabaseUtility;
+
 
 public class Login extends HttpServlet{
 
@@ -23,27 +15,19 @@ public class Login extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {	
 		String userName = req.getParameter("user_name");
 		String passwd = req.getParameter("passwd");
-		ServletContext sc = getServletContext();
-		Connection con = (Connection) sc.getAttribute("DBCon");
 
 		try {
-			Statement st = con.createStatement();
-			String cmd = "SELECT passwd FROM user WHERE user_name = '" + userName + "'";
-			ResultSet rs = st.executeQuery(cmd);
-			if(!rs.next()) {
+			User user = DatabaseUtility.getUser(userName);
+			if(user == null) {
 				req.setAttribute("loginResult", 2); // no such user
+			}else if(!user.getPasswd().equals(passwd)) {
+				req.setAttribute("loginResult", 3); // invalid password
 			}else {
-				String truePasswd = rs.getString("passwd");
-				if(truePasswd.equals(passwd)) {
-					// login successfully
-					req.setAttribute("loginResult", 1);
-					req.setAttribute("user_name", userName);
-					req.setAttribute("passwd", passwd);
-					HttpSession session = req.getSession();
-					session.setAttribute("user", new User(userName));
-				}else {
-					req.setAttribute("loginResult", 3); // invalid password
-				}
+				req.setAttribute("loginResult", 1); // login successfully
+				req.setAttribute("user_name", userName);
+				req.setAttribute("passwd", passwd);
+				HttpSession session = req.getSession();
+				session.setAttribute("user",user);
 			}
 			RequestDispatcher view = req.getRequestDispatcher("login.jsp");
 			view.forward(req, resp);
@@ -53,6 +37,10 @@ public class Login extends HttpServlet{
 			out.println(e.getMessage());
 			e.printStackTrace();
 		}
+		
+
+		
+
 		
 		
 

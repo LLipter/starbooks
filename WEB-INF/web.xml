@@ -34,7 +34,7 @@
 
   <listener>
     <listener-class>
-      listener.DBConnection
+      listener.DatabaseUtility
     </listener-class>
   </listener>
 </web-app>
