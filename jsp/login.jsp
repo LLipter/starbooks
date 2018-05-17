@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Welcome to starbooks</title>
-<link rel="stylesheet" type="text/css" href="resource/css/login.css">
+<link rel="stylesheet" type="text/css" href="../resource/css/login.css">
 </head>
 <body>
 	<div class="heading_container">
@@ -33,15 +33,13 @@
 				</label> <label>
 					<p class="message">
 						<% 
-							Integer res = (Integer) request.getAttribute("loginResult");
+							String res = (String) request.getAttribute("loginResult");
 							if(res != null){
-								if((int)res == 1){
+								if(res.equals("login successfully")){
 									out.println("Hello, " + (String)request.getAttribute("user_name"));
 									out.println("your password is " + (String)request.getAttribute("passwd"));
-								}else if((int)res == 2){
-									out.println("No such user");
 								}else{
-									out.println("Invalid password");
+									out.println(res);
 								}
 							}
 						%>

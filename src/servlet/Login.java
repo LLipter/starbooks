@@ -19,17 +19,17 @@ public class Login extends HttpServlet{
 		try {
 			User user = DatabaseUtility.getUser(userName);
 			if(user == null) {
-				req.setAttribute("loginResult", 2); // no such user
+				req.setAttribute("loginResult", "no such user");
 			}else if(!user.getPasswd().equals(passwd)) {
-				req.setAttribute("loginResult", 3); // invalid password
+				req.setAttribute("loginResult", "invalid password");
 			}else {
-				req.setAttribute("loginResult", 1); // login successfully
+				req.setAttribute("loginResult", "login successfully");
 				req.setAttribute("user_name", userName);
 				req.setAttribute("passwd", passwd);
 				HttpSession session = req.getSession();
 				session.setAttribute("user",user);
 			}
-			RequestDispatcher view = req.getRequestDispatcher("login.jsp");
+			RequestDispatcher view = req.getRequestDispatcher("jsp/login.jsp");
 			view.forward(req, resp);
 		} catch (SQLException e) {
 			PrintWriter out = resp.getWriter();
