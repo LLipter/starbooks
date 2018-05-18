@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Welcome to starbooks</title>
-<link rel="stylesheet" type="text/css" href="../resource/css/login.css">
+<link rel="stylesheet" type="text/css" href="/starbooks/resource/css/login.css">
 </head>
 <body>
 	<div class="heading_container">
@@ -21,7 +21,7 @@
                 <input type="password" name="passwd">
                 <input type="submit">
             </form> -->
-			<form action="login" method="post" class="white-pink">
+			<form action="/starbooks/login" method="post" class="white-pink">
 				<h1>
 					Login to Starbooks <span>Please fill all the texts in the
 						fields.</span>
