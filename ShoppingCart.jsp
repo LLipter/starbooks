@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="model.*" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +20,7 @@
 	<!--登陆、主页面、用户中心、购物车按钮-->
 		<div class="top_menu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="index.jsp">Home</a></li>
 				<li><a href="jsp/login.jsp">Login</a></li>
 				<li class = "sel"><a href="#">Cart</a></li>
 				<li><a href="#">User</a></li>
@@ -26,9 +29,16 @@
 		</div>
 		
 		<!--显示用户登录状态-->
-		<div class="top_status">
-			<p>User: not logged in</p>
-		</div>
+		<% 
+			User user = (User)session.getAttribute("user");
+			if(user != null){
+				out.println("<div class=\"top_status\">");
+				out.print("<p>");
+				out.print(user.getUser_name());
+				out.println(" <a href=\"logout\">log out</a></p>");
+				out.println("</div>");
+			}
+		%>
 	</div>
 	
 	<p></p>
