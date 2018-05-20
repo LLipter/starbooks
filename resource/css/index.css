@@ -15,6 +15,9 @@ body{ background:#fff;}
 .top_menu ul li{ padding:20px 10px 3px; margin-left:10px; float:left;}
 .top_menu ul li a{ font:20px/20px Arial, Helvetica, sans-serif; color:#333; text-decoration:none;}
 .top_menu ul li:hover,.top_menu ul li.sel{ border-bottom:1px solid #bcb79c; background:#f6f5ea;}
+.top_status{ width:auto; height:auto; display:inline; float:right; margin-right:30px; margin-top:13px;
+border: 2px solid #dcbf8a; border-radius: 12px; background-color:#dcbf8a;}
+.top_status p{font:18px Arial, Helvetica, sans-serif; color:#fff;padding:5px 7px;}
 
 .top_shop_cur{ width:79px; height:50px; display:inline;position:absolute; top:30px; right:10px; z-index:100;}
 .top_shop_cur img{ width:auto; height:auto; display:inline; float:left;}
