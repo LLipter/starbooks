@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +19,8 @@
 	<!--登陆、主页面、用户中心、购物车按钮-->
 		<div class="top_menu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="login.jsp">Login</a></li>
+				<li><a href="index.jsp">Home</a></li>
+				<li><a href="jsp/login.jsp">Login</a></li>
 				<li class = "sel"><a href="#">Cart</a></li>
 				<li><a href="#">User</a></li>
 				<li><a href="#">Help</a></li>

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="model.*" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,15 +21,22 @@
             	<ul>
                 	<li class="sel"><a href="#">Home</a></li>
 					<li><a href="jsp/login.jsp">Login</a></li>
-                	<li><a href="ShoppingCart.html">Cart</a></li>
+                	<li><a href="ShoppingCart.jsp">Cart</a></li>
                 	<li><a href="#">User</a></li>
                 	<li><a href="#">Help</a></li>
                 </ul>
             </div>
-			<!--显示用户登录状态-->
-			<div class="top_status">
-				<p>User: not logged in</p>
-			</div>
+            <!--显示用户登录状态-->
+            <% 
+                User user = (User)session.getAttribute("user");
+                if(user != null){
+                    out.println("<div class=\"top_status\">");
+                    out.print("<p>");
+                    out.print(user.getUser_name());
+                    out.println(" <a href=\"logout\">log out</a></p>");
+                    out.println("</div>");
+                }
+            %>
         </div>
 		<!--一张凑位置的图片-->
         <span class="index_img">
