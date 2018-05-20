@@ -12,8 +12,8 @@ INSERT INTO user(user_name,passwd,privilege) VALUES("admin","admin",10);
 CREATE TABLE book(
     book_id INT auto_increment,
     book_name VARCHAR(100) NOT NULL,
-    author VARCHAR(100) DEFAULT '',
-    publisher VARCHAR(100) DEFAULT '',
+    author VARCHAR(100),
+    publisher VARCHAR(100),
     price DECIMAL(10,2) NOT NULL,
     res_url VARCHAR(100) NOT NULL,
     book_status INT DEFAULT 1, -- 1 means available, 0 means not

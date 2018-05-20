@@ -1,10 +1,12 @@
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Connection;
+package listener;
+
+import java.sql.*;
 import javax.servlet.*;
 
+import model.*;
 
-public class DBConnection implements ServletContextListener {
+
+public class DatabaseUtility implements ServletContextListener {
 
 	private static final String userName = "starbooks";
 	private static final String password = "admin";
@@ -41,5 +43,28 @@ public class DBConnection implements ServletContextListener {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public static User getUser(String userName) throws SQLException {
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM user WHERE user_name = ?");
+		ps.setString(1, userName);
+		ResultSet rs = ps.executeQuery();
+		if(!rs.next())
+			return null; // no such user
+		
+		int user_id = rs.getInt("user_id");
+		String passwd = rs.getString("passwd");
+		Timestamp registerTime = rs.getTimestamp("register_time");
+		int privilege = rs.getInt("privilege");
+		
+		return new User(user_id,userName,passwd,registerTime,privilege);
+	}
+	
+	public static int updateUser(User user) throws SQLException{
+		PreparedStatement ps = con.prepareStatement("UPDATE user SET passwd=?,privilege=? WHERE user_id=?");
+		ps.setString(1, user.getPasswd());
+		ps.setInt(2, user.getPrivilege());
+		ps.setInt(3, user.getUser_id());
+		return ps.executeUpdate();	// the number of rows that are changed
 	}
 }
