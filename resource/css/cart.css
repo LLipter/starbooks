@@ -10,6 +10,9 @@ body{ background:#fff;}
 .top_menu ul li{ padding:20px 10px 3px; margin-left:10px; float:left;}
 .top_menu ul li a{ font:20px/20px Arial, Helvetica, sans-serif; color:#333; text-decoration:none;}
 .top_menu ul li:hover,.top_menu ul li.sel{ border-bottom:1px solid #bcb79c; background:#f6f5ea;}
+.top_status{ width:170px; height:30px; display:inline; float:right; margin-right:30px; margin-top:13px;
+border: 2px solid #dcbf8a; border-radius: 12px; background-color:#dcbf8a;}
+.top_status p{font:18px Arial, Helvetica, sans-serif; color:#fff;padding:5px 2px;}
 
 .title_shoppingcart{ width:940px; height:30px; margin:24px 0 18px 10px; font:18px/30px "微软雅黑"; color:#998a62;}
 .index_hr{ width:940px; border-bottom:5px solid #f2f1e2; float:left; margin-top:35px; margin-left:10px;}
