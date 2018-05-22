@@ -1,11 +1,13 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Pay</title>
+<title>Shopping Cart</title>
 <!--底层布局的css-->
 <link type="text/css" rel="stylesheet" href="resource/css/reset.css" />
 <!--样式css-->
-<link type="text/css" rel="stylesheet" href="resource/css/pay.css" />
+<link type="text/css" rel="stylesheet" href="resource/css/cart.css" />
+
 <!--改动-->
 
 <link href="resource/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -14,9 +16,10 @@
 <link href="resource/css/style4.css" rel="stylesheet" type="text/css" media="all" />  
 <link href="resource/css/form.css" rel="stylesheet" type="text/css" media="all" />
 </head>
+
 <body>
 
-	<!--头部-->
+<!--头部-->
 <div class="header">
 <div class="container">
         <div class="head">
@@ -79,78 +82,72 @@
 
 </nav>
 </div>
-
-<div class="col-sm-2 search-right">
-                    <div class="cart box_1">
-                        <a href="resource/checkout.html">
-                        <h3> <div class="total">
-                            <span class="simpleCart_total"></span></div>
-                            <img src="resource/images/cart.png" alt=""/></h3>
-                        </a>
-                        <p><a href="resource/javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-
-                    </div>
-                    <div class="clearfix"> </div>
-
-                        
-           
-        </div>
-		
 </div>
 </div>
 </div>
-	
-	<p></p>
 
 <div class = "container">
 <div class="w_100_l">
 <div class="main">
+	
+	<p></p>
+
+	
 	<div class = "content">
-		<h1 class = "title_pay">Pay For Your Books</h1>
-		
-		<p></p>
-		
-		<ul>
-			<li><img src="resource/images/user.jpeg" alt="user" /></li>
-			<li class="user">User Name :</li>
-			<li class="user_id">Null</li>
-			<li class="user">User Address :</li>
-			<li class="user_address">WHU.ISS</li>
-			<li class="user">User Phone :</li>
-			<li class="user_phone">116511231</li>
-		</ul>
+		<h1 class = "title_shoppingcart">The ShoppingCart of StarBooks</h1>
 		
 		<p class="index_hr"></p>
 		
 		<ul>
-			<li class="book_title0">Title :</li>
-			<li class="book_quantity0">Quantity :</li>
-			<li class="book_price0">Price :</li>
-		</ul>
-		<ul>
-           	<li class="book_title">Gift cards</li>
+			<li><a href="#"><img src="resource/book/book_01.jpg" alt="book" /></a></li>
+			<li class="book_title">Title :</li>
+			<li class="book_quantity">Quantity :</li>
+			<li class="book_price">Price :</li>
+           	<li class="book_title"><a href="#" target="_blank">Gift cards</a></li>
 			<li class="book_quantity">1</li>
 			<li class="book_price">$20</li>
+			<form method="post" action="ShopCartServlet">
+				<button class = "remove_book" name="removeBook" type="submit">Delete</button>
+			</form>
 		</ul>
+		<p class="index_n"></p>
 		<ul>
-			<li class="book_title">Just Enough Research</li>
+			<li><a href="#"><img src="resource/book/book_02.jpg" alt="book" /></a></li>
+			<li class="book_title">Title :</li>
+			<li class="book_quantity">Quantity :</li>
+			<li class="book_price">Price :</li>
+			<li class="book_title"><a href="#" target="_blank">Just Enough Research</a></li>
 			<li class="book_quantity">2</li>
 			<li class="book_price">$50</li>
+			<form method="post" action="ShopCartServlet">
+				<button class = "remove_book" name="removeBook" type="submit">Delete</button>
+			</form>
 		</ul>
+		<p class="index_n"></p>
 		<ul>
-            <li class="book_title">Content Strategy for Mobile</li>
+			<li><a href="#"><img src="resource/book/book_03.jpg" alt="book" /></a></li>
+			<li class="book_title">Title :</li>
+			<li class="book_quantity">Quantity :</li>
+			<li class="book_price">Price :</li>
+            <li class="book_title"><a href="#" target="_blank">Content Strategy for Mobile</a></li>
 			<li class="book_quantity">1</li>
 			<li class="book_price">$15</li>
+			<form method="post" action="ShopCartServlet">
+				<button class = "remove_book" name="removeBook" type="submit">Delete</button>
+			</form>
 	</div>
 	
 	<p class="index_hr"></p>
 	<p class = "total_price">Total Price: $85</p>
 	
-	<form class = "button" method="post" action="#">
+	<form class = "button" method="post" action="ShopCartServlet">
+
+		<button class = "clear_cart" name="clearCart" type="submit">Clear The Cart</button>
 		
 		<button class = "pay_cart" name="pay" type="submit">Pay</button>
 
 	</form>
+	
 </div>
 </div>
 </div>
@@ -194,3 +191,4 @@ $(window).load(function() {
 </body>
 
 </html>
+
