@@ -1,5 +1,9 @@
 body{background:#fff;}
 
+.main{width: 960px;
+	  height: auto;
+	  margin: 0 auto;}
+
 .top_banner{width: 100%;
 			height: auto;
 			display: inline;
