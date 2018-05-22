@@ -3,9 +3,18 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>UI for Admin</title>
-		<link href = "reset.css" rel = "stylesheet" type = "text/css"/>
-		<!--unfinished CSS-->
-		<link href = "admin.css" rel = "stylesheet" type="text/css"/>
+		<link href = "resource/css/reset.css" rel = "stylesheet" type = "text/css"/>
+		<!--finished CSS-->
+		<link href = "resource/css/admin.css" rel = "stylesheet" type="text/css"/>
+		<!--默认查看上架书籍 点击文本替换为下架书籍-->
+		<script type="text/javascript">
+			function statusChange(){
+				if (document.getElementById('statusBtn').value == 'Books on Shelf') 
+					document.getElementById('statusBtn').value = 'Books off Shelf';
+				else
+					document.getElementById('statusBtn').value = 'Books on Shelf';
+			}
+		</script>
 
 	</head>
 	<body>
@@ -51,7 +60,8 @@
 				<!--
 				<a class = "admin_add" href = "#" target = "_blank">Add books</a> -->
 				<!--添加和修改跳转到同一书籍信息界面-->
-				<a href = "#"><button>Add books</button></a>
+				<a class = "admin_add" href = "#"><button>Add books</button></a>
+				<input class = "book_status" type="button" id = "statusBtn" onclick = "statusChange()" value = "Books on Shelf"/>
 				<ul>
 					<li>
 						<dl>

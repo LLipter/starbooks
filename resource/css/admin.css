@@ -75,7 +75,7 @@ body{background:#fff;}
 		 overflow: hidden;
 		 margin-left: 10px;}
 
-.content a button  {background:-color: #555555;
+.admin_add button  {background:-color: #555555;
 				    border-color: #eeeee0; 
 					border-radius: 8px;
 					color: #ee1289;
@@ -87,9 +87,21 @@ body{background:#fff;}
 					margin-top: 10px;
 					margin-bottom: 10px;}
 
+.admin_add button:hover{background-color: #eee5de;}
 
-
-
+.book_status {background:-color: #555555;
+		      border-color: #eeeee0; 
+			  border-radius: 8px;
+			  color: #ee1289;
+			  padding: 10px 16px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin-top: 10px;
+			  margin-bottom: 10px;
+			  margin-right: 10px;
+			  float: right;}
 
 .content ul{width: 940px;
 			height: auto;
