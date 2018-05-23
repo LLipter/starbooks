@@ -55,6 +55,9 @@ h1,h2,h3,h4,h5,h6,label,p{
 	color:#fff;
 	font-size:0.8em;
 	margin: 0 0.5em;
+	margin-left: -1em;
+	margin-right: 2em;
+
 }
 .header-login ul li a:hover {
     color: #F67777;
@@ -62,6 +65,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 .header-top {
     background-color: #2E2E2E;
 	padding: 0.3em 0;
+	
 }
 .header-social ul li a i{
 	width: 17px;
