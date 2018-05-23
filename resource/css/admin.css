@@ -1,6 +1,7 @@
 body{background:#fff;}
 
-.main{width: 960px;
+.main{
+		width : 100%;
 	  height: auto;
 	  margin: 0 auto;}
 
@@ -37,7 +38,7 @@ body{background:#fff;}
 
 
 
-.admin_table{width: 940px;
+.admin_table{width: 100%;
 			 height: auto;
 			 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 			 border-collapse: collapse;}
@@ -54,7 +55,7 @@ body{background:#fff;}
 				color: #ffffff;}
 
 
-.admin_hr{width: 940px;
+.admin_hr{width: 100%;
 		  border-bottom: 5px solid #f2f1e2;
 		  float: left;
 		  margin-top: 35px;
@@ -64,7 +65,7 @@ body{background:#fff;}
 
 
 
-.content{width: 940px;
+.content{width: 100%;
 		 height: auto;
 		 display: inline;
 		 float: left;
@@ -99,12 +100,12 @@ body{background:#fff;}
 			  margin-right: 10px;
 			  float: right;}
 
-.content ul{width: 940px;
+.content ul{width: 100%;
 			height: auto;
 			float: left;
 			overflow: hidden;}
 
-.content ul li{width: 300px;
+.content ul li{width: 370px;
 			   height: auto;
 			   display: inline;
 			   overflow: hidden;

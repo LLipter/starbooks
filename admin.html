@@ -8,13 +8,18 @@
 		<link href = "resource/css/admin.css" rel = "stylesheet" type="text/css"/>
 		<!--默认查看上架书籍 点击文本替换为下架书籍-->
 
-		<link href="resource/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-		<!-- 需要用到bootstrap 由于bootstrap的css效果要依赖于jquery 所以 最后也引入了jquery的几个文件  -->
-		<link href="resource/css/style.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="resource/css/style4.css" rel="stylesheet" type="text/css" media="all" />  
-		<link href="resource/css/form.css" rel="stylesheet" type="text/css" media="all" />
 
-		<script type="text/javascript">
+<!--改动-->
+
+<link href="resource/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- 需要用到bootstrap 由于bootstrap的css效果要依赖于jquery 所以 最后也引入了jquery的几个文件  -->
+<link href="resource/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="resource/css/style4.css" rel="stylesheet" type="text/css" media="all" />  
+<link href="resource/css/form.css" rel="stylesheet" type="text/css" media="all" />
+<script src="resource/js/jquery.min.js"></script>
+<script src="resource/js/jstarbox.js"></script>
+    <link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+        <script type="text/javascript">
             jQuery(function() {
             jQuery('.starbox').each(function() {
                 var starbox = jQuery(this);
@@ -39,118 +44,104 @@
 
 
 
-		<script type="text/javascript">
-			function statusChange(){
-				if (document.getElementById('statusBtn').value == 'Books on Shelf') 
-					document.getElementById('statusBtn').value = 'Books off Shelf';
-				else
-					document.getElementById('statusBtn').value = 'Books on Shelf';
-			}
-		</script>
-
 	</head>
 	<body>
 		<div class = "main">
-			<!--
-			<div class = "top_banner">
-				<div class = "top_menu">
-					<ul>
-						<li class = "sel">
-							<a href = "#">Home</a>
-						</li>
-						<li>
-							<a href = "#">Help</a>
-						</li>
-					</ul>
-					<p>Welcome, dear
-					<strong>Administartor</strong>
-					
-					</p>
+
+
+			
+	 <!--头部-->
+<div class="header">
+	<div class="container">
+			<div class="head">
+				<div class=" logo">
+					<a href="resource/index.html"><img src="resource/images/logo.png" alt=""></a>   
 				</div>
 			</div>
-			-->
-
-			<!--头部-->
-			<div class="header">
-				<div class="container">
-			        <div class="head">
-			            <div class=" logo">
-			                <a href="resource/index.html"><img src="resource/images/logo.png" alt=""></a>   
-			            </div>
-			        </div>
-			    </div>
-
-			    <div class="header-top">
-			        <div class="container">
-			        <div class="col-sm-5 col-md-offset-2  header-login">
-			                    <ul >
-			                        <li><a href="resource/login.html">Login</a></li>
-			                        <li><a href="resource/register.html">Register</a></li>
-			                        <li><a href="resource/checkout.html">Checkout</a></li>
-			                    </ul>
-			                </div>
-			                
-			             <!-- social media of administrator to contact  --> 
-			            <div class="col-sm-5 header-social">        
-			                    <ul >
-			                        <li><a href="resource/#"><i></i></a></li>
-			                        <li><a href="resource/#"><i class="ic1"></i></a></li>
-			                        <li><a href="resource/#"><i class="ic2"></i></a></li>
-			                        <li><a href="resource/#"><i class="ic3"></i></a></li>
-			                        <li><a href="resource/#"><i class="ic4"></i></a></li>
-			                    </ul>
-			                    
-			            </div>
-			                <div class="clearfix"> </div>
-			        </div>
-			        </div>
-			        
-			        <div class="container">
-			            <div class="head-top">
-			         <div class="col-sm-8 col-md-offset-2 h_menu4">
-			                <nav class="navbar nav_bottom" role="navigation">
-			 
-			 <!-- Brand and toggle get grouped for better mobile display -->
-			  <div class="navbar-header nav_2">
-			      <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			     
-			   </div> 
-			   <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-			        <ul class="nav navbar-nav nav_1">
-			            <li><a class="color" href="resource/index.html">Home</a></li>
-			            <li><a class="color3" href="resource/product.html">Sale</a></li>
-			            <li><a class="color4" href="resource/404.html">About</a></li>
-			            <li><a class="color5" href="resource/typo.html">Short Codes</a></li>
-			            <li ><a class="color6" href="resource/contact.html">Contact</a></li>
-			        </ul>
-			     </div>
-
-			</nav>
+		</div>
+	
+		<div class="header-top">
+			<div class="container">
+			<div class="col-sm-5 col-md-offset-2  header-login">
+						<ul >
+							<li><a href="resource/login.html">Login</a></li>
+							<li><a href="resource/register.html">Register</a></li>
+							<li><a href="resource/checkout.html">Checkout</a></li>
+						</ul>
+					</div>
+					
+				 <!-- social media of administrator to contact  --> 
+				<div class="col-sm-5 header-social">        
+						<ul >
+							<li><a href="resource/#"><i></i></a></li>
+							<li><a href="resource/#"><i class="ic1"></i></a></li>
+							<li><a href="resource/#"><i class="ic2"></i></a></li>
+							<li><a href="resource/#"><i class="ic3"></i></a></li>
+							<li><a href="resource/#"><i class="ic4"></i></a></li>
+						</ul>
+						
+				</div>
+					<div class="clearfix"> </div>
 			</div>
-			            <div class="col-sm-2 search-right">
-			                    <div class="cart box_1">
-			                        <a href="resource/checkout.html">
-			                        <h3> <div class="total">
-			                            <span class="simpleCart_total"></span></div>
-			                            <img src="resource/images/cart.png" alt=""/></h3>
-			                        </a>
-			                        <p><a href="resource/javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+			</div>
+			
+			<div class="container">
+				<div class="head-top">
+			 <div class="col-sm-8 col-md-offset-2 h_menu4">
+					<nav class="navbar nav_bottom" role="navigation">
+	 
+	 <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header nav_2">
+		  <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		 
+	   </div> 
+	   <!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+			<ul class="nav navbar-nav nav_1">
+				<li><a class="color" href="resource/index.html">Home</a></li>
+				<li><a class="color3" href="resource/product.html">Sale</a></li>
+				<li><a class="color4" href="resource/404.html">About</a></li>
+				<li><a class="color5" href="resource/typo.html">Short Codes</a></li>
+				<li ><a class="color6" href="resource/contact.html">Contact</a></li>
+			</ul>
+		 </div>
+	
+	</nav>
+	</div>
+				<div class="col-sm-2 search-right">
+						<div class="cart box_1">
+							<a href="resource/checkout.html">
+							<h3> <div class="total">
+								<span class="simpleCart_total"></span></div>
+								<img src="resource/images/cart.png" alt=""/></h3>
+							</a>
+							<p><a href="resource/javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+	
+						</div>
+						<div class="clearfix"> </div>
+	
+							
+			   
+			</div>
+			</div>
+			</div>     
+		</div>
+	
+	<!--以上为导航栏-->
 
-			                    </div>
-			                    <div class="clearfix"> </div>
 
-			                        
-			           
-			        </div>
-			        </div>
-			        </div>     
-			    </div>
+	<div class="banner-top">
+			<div class="container">
+				<h1>Register</h1>
+				<em></em>
+				<h2><a href="resource/index.html">Home</a><label>/</label>Register</a></h2>
+			</div>
+		</div>
 
 
 
@@ -217,7 +208,7 @@
 								</p>
 								<p class = "book_inline">by Erika Hall</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -234,7 +225,7 @@
 								</p>
 								<p class = "book_inline">by Karen McGrane</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -251,7 +242,7 @@
 								</p>
 								<p class = "book_inline">by Mike Monteiro</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -268,7 +259,7 @@
 								</p>
 								<p class = "book_inline">by Luke Wroblewski</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -285,7 +276,7 @@
 								</p>
 								<p class = "book_inline">by Aarron Walter</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -302,7 +293,7 @@
 								</p>
 								<p class = "book_inline">by ethan Marcotte</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -319,7 +310,7 @@
 								</p>
 								<p class = "book_inline">by Dan Cederholm</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -336,7 +327,7 @@
 								</p>
 								<p class = "book_inline">by Jeremy Keith</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -353,7 +344,7 @@
 								</p>
 								<p class = "book_inline">by Jason Santa Maria</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -370,7 +361,7 @@
 								</p>
 								<p class = "book_inline">by Scott Jehl</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -387,7 +378,7 @@
 								</p>
 								<p class = "book_inline">by Jason Santa Maria</p>
 								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button>
+								<a href = "#"><button>Modify</button></a>
 							</dt>
 						</dl>
 					</li>
@@ -398,7 +389,7 @@
 
 
 
-			<p class = "admin_hr"></p>
+			
 			<div class="footer">
 			<div class="footer-bottom">
 			<div class="container">
