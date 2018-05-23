@@ -33,7 +33,7 @@ border: 2px solid #dcbf8a; border-radius: 12px; background-color:#dcbf8a;}
 
 .pay_cart{ border:1px solid #64991e; background:#FF6633; padding:5px 8px; text-decoration:none; color:#fff;
  -webkit-border-radius:3px;display:inline; text-transform:uppercase; letter-spacing:0.1em; 
- font-size: 13px;float:right;margin-right:2px;
+ font-size: 13px;float:right;
 }
 
 .blank_pay{width:auto;height:200px;}
