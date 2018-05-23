@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<title>bookInfo</title>
+	<link rel="stylesheet" type="text/css" href="resource/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="resource/css/bookInfo.css"/>
+</head>
+<body>
+	<div class="bookDetails">
+		<form class="black-white" action="%" method="post">
+			<h1 style="text-align: center;">Books Information
+				<span style="text-align: center;">please fill in the blanks</span>
+			</h1>
+			<label>
+				<span>Book Title :</span>
+				<input type="text" name="bookTitle"/>
+			</label>
+			<label>
+				<span>Author :</span>
+				<input type="text" name="bookAuthor"/>
+			</label>
+			<label>
+				<span>Price :</span>
+				<input type="text" name="price" onkeyup="this.value = this.value.replace(/[^0-9]+/,);"/>
+			</label>
+			<label>
+				<div class = "applyBtn">
+					<input class="button" type="submit" value="apply"/>
+				</div>
+			</label>
+		</form>
+	</div>
+</body>
