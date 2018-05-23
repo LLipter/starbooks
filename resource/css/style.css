@@ -2347,3 +2347,11 @@ td.add-check a {
     background-size: 542px;
 }
 }
+
+
+
+@media (min-width: 992px), all{
+.col-md-9 {
+    width: 100%;
+}
+}
