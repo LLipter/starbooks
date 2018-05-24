@@ -64,8 +64,8 @@
    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
-            <li><a class="color" href="#">Home</a></li>
-            <li><a class="color3" href="#">User</a></li>
+            <li><a class="color" href="/starbooks/jsp/index.jsp">Home</a></li>
+            <li><a class="color3" href="/starbooks/userhome">User</a></li>
             <li><a class="color4" href="#">Cart</a></li>
             <!-- <li><a class="color5" href="resource/typo.html">Short Codes</a></li>
             <li ><a class="color6" href="resource/contact.html">Contact</a></li> -->

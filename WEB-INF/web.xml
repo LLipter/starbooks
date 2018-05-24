@@ -49,6 +49,15 @@
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>userhome</servlet-name>
+    <servlet-class>servlet.UserHome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userhome</servlet-name>
+    <url-pattern>/userhome</url-pattern>
+  </servlet-mapping>
+
 
   <listener>
     <listener-class>
