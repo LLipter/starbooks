@@ -1,22 +1,22 @@
-
+<%@page import="model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Welcome to starbooks</title>
-<link rel="stylesheet" type="text/css" href="resource/css/login.css">
+<link rel="stylesheet" type="text/css" href="/starbooks/resource/css/login.css">
 
 
 <!--改动-->
 
-<link href="resource/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/starbooks/resource/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- 需要用到bootstrap 由于bootstrap的css效果要依赖于jquery 所以 最后也引入了jquery的几个文件  -->
-<link href="resource/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="resource/css/style4.css" rel="stylesheet" type="text/css" media="all" />  
-<link href="resource/css/form.css" rel="stylesheet" type="text/css" media="all" />
-<script src="resource/js/jquery.min.js"></script>
-<script src="resource/js/jstarbox.js"></script>
-    <link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+<link href="/starbooks/resource/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/starbooks/resource/css/style4.css" rel="stylesheet" type="text/css" media="all" />  
+<link href="/starbooks/resource/css/form.css" rel="stylesheet" type="text/css" media="all" />
+<script src="/starbooks/resource/js/jquery.min.js"></script>
+<script src="/starbooks/resource/js/jstarbox.js"></script>
+    <link rel="stylesheet" href="/starbooks/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
         <script type="text/javascript">
             jQuery(function() {
             jQuery('.starbox').each(function() {
@@ -58,7 +58,7 @@
         <div class="container">
                 <div class="head">
                     <div class=" logo">
-                        <a href="resource/index.html"><img src="resource/images/logo.png" alt=""></a>   
+                        <a href="resource/index.html"><img src="/starbooks/resource/images/logo.png" alt=""></a>   
                     </div>
                 </div>
             </div>
@@ -121,9 +121,9 @@
                                 <a href="resource/checkout.html">
                                 <h3> <div class="total">
                                     <span class="simpleCart_total"></span></div>
-                                    <img src="resource/images/cart.png" alt=""/></h3>
+                                    <img src="/starbooks/resource/images/cart.png" alt=""/></h3>
                                 </a>
-                                <p><a href="resource/javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+                                <p><a href="/starbooks/resource/javascript:;" class="simpleCart_empty">Empty Cart</a></p>
         
                             </div>
                             <div class="clearfix"> </div>
@@ -195,9 +195,9 @@
             <div class="footer-bottom">
             <div class="container">
                                 <ul class="footer-bottom-top">
-                                    <li><a href="resource/#"><img src="resource/images/f1.png" class="img-responsive" alt=""></a></li>
-                                    <li><a href="resource/#"><img src="resource/images/f2.png" class="img-responsive" alt=""></a></li>
-                                    <li><a href="resource/#"><img src="resource/images/f3.png" class="img-responsive" alt=""></a></li>
+                                    <li><a href="resource/#"><img src="/starbooks/resource/images/f1.png" class="img-responsive" alt=""></a></li>
+                                    <li><a href="resource/#"><img src="/starbooks/resource/images/f2.png" class="img-responsive" alt=""></a></li>
+                                    <li><a href="resource/#"><img src="/starbooks/resource/images/f3.png" class="img-responsive" alt=""></a></li>
                                 </ul>
                                     <p class="footer-class">Copyright &copy; 2018.Company name All rights reserved &nbsp;<a href="index.html" target="_blank" title="StarBook">StarBook</a> &emsp;Published by Group </p>
                                 <div class="clearfix"> </div>
@@ -209,9 +209,9 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
 
-<script src="resource/js/imagezoom.js"></script>
-<script defer src="resource/js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="resource/css/flexslider.css" type="text/css" media="screen" />
+<script src="/starbooks/resource/js/imagezoom.js"></script>
+<script defer src="/starbooks/resource/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="/starbooks/resource/css/flexslider.css" type="text/css" media="screen" />
 <script>
 // Can also be used with $(document).ready()
 $(window).load(function() {
@@ -221,8 +221,8 @@ $(window).load(function() {
   });
 });
 </script>
-<script src="resource/js/simpleCart.min.js"> </script>
-<script src="resource/js/bootstrap.min.js"></script>
+<script src="/starbooks/resource/js/simpleCart.min.js"> </script>
+<script src="/starbooks/resource/js/bootstrap.min.js"></script>
 <!--这一段保留 不用管-->
 </body>
 </html>
