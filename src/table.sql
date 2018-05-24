@@ -20,9 +20,6 @@ CREATE TABLE book(
     PRIMARY KEY(book_id)
 )default charset=utf8; 
 
-INSERT INTO book(book_name,author,publisher,price,res_url) 
-VALUES('深入理解Java虚拟机：JVM高级特性与最佳实践（第2版）','周志明','机械工业出版社',58.8,'592bf167Naf49f7f6');
-
 
 CREATE TABLE book_order(
     order_id INT auto_increment,
