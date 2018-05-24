@@ -1,39 +1,114 @@
-body{ background:#fff;}
 
-.w_100_l{ width:100%; height:auto; display:inline; float:left;}
-.main p{ width:100%; height:42px; display:inline; text-align:center; float:left;}
+.main_pay p{ width:100%; height:42px; display:inline; text-align:center; float:left;}
 
-.main{ width:960px; height:auto; margin:0 auto;}
-.top_banner{ width:100%; height:auto; display:inline; float:left; position:relative;}
-.top_menu{ width:460px; height:auto; display:inline; float:left; margin-left:10px;}
-.top_menu ul{ width:100%; height:auto; display:inline; float:left;}
-.top_menu ul li{ padding:20px 10px 3px; margin-left:10px; float:left;}
-.top_menu ul li a{ font:20px/20px Arial, Helvetica, sans-serif; color:#333; text-decoration:none;}
-.top_menu ul li:hover,.top_menu ul li.sel{ border-bottom:1px solid #bcb79c; background:#f6f5ea;}
-.top_status{ width:170px; height:30px; display:inline; float:right; margin-right:30px; margin-top:13px;
-border: 2px solid #dcbf8a; border-radius: 12px; background-color:#dcbf8a;}
-.top_status p{font:18px Arial, Helvetica, sans-serif; color:#fff;padding:5px 2px;}
+.main_pay{ width:960px; height:auto; margin:auto;}
 
 .title_pay{ width:940px; height:30px; margin:24px 0 18px 10px; font:18px/30px "微软雅黑"; color:#998a62;}
-.index_hr{ width:940px; border-bottom:5px solid #f2f1e2; float:left; margin-top:35px; margin-left:10px;}
-.index_n{ width:940px; border-bottom:1px solid #009999; float:left; margin-top:35px; margin-left:10px;}
-.content ul li img{ width:200px; height:200px; display:inline; float:left; margin-right:10px;}
-.content ul li.user{ width:100px; font:12px/25px Arial;color:#998f77; display:inline;float:left;margin-top:30px;margin-left:100px;}
-.content ul li.user_id{ width:400px; font:12px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
-.content ul li.user_address{ width:400px; font:12px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
-.content ul li.user_phone{ width:400px; font:12px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
-.content ul li.book_title0{ width:300px; font:12px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;}
-.content ul li.book_quantity0{ width:100px; font:12px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-left:100px;}
-.content ul li.book_price0{ width:100px; font:12px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-left:200px;}
-.content ul li.book_title{ width:300px; font:12px/25px Arial; display:inline; float:left;margin-bottom:10px;}
-.content ul li.book_quantity{ width:100px; font:12px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:100px;}
-.content ul li.book_price{ width:100px; font:12px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:200px;}
+.index_hr{ width:960px; border-bottom:5px solid #f2f1e2; float:left; margin-top:35px; margin-left:10px;}
+.index_h{ width:960px; border-bottom:5px solid #f2f1e2; float:left; margin-left:10px;}
 
-.total_price{ width:190px; height:auto;font:15px/50px Arial, Helvetica, sans-serif; color:#666; overflow:hidden;text-align:right;}
+.book_title0{ width:300px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-top:10px;}
+.book_quantity0{ width:100px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-left:100px;margin-top:10px;}
+.book_price0{ width:100px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-left:200px;margin-top:10px;}
+.book_title{ width:300px; font:18px/25px Arial; display:inline; float:left;margin-bottom:10px;}
+.book_quantity{ width:100px; font:18px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:100px;}
+.book_price{ width:100px; font:18px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:200px;}
+
+.total_price{ width:190px; height:auto;font:18px/50px Arial, Helvetica, sans-serif; color:#666; overflow:hidden;text-align:right;}
 
 .pay_cart{ border:1px solid #64991e; background:#FF6633; padding:5px 8px; text-decoration:none; color:#fff;
  -webkit-border-radius:3px;display:inline; text-transform:uppercase; letter-spacing:0.1em; 
- font-size: 13px;float:right;
+ font-size: 15px;float:right;margin-top:10px;
 }
 
-.blank_pay{width:auto;height:200px;}
+.blank_pay{width:auto;height:150px;}
+
+
+.personal_container{
+    width: 100%;
+	
+}
+.personal{
+    /* background-color: rgb(235, 192, 0); */
+    height: 100%;
+    width: 40%;
+    margin-left: 200px;
+}
+
+
+/* form */
+.white-pink {
+    width: 600px;
+	height: auto;
+    background: #FFF;
+    padding: 30px 30px 30px 30px;
+    box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+    -webkit-box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #666;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+.white-pink h1 {
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom: 1px solid #F5F5F5;
+    margin: -10px -30px 10px -30px;
+    color: #969696;
+}
+.white-pink h1>span {
+    display: block;
+    font-size: 11px;
+    color: #C4C2C2;
+}
+.white-pink label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+.white-pink label>span {
+    float: left;
+    width: 30%;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 10px;
+    color: #969696;
+}
+.white-pink input[type="text"], .white-pink input[type="password"], .white-pink textarea,.white-pink select{
+    color: #555;
+    width: 60%;
+    padding: 3px 0px 3px 5px;
+    margin-top: 2px;
+    margin-right: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e5e5;
+    background: #fbfbfb;
+    height: 25px;
+    line-height:15px;
+    outline: 0;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+    box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+}
+
+.white-pink select {
+    background: url('down-arrow.png') no-repeat right, -moz-linear-gradient(top, #FBFBFB 0%, #E9E9E9 100%);
+    background: url('down-arrow.png') no-repeat right, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FBFBFB), color-stop(100%,#E9E9E9));
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 60%;
+    line-height: 15px;
+    height: 30px;
+}
+
+.button_container{
+    margin-left: 20%;
+    margin-right: 20%
+}
+
+.message{
+    text-align: center;
+    color:red;
+}
