@@ -1,6 +1,8 @@
 package listener;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import javax.servlet.*;
 
 import model.*;
@@ -66,5 +68,27 @@ public class DatabaseUtility implements ServletContextListener {
 		ps.setInt(2, user.getPrivilege());
 		ps.setInt(3, user.getUser_id());
 		return ps.executeUpdate();	// the number of rows that are changed
+	}
+	
+	public static int registerUser(User user) throws SQLException{
+		PreparedStatement ps = con.prepareStatement("INSERT INTO user(user_name,passwd) VALUES(?,?)");
+		ps.setString(1, user.getUser_name());
+		ps.setString(2, user.getPasswd());
+		return ps.executeUpdate();	// the number of rows that are changed
+	}
+	
+	public static ArrayList<User> getAllUsers() throws SQLException{
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM user");
+		ResultSet rs = ps.executeQuery();
+		ArrayList<User> ret = new ArrayList<User>();
+		while(rs.next()) {
+			int user_id = rs.getInt("user_id");
+			String passwd = rs.getString("passwd");
+			Timestamp registerTime = rs.getTimestamp("register_time");
+			int privilege = rs.getInt("privilege");
+			User user = new User(user_id,userName,passwd,registerTime,privilege);
+			ret.add(user);
+		}
+		return ret;
 	}
 }
