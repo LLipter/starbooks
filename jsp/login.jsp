@@ -76,8 +76,8 @@
 										out.println("</a></li>");
 										out.println("<li><a href='/starbooks/logout'>Logout</a></li>");
 									}else{
-										out.println("<li><a href='resource/login.html'>Login</a></li>");
-										out.println("<li><a href='resource/register.html'>Register</a></li>");
+										out.println("<li><a href='/starbooks/jsp/login.jsp'>Login</a></li>");
+										out.println("<li><a href='/starbooks/jsp/register.jsp'>Register</a></li>");
 									}
 
 								%>
