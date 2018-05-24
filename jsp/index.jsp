@@ -294,7 +294,7 @@
                         <li><a href="#"><img src="/starbooks/resource/images/f2.png" class="img-responsive" alt=""></a></li>
                         <li><a href="#"><img src="/starbooks/resource/images/f3.png" class="img-responsive" alt=""></a></li>
                     </ul>
-                        <p class="footer-class"><a href="#" target="_blank" title="StarBook">For Administrator</a>&nbsp;&nbsp;Copyright &copy; 2018. &nbsp;<a href="index.html" target="_blank" title="StarBook">StarBook</a> &emsp;Published by Group 13</p>
+                        <p class="footer-class"><a href="/starbooks/jsp/login.jsp?admin=true" target="_blank">For Administrator</a>&nbsp;&nbsp;Copyright &copy; 2018. &nbsp;<a href="/stabooks/jsp/index.jsp" target="_blank" title="StarBook">StarBook</a> &emsp;Published by Group 13</p>
                     <div class="clearfix"> </div>
                 </div>
             </div>

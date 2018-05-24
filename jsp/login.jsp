@@ -196,7 +196,14 @@
 							}
 						%>
 					</p>
-				</label> <label>
+                </label> 
+                <%
+                    if(request.getParameter("admin") != null)
+                        out.println("<input type='hidden' name='admin' value='true'/>");
+                %>
+                
+                
+                <label>
 					<div class="button_container">
 						<input type="submit" class="button" value="Login" />
 					</div>
