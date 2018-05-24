@@ -40,10 +40,34 @@
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>register</servlet-name>
+    <servlet-class>servlet.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>register</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>userhome</servlet-name>
+    <servlet-class>servlet.UserHome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userhome</servlet-name>
+    <url-pattern>/userhome</url-pattern>
+  </servlet-mapping>
+
 
   <listener>
     <listener-class>
       listener.DatabaseUtility
     </listener-class>
   </listener>
+
+  <welcome-file-list>
+    <welcome-file>
+      jsp/index.jsp
+    </welcome-file>
+  </welcome-file-list>
 </web-app>

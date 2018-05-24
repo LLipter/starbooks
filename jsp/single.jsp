@@ -1,134 +1,20 @@
+<%@page import="model.*"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Single</title>
-<link href="resource/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/starbooks/resource/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
-<!-- 需要用到bootstrap 由于bootstrap的css效果要依赖于jquery 所以 也引入了jquery的几个文件  -->
-<!--另外 出现了好几处clearfix 类 查了后 是事关布局效果的，css 调整视觉效果的类 不深究-->
-<!--theme-style-->
-<link href="resource/css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<link href="resource/css/form.css" rel="stylesheet" type="text/css" media="all" />
-<link href="resource/css/style4.css" rel="stylesheet" type="text/css" media="all" />
+<%@ include file="include.jsp" %>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-<script src="resource/js/jquery.min.js"></script>
-<script src="resource/js/jstarbox.js"></script>
-	<link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
-		<script type="text/javascript">
-			jQuery(function() {
-			jQuery('.starbox').each(function() {
-				var starbox = jQuery(this);
-					starbox.starbox({
-					average: starbox.attr('data-start-value'),
-					changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
-					ghosting: starbox.hasClass('ghosting'),
-					autoUpdateAverage: starbox.hasClass('autoupdate'),
-					buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
-					stars: starbox.attr('data-star-count') || 5
-					}).bind('starbox-value-changed', function(event, value) {
-					if(starbox.hasClass('random')) {
-					var val = Math.random();
-					starbox.next().text(' '+val);
-					return val;
-					} 
-				})
-			});
-		});
-		</script>
-<!---//End-rate---->
+
 
 </head>
 <body>
 
-<!--header-->
-<div class="header">
-<div class="container">
-		<div class="head">
-			<div class=" logo">
-				<a href="resource/index.html"><img src="resource/images/logo.png" alt=""></a>	
-			</div>
-		</div>
-	</div>
-	<div class="header-top">
-		<div class="container">
-		<div class="col-sm-5 col-md-offset-2  header-login">
-					<ul >
-						<li><a href="resource/login.html">Login</a></li>
-						<li><a href="resource/register.html">Register</a></li>
-						<li><a href="resource/checkout.html">Checkout</a></li>
-					</ul>
-				</div>
-				
-			<div class="col-sm-5 header-social">		
-					<ul >
-						<li><a href="resource/#"><i></i></a></li>
-						<li><a href="resource/#"><i class="ic1"></i></a></li>
-						<li><a href="resource/#"><i class="ic2"></i></a></li>
-						<li><a href="resource/#"><i class="ic3"></i></a></li>
-						<li><a href="resource/#"><i class="ic4"></i></a></li>
-					</ul>
-					
-			</div>
-				<div class="clearfix"> </div>
-		</div>
-		</div>
-
-
-
-
-
-		
-		<div class="container">
-		
-			<div class="head-top">
-			
-		 <div class="col-sm-8 col-md-offset-2 h_menu4">
-
-<nav class="navbar nav_bottom" role="navigation">
- 
- <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header nav_2">
-      <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-   </div> 
-   <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-        <ul class="nav navbar-nav nav_1">
-            <li><a class="color" href="resource/index.html">Home</a></li>
-			<li><a class="color3" href="resource/product.html">Sale</a></li>
-			<li><a class="color4" href="resource/404.html">About</a></li>
-            <li><a class="color5" href="resource/typo.html">Short Codes</a></li>
-            <li ><a class="color6" href="resource/contact.html">Contact</a></li>
-        </ul>
-     </div>
-
-</nav>
-			</div>
-			<div class="col-sm-2 search-right">
-					<div class="cart box_1">
-						<a href="resource/checkout.html">
-						<h3> <div class="total">
-							<span class="simpleCart_total"></span></div>
-							<img src="resource/images/cart.png" alt=""/></h3>
-						</a>
-                        <!--目前还不知道 清空购物车 是什么操作-->
-						<p><a href="resource/javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-
-					</div>
-					<div class="clearfix"> </div>						
-					
-		</div>
-		</div>
-		</div>				
-</div>
-
-
+	<%@ include file="header.jsp" %>
 
 
 
@@ -162,8 +48,8 @@
 	<div class="col-md-5 grid">		
 		<div class="flexslider">
 			  <ul class="slides">
-			    <li data-thumb="resource/images/si.jpg">
-			        <div class="thumb-image"> <img src="resource/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb="/starbooks/resource/images/si.jpg">
+			        <div class="thumb-image"> <img src="/starbooks/resource/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
 			    <!-- <li data-thumb="resource/images/si1.jpg">
 			         <div class="thumb-image"> <img src="resource/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
@@ -292,38 +178,7 @@
 
 
 
-	<div class="footer">		
-			<div class="footer-bottom">
-				<div class="container">
-					<ul class="footer-bottom-top">
-						<li><a href="resource/#"><img src="resource/images/f1.png" class="img-responsive" alt=""></a></li>
-						<li><a href="resource/#"><img src="resource/images/f2.png" class="img-responsive" alt=""></a></li>
-						<li><a href="resource/#"><img src="resource/images/f3.png" class="img-responsive" alt=""></a></li>
-					</ul>
-					<p class="footer-class">Copyright &copy; 2018.Company name All rights reserved &nbsp;<a href="index.html" target="_blank" title="StarBook">StarBook</a> &emsp;Published by Group </p>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-		<!--//footer-->
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
-
-<script src="resource/js/imagezoom.js"></script>
-<script defer src="resource/js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="resource/css/flexslider.css" type="text/css" media="screen" />
-<script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    controlNav: "thumbnails"
-  });
-});
-</script>
-<script src="resource/js/simpleCart.min.js"> </script>
-<script src="resource/js/bootstrap.min.js"></script>
-<!--这一段保留 不用管-->
-
+<%@ include file="footer.jsp" %>
 
 </body>
 </html>

@@ -29,10 +29,7 @@ body{ background:#fff;}
 .content ul li.order_time{ width:100px; font:12px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:100px;}
 .content ul li.order_status{ width:100px; font:12px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:200px;}
 
-.footer{ width:940px; height:50px; display:inline; float:left; margin-left:10px;font:15px/50px Arial, Helvetica, sans-serif; padding-top:5px;}
-.footer a{ color:#f57389; float:left; margin-left:25px;}
-.footer .span_1{ width:auto; height:50px; color:#666; float:left;}
 
-.footer .span_2{ width:auto; height:50px; float:right; margin-right:20px;font:12px/50px Arial, Helvetica, sans-serif;}
-.footer .span_2 b{ font:12px/50px Arial, Helvetica, sans-serif; color:#666; float:left;}
-.footer .span_2 img{ float:left;}
+
+
+
