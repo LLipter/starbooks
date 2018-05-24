@@ -1,4 +1,5 @@
 <%@page import="model.*"%>
+<%@page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -38,7 +39,7 @@
 
 	<div class="login_container" id="login_conatiner">
 		<div class="login">
-			<form action="/starbooks/login" method="post" class="white-pink">
+			<form action="/starbooks/register" method="post" class="white-pink">
 				<h1>
 					Register to Starbooks <span>Please fill all the texts in the
 						fields.</span>
@@ -48,9 +49,24 @@
 				</label> <label> <span>Password :</span> <input type="password"
                     name="passwd" />
                 </label> <label> <span>Confirm Password :</span> <input type="password"
-					name="passwd" />
+					name="passwd_confirm" />
 				</label> <label>
 					<p class="message">
+
+						<% 
+							String res = (String) request.getAttribute("registerResult");
+							if(res != null){
+								if(res.equals("register successfully")){
+									out.println("Hello, " + (String)request.getAttribute("user_name"));
+									out.println("your password is " + (String)request.getAttribute("passwd"));
+								}else{
+									out.println(res);
+								}
+							}
+						%>
+
+
+
 					</p>
 				</label> <label>
 					<div class="button_container">
