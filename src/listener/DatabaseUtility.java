@@ -77,16 +77,51 @@ public class DatabaseUtility implements ServletContextListener {
 		return ps.executeUpdate();	// the number of rows that are changed
 	}
 	
+	public static Book getBook(int book_id) throws SQLException{
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM book WHERE book_id = ?");
+		ps.setInt(1, book_id);
+		ResultSet rs = ps.executeQuery();
+		if(!rs.next())
+			return null; // no such book
+		
+		String book_name = rs.getString("book_name");
+		String author = rs.getString("author");
+		String publisher = rs.getString("publisher");
+		double price = rs.getDouble("price");
+		String res_url = rs.getString("res_url");
+		int book_status = rs.getInt("book_status");
+		return new Book(book_id,book_name,author,publisher,price,res_url,book_status);
+	}
+	
+	public static ArrayList<Book> getAllBooks() throws SQLException{
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM book");
+		ResultSet rs = ps.executeQuery();
+		ArrayList<Book> ret = new ArrayList<Book>();
+		while(rs.next()) {
+			int book_id = rs.getInt("book_id");
+			String book_name = rs.getString("book_name");
+			String author = rs.getString("author");
+			String publisher = rs.getString("publisher");
+			double price = rs.getDouble("price");
+			String res_url = rs.getString("res_url");
+			int book_status = rs.getInt("book_status");
+			Book book = new Book(book_id,book_name,author,publisher,price,res_url,book_status);
+			ret.add(book);
+		}
+		return ret;
+	}
+	
 	public static ArrayList<User> getAllUsers() throws SQLException{
 		PreparedStatement ps = con.prepareStatement("SELECT * FROM user");
 		ResultSet rs = ps.executeQuery();
 		ArrayList<User> ret = new ArrayList<User>();
 		while(rs.next()) {
 			int user_id = rs.getInt("user_id");
+			String user_name = rs.getString("user_name");
 			String passwd = rs.getString("passwd");
 			Timestamp registerTime = rs.getTimestamp("register_time");
 			int privilege = rs.getInt("privilege");
-			User user = new User(user_id,userName,passwd,registerTime,privilege);
+			User user = new User(user_id,user_name,passwd,registerTime,privilege);
 			ret.add(user);
 		}
 		return ret;
