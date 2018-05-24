@@ -1,4 +1,7 @@
 <%@page import="model.*"%>
+<%@page import="java.util.*"%>
+<%@page import="listener.*"%>
+<%@page contentType="text/html;charset=UTF-8" %>
     <!DOCTYPE html>
     <html>
     <head>
@@ -30,7 +33,7 @@
                         <div class="content">
                             <h1 class="h1_book_title">Here are books for users to buy</h1>
                             <ul>
-                                <li>
+                                <!-- <li>
                                     <dl>
                                         <dd>
                                             <a href="resource/single.html">
@@ -45,9 +48,28 @@
                                             <a class="book_buy" href="#" target="_blank">ADD TO CART</a>
                                         </dt>
                                     </dl>
-                                </li>
+                                </li> -->
                                 <%
-                                    
+                                    ArrayList<Book> books = DatabaseUtility.getAllBooks();
+                                    for(Book book : books){
+                                        out.println("<li>");
+                                        out.println("<dl>");
+                                        out.println("<dd>");
+                                        out.println("<a href='/starbooks/jsp/single.jsp?book_id=" + book.getBook_id() + "'>");
+                                        out.println("<img class='book_image' src='/starbooks/resource/book/image/" + book.getRes_url() + ".jpg' alt='book' />");
+                                        out.println("</a>");
+                                        out.println("</dd>");
+                                        out.println("<dt>");
+                                        out.println("<p class='book_title'>");
+                                        out.println("<a href='/starbooks/jsp/single.jsp?book_id=" + book.getBook_id() + "'>" + book.getBook_name() + "</a>");
+                                        out.println("</p>");
+                                        out.println("<p class='book_inline'>" + book.getAuthor() +"</p>");
+                                        out.println("<a class='book_buy' href='#' target='_blank'>ADD TO CART</a>");
+                                        out.println("</dt>");
+                                        out.println("</dl>");
+                                        out.println("</li>");
+
+                                    }
 
                                 %>
                             </ul>

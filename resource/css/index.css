@@ -62,3 +62,11 @@ border: 2px solid #dcbf8a; border-radius: 12px; background-color:#dcbf8a;}
 .news_title_1 .span_1{ font:12px/25px Arial, Helvetica, sans-serif; color:#333; float:left;}
 .news_title_1 .span_2{ width:294px; height:33px; display:inline; float:right; margin-right:20px;}
 
+
+
+.book_image{
+
+
+    width: 100px;
+    height: 154px;
+}
