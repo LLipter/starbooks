@@ -20,7 +20,7 @@ border: 2px solid #dcbf8a; border-radius: 12px; background-color:#dcbf8a;}
 .index_hr{ width:940px; border-bottom:5px solid #f2f1e2; float:left; margin-top:15px; margin-left:10px;}
 .index_n{ width:940px; border-bottom:1px solid #009999; float:left; margin-top:15px; margin-left:10px;}
 .content ul{ width:940px; height:auto; float:left; overflow:hidden; border-style: solid; border-color: black;}
-.content ul li{ width:190px; height:auto; display:inline; float:left;}
+.content ul li{ width:190px; height:auto; display:inline; float:left; margin-top:50px;}
 .content ul li.book_title{ width:190px; font:18px/25px Arial; color:#eb4c89;display:inline;float:left;margin-bottom:10px;}
 .content ul li.book_title a{ text-decoration:none; color:#eb4c89;display:inline;float:left;margin-bottom:10px;}
 .content ul li.book_quantity{ width:190px; font:18px/25px Arial; color:#998f77;display:inline;float:left;margin-bottom:10px;}
