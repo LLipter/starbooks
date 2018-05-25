@@ -1,5 +1,5 @@
 <%@page import="model.*"%>
-<?DOCTYPE HTML>
+	<?DOCTYPE HTML>
 <html>
 	<head>
 		<meta charset="utf-8"/>
@@ -8,32 +8,18 @@
 		<!--finished CSS-->
 		<link href = "/starbooks/resource/css/admin.css" rel = "stylesheet" type="text/css"/>
 		<!--默认查看上架书籍 点击文本替换为下架书籍-->
-
-
 		<%@ include file="include.jsp" %>
-
-
-
-
 	</head>
 	<body>
 		<div class = "main">
-
-
 			<%@ include file="header.jsp" %>
-
-
-
 	<div class="banner-top">
 			<div class="container">
 				<h1>Admin</h1>
 				<em></em>
-				<h2><a href="resource/index.html">Home</a><label>/</label>Admin</a></h2>
+				<h2><a href="/starbooks/jsp/index.jsp">Home</a><label>/</label>Admin</a></h2>
 			</div>
 		</div>
-
-
-
     	<div class = "container">
 			<p class = "admin_hr"></p>
 			<div class = "admin_msg">
@@ -275,12 +261,6 @@
 			</div>
 		</div>
 
-
-
-
 		<%@ include file="footer.jsp" %>
-
-
-
 	</body>
 </html>
