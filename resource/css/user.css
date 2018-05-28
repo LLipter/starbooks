@@ -1,0 +1,52 @@
+body{ background: #ffcecc;}
+
+.w_100_l{ width:100%; height:auto; display:inline; float:left;}
+.main p{ width:100%; height:42px; display:inline; text-align:center; float:left;}
+
+.main{ width:960px; height:auto; margin:0 auto;}
+.top_banner{ width:100%; height:auto; display:inline; float:left; position:relative;}
+.top_menu{ width:460px; height:auto; display:inline; float:left; margin-left:10px;}
+.top_menu ul{ width:100%; height:auto; display:inline; float:left;}
+.top_menu ul li{ padding:20px 10px 3px; margin-left:10px; float:left;}
+.top_menu ul li a{ font:20px/20px Arial, Helvetica, sans-serif; color:#333; text-decoration:none;}
+.top_menu ul li:hover,.top_menu ul li.sel{ border-bottom:1px solid #bcb79c; background:#f6f5ea;}
+.top_status{ width:170px; height:30px; display:inline; float:right; margin-right:30px; margin-top:13px;
+    border: 2px solid #dcbf8a; border-radius: 12px; background-color:#dcbf8a;}
+.top_status p{font:18px Arial, Helvetica, sans-serif; color:#fff;padding:5px 2px;}
+
+.title_pay{ width:940px; height:30px; margin:24px 0 18px 10px; font:18px/30px "微软雅黑"; color:#998a62;}
+.index_hr{ width:940px;height:20px; border-bottom:5px solid #f2f1e2; float:left; margin-top:10px; margin-left:10px;}
+.index_n{ max-height: 20px; width:940px; height:20px; border-bottom:1px solid #009999; float:left; margin-top:10px; margin-left:10px;}
+.img{ width:370px; height:320px; display:inline; float:left; margin-top:30px;margin-right:10px;}
+.user{ width:180px; font:18px/25px Arial;color:#998f77; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_id{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_gender{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_address{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_phone{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_email{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_birthday{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+
+.order_title0{ width:200px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;}
+.order_time0{ width:200px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:60px;}
+.order_status0{ width:150px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:60px;}
+.order_price0{ width:100px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left: 80px;}
+.order_title{ width:200px; font:18px/25px Arial; display:inline; float:left;margin-top:20px;margin-bottom: 20px;}
+.order_time{ width:200px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:60px;margin-bottom: 20px;}
+.order_status{ width:150px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:60px;margin-bottom: 20px;}
+.order_price{width:100px; font:18px/25px Arial; display:inline; float:left;margin-top:20px;margin-bottom: 20px;margin-left: 80px}
+.book{ width:150px; font:12px/25px Arial; display:inline; float:left;margin-bottom:10px;}
+.book_title{ width:240px; font:12px/25px Arial; display:inline; float:left;margin-top:20px;}
+.book_quantity{width:70px; font:12px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:100px;}
+.book_price{ width:40px; font:12px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:200px;}
+.img_book{ max-width:110px; height:auto; display:inline; float:left; margin-top:15px;margin-right:50px;}
+.img_book img{max-width: 110px;height:auto;}
+.index_hr{ width:940px;height: 20px; border-bottom:5px solid #f2f1e2; float:left; margin-top:10px; margin-left:10px;}
+.index_n{  max-height:20px; width:940px; solid: #009999; float:left; margin-top:10px; margin-left:10px;}
+
+/*.apply-for-return{ border:2px solid #2c4999; background: #ffae88; padding:5px 8px;  color:#fff;*/
+    /*-webkit-border-radius:3px;display:inline; text-transform:uppercase; letter-spacing:0.1em;*/
+    /*font-size: 15px;margin-top:30px;margin-bottom:10px;*/
+/*}*/
+.return{ width:200px; font:18px/25px Arial; display:inline; float:right; color:#998f77;margin-right:50px;margin-top:5px;margin-bottom:5px;}
+
+
