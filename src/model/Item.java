@@ -1,6 +1,7 @@
 package model;
 
 public class Item {
+    Book book = new Book();
 
     private int item_id;
 
@@ -12,19 +13,9 @@ public class Item {
 
     public Item(){}
 
-    public Item(int item_id, int book_id, int order_id, int quantity){
-        this.item_id = item_id;
+    public Item(int book_id, int quantity){
         this.book_id = book_id;
-        this.order_id = order_id;
         this.quantity = quantity;
-    }
-
-    public int getItem_id() {
-        return item_id;
-    }
-
-    public void setItem_id(int item_id) {
-        this.item_id = item_id;
     }
 
     public int getBook_id() {
@@ -33,14 +24,6 @@ public class Item {
 
     public void setBook_id(int book_id) {
         this.book_id = book_id;
-    }
-
-    public int getOrder_id() {
-        return order_id;
-    }
-
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
     }
 
     public int getQuantity() {

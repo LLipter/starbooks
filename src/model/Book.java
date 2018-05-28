@@ -16,6 +16,8 @@ public class Book {
 
     private int book_status;
 
+    public Book(){}
+
     public Book(int book_id, String book_name, String author, String publisher, double price, String res_url, int book_status){
         this.book_id = book_id;
         this.book_name = book_name;
