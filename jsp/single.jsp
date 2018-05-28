@@ -119,7 +119,7 @@
 								<div class="tab-pane active text-style" id="tab1">
 									<div class="facts">
 										<% temp="/starbooks/resource/book/description/"+book.getRes_url()+".txt";
-										out.println("<p>"+book.getTxt(temp)+"</p>");
+										out.println("<p>"+book.getText(temp)+"</p>");
 
 											%>
 										<ul>
@@ -143,7 +143,7 @@
 
 									<div class="facts">
 						<%				temp="/starbooks/resource/book/infomation/"+book.getRes_url()+".txt";
-						out.println("<p>"+book.getTxt(temp)+"</p>");
+						out.println("<p>"+book.getText(temp)+"</p>");
 						%>
 										
 										<ul>
@@ -162,7 +162,7 @@
 									<div class="facts">
 
 										<%	temp="/starbooks/resource/book/reviews/"+book.getRes_url()+".txt";
-										out.println("<p>"+book.getTxt(temp)+"</p>");%>
+										out.println("<p>"+book.getText(temp)+"</p>");%>
 										
 
 										<ul>
