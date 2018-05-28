@@ -15,25 +15,36 @@ body{ background: #ffcecc;}
 .top_status p{font:18px Arial, Helvetica, sans-serif; color:#fff;padding:5px 2px;}
 
 .title_pay{ width:940px; height:30px; margin:24px 0 18px 10px; font:18px/30px "微软雅黑"; color:#998a62;}
-.index_hr{ width:940px; border-bottom:5px solid #f2f1e2; float:left; margin-top:35px; margin-left:10px;}
-.index_n{ width:940px; border-bottom:1px solid #009999; float:left; margin-top:35px; margin-left:10px;}
-.content ul li img{ width:370px; height:320px; display:inline; float:left; margin-top:30px;margin-right:10px;}
-.content ul li.user{ width:180px; font:18px/25px Arial;color:#998f77; display:inline;float:left;margin-top:30px;margin-left:50px;}
-.content ul li.user_id{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
-.content ul li.user_gender{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
-.content ul li.user_address{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
-.content ul li.user_phone{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
-.content ul li.user_email{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
-.content ul li.user_birthday{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.index_hr{ width:940px;height:20px; border-bottom:5px solid #f2f1e2; float:left; margin-top:10px; margin-left:10px;}
+.index_n{ max-height: 20px; width:940px; height:20px; border-bottom:1px solid #009999; float:left; margin-top:10px; margin-left:10px;}
+.img{ width:370px; height:320px; display:inline; float:left; margin-top:30px;margin-right:10px;}
+.user{ width:180px; font:18px/25px Arial;color:#998f77; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_id{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_gender{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_address{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_phone{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_email{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
+.user_birthday{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
 
-.content ul li.order_title0{ width:150px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;}
-.content ul li.order_time0{ width:250px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:100px;}
-.content ul li.order_status0{ width:200px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:200px;}
-.content ul li.order_title{ width:150px; font:18px/25px Arial; display:inline; float:left;margin-top:20px;}
-.content ul li.order_time{ width:250px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:100px;}
-.content ul li.order_status{ width:200px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:200px;}
-.content ul li.book{ width:150px; font:12px/25px Arial; display:inline; float:left;margin-bottom:10px;}
+.order_title0{ width:120px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;}
+.order_time0{ width:220px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:100px;}
+.order_status0{ width:180px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:100px;}
+.order_title{ width:120px; font:18px/25px Arial; display:inline; float:left;margin-top:20px;margin-bottom: 20px;}
+.order_time{ width:220px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:100px;margin-bottom: 20px;}
+.order_status{ width:180px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:100px;margin-bottom: 20px;}
+.order_price{width:120px; font:18px/25px Arial; display:inline; float:left;margin-top:20px;margin-bottom: 20px;margin-left: 100px}
+.book{ width:150px; font:12px/25px Arial; display:inline; float:left;margin-bottom:10px;}
+.book_title{ width:240px; font:12px/25px Arial; display:inline; float:left;margin-top:20px;}
+.book_quantity{width:70px; font:12px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:100px;}
+.book_price{ width:40px; font:12px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:200px;}
+.img_book{ max-width:110px; height:auto; display:inline; float:left; margin-top:15px;margin-right:50px;}
+.img_book img{max-width: 110px;height:auto;}
+.index_hr{ width:940px;height: 20px; border-bottom:5px solid #f2f1e2; float:left; margin-top:10px; margin-left:10px;}
+.index_n{  max-height:20px; width:940px; solid: #009999; float:left; margin-top:10px; margin-left:10px;}
 
-
+.apply-for-return{ border:2px solid #2c4999; background: #ffae88; padding:5px 8px;  color:#fff;
+    display:inline; text-transform:uppercase; letter-spacing:0.1em;
+    font-size: 15px;margin-top:30px;margin-bottom:10px;
+}
 
 
