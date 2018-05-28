@@ -50,7 +50,7 @@
                                     </dl>
                                 </li> -->
                                 <%
-                                    ArrayList<Book> books = DatabaseUtility.getAllBooks();
+                                    ArrayList<Book> books = DatabaseUtility.getAllBooks(1);
                                     for(Book book : books){
                                         out.println("<li>");
                                         out.println("<dl>");

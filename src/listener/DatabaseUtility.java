@@ -58,16 +58,12 @@ public class DatabaseUtility implements ServletContextListener {
 		String passwd = rs.getString("passwd");
 		Timestamp registerTime = rs.getTimestamp("register_time");
 		int privilege = rs.getInt("privilege");
-		
-		return new User(user_id,userName,passwd,registerTime,privilege);
-	}
-	
-	public static int updateUser(User user) throws SQLException{
-		PreparedStatement ps = con.prepareStatement("UPDATE user SET passwd=?,privilege=? WHERE user_id=?");
-		ps.setString(1, user.getPasswd());
-		ps.setInt(2, user.getPrivilege());
-		ps.setInt(3, user.getUser_id());
-		return ps.executeUpdate();	// the number of rows that are changed
+		int gender = rs.getInt("gender");
+		Date birthday = rs.getDate("birthday");
+		String address = rs.getString("address");
+		String phone = rs.getString("phone");
+		String email = rs.getString("email");
+		return new User(user_id,userName,passwd,registerTime,privilege,gender,birthday,address,phone,email);
 	}
 	
 	public static int registerUser(User user) throws SQLException{
@@ -93,8 +89,9 @@ public class DatabaseUtility implements ServletContextListener {
 		return new Book(book_id,book_name,author,publisher,price,res_url,book_status);
 	}
 	
-	public static ArrayList<Book> getAllBooks() throws SQLException{
-		PreparedStatement ps = con.prepareStatement("SELECT * FROM book");
+	public static ArrayList<Book> getAllBooks(int book_status) throws SQLException{
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM book WHERE book_status = ?");
+		ps.setInt(1, book_status);
 		ResultSet rs = ps.executeQuery();
 		ArrayList<Book> ret = new ArrayList<Book>();
 		while(rs.next()) {
@@ -104,26 +101,11 @@ public class DatabaseUtility implements ServletContextListener {
 			String publisher = rs.getString("publisher");
 			double price = rs.getDouble("price");
 			String res_url = rs.getString("res_url");
-			int book_status = rs.getInt("book_status");
 			Book book = new Book(book_id,book_name,author,publisher,price,res_url,book_status);
 			ret.add(book);
 		}
 		return ret;
 	}
 	
-	public static ArrayList<User> getAllUsers() throws SQLException{
-		PreparedStatement ps = con.prepareStatement("SELECT * FROM user");
-		ResultSet rs = ps.executeQuery();
-		ArrayList<User> ret = new ArrayList<User>();
-		while(rs.next()) {
-			int user_id = rs.getInt("user_id");
-			String user_name = rs.getString("user_name");
-			String passwd = rs.getString("passwd");
-			Timestamp registerTime = rs.getTimestamp("register_time");
-			int privilege = rs.getInt("privilege");
-			User user = new User(user_id,user_name,passwd,registerTime,privilege);
-			ret.add(user);
-		}
-		return ret;
-	}
+
 }

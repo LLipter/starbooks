@@ -9,6 +9,12 @@ CREATE TABLE user(
 INSERT INTO user(user_name,passwd) VALUES("test","123456");
 INSERT INTO user(user_name,passwd,privilege) VALUES("admin","admin",10);
 
+ALTER TABLE user ADD gender INT;
+ALTER TABLE user ADD birthday DATE;
+ALTER TABLE user ADD address VARCHAR(100);
+ALTER TABLE user ADD phone VARCHAR(20);
+ALTER TABLE user ADD email VARCHAR(50);
+
 CREATE TABLE book(
     book_id INT auto_increment,
     book_name VARCHAR(100) NOT NULL,
