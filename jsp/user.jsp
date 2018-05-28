@@ -1,109 +1,25 @@
+<%@page import="model.*"%>
 <html>
 <head>
     <meta charset="utf-8"/>
     <title>User</title>
     <!--底层布局的css-->
-    <link type="text/css" rel="stylesheet" href="resource/css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="/starbooks/resource/css/reset.css" />
     <!--样式css-->
-    <link type="text/css" rel="stylesheet" href="resource/css/user.css" />
-    <!--改动-->
+    <link type="text/css" rel="stylesheet" href="/starbooks/resource/css/user.css" />
 
-    <link href="resource/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <!-- 需要用到bootstrap 由于bootstrap的css效果要依赖于jquery 所以 最后也引入了jquery的几个文件  -->
-    <link href="resource/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="resource/css/style4.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="resource/css/form.css" rel="stylesheet" type="text/css" media="all" />
+    <%@ include file="include.jsp" %>
 </head>
 <body>
 
-<!--头部-->
-<div class="header">
-    <div class="container">
-        <div class="head">
-            <div class=" logo">
-                <a href="resource/index.html"><img src="resource/images/logo.png" alt=""></a>
-            </div>
-        </div>
-    </div>
 
-    <div class="header-top">
-        <div class="container">
-            <div class="col-sm-5 col-md-offset-2  header-login">
-                <ul >
-                    <li><a href="resource/login.html">Login</a></li>
-                    <li><a href="resource/register.html">Register</a></li>
-                    <li><a href="resource/checkout.html">Checkout</a></li>
-                </ul>
-            </div>
+    <%@ include file="header.jsp" %>
 
-            <!-- social media of administrator to contact  -->
-            <div class="col-sm-5 header-social">
-                <ul >
-                    <li><a href="resource/#"><i></i></a></li>
-                    <li><a href="resource/#"><i class="ic1"></i></a></li>
-                    <li><a href="resource/#"><i class="ic2"></i></a></li>
-                    <li><a href="resource/#"><i class="ic3"></i></a></li>
-                    <li><a href="resource/#"><i class="ic4"></i></a></li>
-                </ul>
-
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="head-top">
-            <div class="col-sm-8 col-md-offset-2 h_menu4">
-                <nav class="navbar nav_bottom" role="navigation">
-
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header nav_2">
-                        <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-
-                    </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                        <ul class="nav navbar-nav nav_1">
-                            <li><a class="color" href="resource/index.html">Home</a></li>
-                            <li><a class="color3" href="resource/product.html">Sale</a></li>
-                            <li><a class="color4" href="resource/404.html">About</a></li>
-                            <li><a class="color5" href="resource/typo.html">Short Codes</a></li>
-                            <li ><a class="color6" href="resource/contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-
-                </nav>
-            </div>
-
-            <div class="col-sm-2 search-right">
-                <div class="cart box_1">
-                    <a href="resource/checkout.html">
-                        <h3> <div class="total">
-                            <span class="simpleCart_total"></span></div>
-                            <img src="resource/images/cart.png" alt=""/></h3>
-                    </a>
-                    <p><a href="resource/javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-
-                </div>
-                <div class="clearfix"> </div>
-
-
-
-            </div>
-
-        </div>
-    </div>
-</div>
 <div class="banner-top">
     <div class="container">
-        <h1>My Home Page</h1>
+        <h1>User Page</h1>
         <em></em>
-        <h2><a href="resource/index.html">Home</a><label>/</label>Single</a></h2>
+        <h2><a href="/starbooks/resource/index.jsp">Home</a><label>/</label>User Page</a></h2>
     </div>
 </div>
 <p></p>
@@ -116,7 +32,7 @@
                 <p></p>
                 <p class="index_hr"></p>
                 <div>
-                    <span class="img"><img src="resource/images/randomUser6.png" alt="user" /></span>
+                    <span class="img"><img src="/starbooks/resource/images/randomUser6.png" alt="user" /></span>
                     <!--随机头像6个已上传，不用调用数据库-->
                     <span class="user">User Name :</span>
                     <span class="user_id">Null</span>
@@ -148,7 +64,7 @@
                     <button class="return">Apply For Return</button>
                     <p class="index_n"></p>
                     <div>
-                        <span class="img_book"><a href="#"><img src="./resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
+                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
                         <span class="book_title">Title :</span>
                         <span class="book_quantity">Quantity :</span>
                         <span class="book_price">Price :</span>
@@ -158,7 +74,7 @@
                     </div>
                     <p class="index_n"></p>
                     <div>
-                        <span class="img_book"><a href="#"><img src="./resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
+                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
                         <span class="book_title">Title :</span>
                         <span class="book_quantity">Quantity :</span>
                         <span class="book_price">Price :</span>
@@ -168,7 +84,7 @@
                     </div>
                     <p class="index_n"></p>
                     <div>
-                        <span class="img_book"><a href="#"><img src="./resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
+                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
                         <span class="book_title">Title :</span>
                         <span class="book_quantity">Quantity :</span>
                         <span class="book_price">Price :</span>
@@ -193,7 +109,7 @@
                     <button class="return">Apply For Return</button>
                     <p class="index_n"></p>
                     <div>
-                        <span class="img_book"><a href="#"><img src="./resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
+                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
                         <span class="book_title">Title :</span>
                         <span class="book_quantity">Quantity :</span>
                         <span class="book_price">Price :</span>
@@ -203,7 +119,7 @@
                     </div>
                     <p class="index_n"></p>
                     <div>
-                        <span class="img_book"><a href="#"><img src="./resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
+                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
                         <span class="book_title">Title :</span>
                         <span class="book_quantity">Quantity :</span>
                         <span class="book_price">Price :</span>
@@ -213,7 +129,7 @@
                     </div>
                     <p class="index_n"></p>
                     <div>
-                        <span class="img_book"><a href="#"><img src="./resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
+                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
                         <span class="book_title">Title :</span>
                         <span class="book_quantity">Quantity :</span>
                         <span class="book_price">Price :</span>
@@ -238,7 +154,7 @@
                     <button class="return">Apply For Return</button>
                     <p class="index_n"></p>
                     <div>
-                        <span class="img_book"><a href="#"><img src="./resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
+                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
                         <span class="book_title">Title :</span>
                         <span class="book_quantity">Quantity :</span>
                         <span class="book_price">Price :</span>
@@ -248,7 +164,7 @@
                     </div>
                     <p class="index_n"></p>
                     <div>
-                        <span class="img_book"><a href="#"><img src="./resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
+                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
                         <span class="book_title">Title :</span>
                         <span class="book_quantity">Quantity :</span>
                         <span class="book_price">Price :</span>
@@ -258,7 +174,7 @@
                     </div>
                     <p class="index_n"></p>
                     <div>
-                        <span class="img_book"><a href="#"><img src="./resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
+                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
                         <span class="book_title">Title :</span>
                         <span class="book_quantity">Quantity :</span>
                         <span class="book_price">Price :</span>
@@ -276,41 +192,7 @@
     </div>
 </div>
 
-<div class="footer">
-    <div class="footer-bottom">
-        <div class="container">
-            <ul class="footer-bottom-top">
-                <li><a href="resource/#"><img src="resource/images/f1.png" class="img-responsive" alt=""></a></li>
-                <li><a href="resource/#"><img src="resource/images/f2.png" class="img-responsive" alt=""></a></li>
-                <li><a href="resource/#"><img src="resource/images/f3.png" class="img-responsive" alt=""></a></li>
-            </ul>
-            <p class="footer-class">Copyright &copy; 2018.Company name All rights reserved &nbsp;<a href="index.html" target="_blank" title="StarBook">StarBook</a> &emsp;Published by Group </p>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-</div>
-
-
-<p></p>
-
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
-
-<script src="resource/js/imagezoom.js"></script>
-<script defer src="resource/js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="resource/css/flexslider.css" type="text/css" media="screen" />
-<script>
-    // Can also be used with $(document).ready()
-    $(window).load(function() {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            controlNav: "thumbnails"
-        });
-    });
-</script>
-<script src="resource/js/simpleCart.min.js"> </script>
-<script src="resource/js/bootstrap.min.js"></script>
+<%@ include file="footer.jsp" %>
 
 </body>
 
