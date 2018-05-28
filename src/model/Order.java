@@ -47,6 +47,10 @@ public class Order implements Iterable<Item>{
 	public void removeItem(Item item) {
 		items.remove(item);
 	}
+	
+	public void removeItem(int index) {
+		items.remove(index);
+	}
 
 	@Override
 	public Iterator<Item> iterator() {
