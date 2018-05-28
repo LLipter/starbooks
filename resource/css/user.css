@@ -26,13 +26,14 @@ body{ background: #ffcecc;}
 .user_email{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
 .user_birthday{ width:270px; font:18px/25px Arial; display:inline;float:left;margin-top:30px;margin-left:50px;}
 
-.order_title0{ width:120px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;}
-.order_time0{ width:220px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:100px;}
-.order_status0{ width:180px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:100px;}
-.order_title{ width:120px; font:18px/25px Arial; display:inline; float:left;margin-top:20px;margin-bottom: 20px;}
-.order_time{ width:220px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:100px;margin-bottom: 20px;}
-.order_status{ width:180px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:100px;margin-bottom: 20px;}
-.order_price{width:120px; font:18px/25px Arial; display:inline; float:left;margin-top:20px;margin-bottom: 20px;margin-left: 100px}
+.order_title0{ width:200px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;}
+.order_time0{ width:200px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:60px;}
+.order_status0{ width:150px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left:60px;}
+.order_price0{ width:100px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-top:30px;margin-bottom:10px;margin-left: 80px;}
+.order_title{ width:200px; font:18px/25px Arial; display:inline; float:left;margin-top:20px;margin-bottom: 20px;}
+.order_time{ width:200px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:60px;margin-bottom: 20px;}
+.order_status{ width:150px; font:18px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:60px;margin-bottom: 20px;}
+.order_price{width:100px; font:18px/25px Arial; display:inline; float:left;margin-top:20px;margin-bottom: 20px;margin-left: 80px}
 .book{ width:150px; font:12px/25px Arial; display:inline; float:left;margin-bottom:10px;}
 .book_title{ width:240px; font:12px/25px Arial; display:inline; float:left;margin-top:20px;}
 .book_quantity{width:70px; font:12px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:100px;}
@@ -42,9 +43,10 @@ body{ background: #ffcecc;}
 .index_hr{ width:940px;height: 20px; border-bottom:5px solid #f2f1e2; float:left; margin-top:10px; margin-left:10px;}
 .index_n{  max-height:20px; width:940px; solid: #009999; float:left; margin-top:10px; margin-left:10px;}
 
-.apply-for-return{ border:2px solid #2c4999; background: #ffae88; padding:5px 8px;  color:#fff;
-    display:inline; text-transform:uppercase; letter-spacing:0.1em;
-    font-size: 15px;margin-top:30px;margin-bottom:10px;
-}
+/*.apply-for-return{ border:2px solid #2c4999; background: #ffae88; padding:5px 8px;  color:#fff;*/
+    /*-webkit-border-radius:3px;display:inline; text-transform:uppercase; letter-spacing:0.1em;*/
+    /*font-size: 15px;margin-top:30px;margin-bottom:10px;*/
+/*}*/
+.return{ width:200px; font:18px/25px Arial; display:inline; float:right; color:#998f77;margin-right:50px;margin-top:5px;margin-bottom:5px;}
 
 
