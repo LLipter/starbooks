@@ -107,5 +107,36 @@ public class DatabaseUtility implements ServletContextListener {
 		return ret;
 	}
 	
+	public static int getNumberOfUser() throws SQLException{
+		PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) AS res FROM user");
+		ResultSet rs = ps.executeQuery();
+		rs.next();
+		return rs.getInt("res");
+	}
+	
+	public static ArrayList<Order> getOrder(User user) throws SQLException{
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM book_order WHERE user_id = ?");
+		ps.setInt(1, user.getUser_id());
+		ResultSet rs = ps.executeQuery();
+		ArrayList<Order> ret = new ArrayList<Order>();
+		while(rs.next()) {
+			Timestamp created_time = rs.getTimestamp("created_time");
+			int order_status = rs.getInt("order_status");
+			Order order = new Order(created_time,order_status);
+			int order_id = rs.getInt("order_id");
+			PreparedStatement subps = con.prepareStatement("SELECT * FROM item WHERE order_id = ?");
+			subps.setInt(1, order_id);
+			ResultSet subrs = subps.executeQuery();
+			while(subrs.next()) {
+				int book_id = subrs.getInt("book_id");
+				int quentity = subrs.getInt("quentity");
+				Item item = new Item(quentity,DatabaseUtility.getBook(book_id));
+				order.AddItems(item);
+			}
+			ret.add(order);
+		}
+		return ret;
+	}
+	
 
 }
