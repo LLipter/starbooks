@@ -1,9 +1,12 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 public class Book {
 
@@ -21,7 +24,11 @@ public class Book {
 
     private int book_status;
     
-    private String txt;
+	private String description;
+    
+    private String information;
+    
+    private String reviews;
     
  
 
@@ -34,7 +41,7 @@ public class Book {
         this.price = price;
         this.res_url = res_url;
         this.book_status = book_status;
-     
+        initText();
     }
 
     public int getBook_id() {
@@ -64,33 +71,55 @@ public class Book {
     public int getBook_status() {
         return book_status;
     }
-   
-    public String getText(String url)  {
-        FileReader fr = null;
+    
+    public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getInformation() {
+		return information;
+	}
+
+	public void setInformation(String information) {
+		this.information = information;
+	}
+
+	public String getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(String reviews) {
+		this.reviews = reviews;
+	}
+	
+	private String getText(String url) {
+    	BufferedReader input;
+		String line = null;
+		String ret = "";
 		try {
-			fr = new FileReader(url);
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		}
-        BufferedReader br=new BufferedReader(fr);
-        txt=null;
-        
-        
-        try {
-			while(br.readLine()!=null){
-			    txt+=br.readLine();
-			}
+			input = new BufferedReader(new FileReader(url));
+			while((line = input.readLine()) != null)
+				ret += line;
+			input.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        
- 
-        try {
-			br.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-        return txt;
+		return ret;
+	}
+   
+    private void initText()  {
+    	String desc_url = String.format("/starbooks/resource/book/description/%s.txt",this.getRes_url());
+    	String info_url = String.format("/starbooks/resource/book/information/%s.txt",this.getRes_url());
+    	String review_url = String.format("/starbooks/resource/book/reviews/%s.txt",this.getRes_url());
+
+    	this.setDescription(getText(desc_url));
+    	this.setInformation(getText(info_url));
+    	this.setReviews(getText(review_url));
+		
     }
     
     
