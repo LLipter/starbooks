@@ -16,7 +16,7 @@
 				<script type="text/javascript">
 					$(function () {
 						//改变div的高度
-						$("#login_conatiner").height($(window).height() - 250);
+						$("#login_conatiner").height($(window).height());
 					});
 				</script>
 		</head>
@@ -43,7 +43,7 @@
 
 				<div class="login_container" id="login_conatiner">
 					<div class="login">
-						<form action="/starbooks/register" method="post" class="white-pink">
+						<form action="/starbooks/register" method="post" class="white-pink" enctype="multipart/form-data">
 							<h1>
 								Register to Starbooks
 								<span>Please fill all the texts in the fields.
@@ -61,6 +61,38 @@
 								<span>Confirm Password :</span>
 								<input type="password" name="passwd_confirm" />
 							</label>
+							<label>
+								<span>Gender</span>
+								<select name="gender">
+									<option value = '1'>
+										male
+									</option>
+									<option value = '0'>
+										female
+									</option>
+								</select>
+							</label>
+							<label>
+								<span>Birthday</span>
+								<input type="date" name="birthday" />
+							</label>
+							<label>
+								<span>Address</span>
+								<input type="text" name="address" />
+							</label>
+							<label>
+								<span>Phone</span>
+								<input type="text" name="phone" />
+							</label>
+							<label>
+								<span>Email</span>
+								<input type="text" name="email" />
+							</label>
+							<label>
+								<span>Portrait</span>
+								<input type="file" name="portrait" accept=".jpg"/>
+							</label>
+							<br/>
 							<label>
 								<p class="message">
 

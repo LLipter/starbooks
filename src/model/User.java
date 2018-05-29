@@ -17,14 +17,23 @@ public class User {
 	private String phone;
 	private String email;
 	
-	public User(String user_name, String passwd) {
+	
+	public User(String user_name, String passwd, int gender, Date birthday, String address, String phone,
+			String email) {
 		this.user_id = -1;
 		this.user_name = user_name;
 		this.passwd = passwd;
 		this.registerTime = null;
 		this.privilege = 0;
+		this.gender = gender;
+		this.birthday = birthday;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
 	}
-	
+
+
+
 	public User(int user_id, String user_name, String passwd, Timestamp registerTime, int privilege, int gender,
 			Date birthday, String address, String phone, String email) {
 		this.user_id = user_id;
