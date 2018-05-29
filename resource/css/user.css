@@ -40,7 +40,7 @@ body{ background: #ffcecc;}
 .book_price{ width:40px; font:12px/25px Arial;  display:inline; float:left;margin-top:20px;margin-left:200px;}
 .img_book{ max-width:110px; height:auto; display:inline; float:left; margin-top:15px;margin-right:50px;}
 .img_book img{max-width: 110px;height:auto;}
-.index_hr{ width:940px;height: 20px; border-bottom:5px solid #f2f1e2; float:left; margin-top:10px; margin-left:10px;}
+.index_hr{ width:940px;height: 20px; border-bottom:5px solid #f2f1e2; float:left; margin-top:10px; margin-left:10px;margin-bottom: 5px;}
 .index_n{  max-height:20px; width:940px; solid: #009999; float:left; margin-top:10px; margin-left:10px;}
 
 /*.apply-for-return{ border:2px solid #2c4999; background: #ffae88; padding:5px 8px;  color:#fff;*/
