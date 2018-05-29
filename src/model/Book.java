@@ -2,6 +2,8 @@ package model;
 
 import java.io.*;
 
+import listener.DatabaseUtility;
+
 public class Book {
 
 	private final int book_id;
@@ -14,7 +16,7 @@ public class Book {
 	private String description;
     private String information;
     private String reviews;
-    private String ret;
+    
     public Book() {
     	book_id = -1;
     	res_url = "no such url";
@@ -34,32 +36,24 @@ public class Book {
     }
 	
 	private String getText(String url) {
-		File file=new File(url);
-		
-    	BufferedReader input=null;
+    	BufferedReader input;
 		String line = null;
-		ret=null;
-		
+		String ret = "";
 		try {
-		try {
-			input = new BufferedReader(new FileReader(file));
+			input = new BufferedReader(new FileReader(url));
 			while((line = input.readLine()) != null)
 				ret += line;
 			input.close();
-}catch(FileNotFoundException a) {
-		a.printStackTrace();	
-		}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		return ret;
 	}
    
     private void initText()  {
-    	String desc_url = String.format("/Users/Haoyu/Desktop/Tomcat/webapps/starbooks/resource/book/description/%s.txt",this.getRes_url());
-    	String info_url = String.format("/Users/Haoyu/Desktop/Tomcat/webapps/starbooks/resource/book/information/%s.txt",this.getRes_url());
-    	String review_url = String.format("/Users/Haoyu/Desktop/Tomcat/webapps/starbooks/resource/book/reviews/%s.txt",this.getRes_url());
+    	String desc_url = String.format("%sresource/book/description/%s.txt",DatabaseUtility.basePath,this.getRes_url());
+    	String info_url = String.format("%sresource/book/information/%s.txt",DatabaseUtility.basePath,this.getRes_url());
+    	String review_url = String.format("%sresource/book/reviews/%s.txt",DatabaseUtility.basePath,this.getRes_url());
 
     	this.setDescription(getText(desc_url));
     	this.setInformation(getText(info_url));

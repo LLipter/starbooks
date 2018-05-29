@@ -15,10 +15,12 @@ public class DatabaseUtility implements ServletContextListener {
 	private static final String host = "jdbc:mysql://www.irran.top:3306/starbooks";
 	private static final String driverName = "com.mysql.jdbc.Driver";
 	private static Connection con = null;
+	public static String basePath = null;
 	
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
+		basePath =  sce.getServletContext().getRealPath("/");
 		try {
 			Class.forName(driverName);
 		} catch (ClassNotFoundException e) {
