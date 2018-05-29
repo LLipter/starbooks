@@ -8,6 +8,7 @@ import java.util.Iterator;
 public class Order implements Iterable<Item>{
 
     private ArrayList<Item> items;
+    private int order_id;
     private Timestamp created_time;
     private int order_status;
     
@@ -15,8 +16,9 @@ public class Order implements Iterable<Item>{
     	// do nothing
     }
 
-    public Order(Timestamp created_time, int order_status) {
+    public Order(int order_id,Timestamp created_time, int order_status) {
     	items = new ArrayList<Item>();
+    	this.order_id = order_id;
 		this.created_time = created_time;
 		this.order_status = order_status;
 	}
@@ -58,4 +60,13 @@ public class Order implements Iterable<Item>{
 		return items.iterator();
 	}
 
+	public int getOrder_id() {
+		return order_id;
+	}
+
+	public void setOrder_id(int order_id) {
+		this.order_id = order_id;
+	}
+
+	
 }

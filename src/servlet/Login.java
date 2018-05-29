@@ -35,6 +35,8 @@ public class Login extends HttpServlet{
 					RequestDispatcher view = req.getRequestDispatcher("jsp/admin.jsp");
 					view.forward(req, resp);
 				}
+				resp.sendRedirect("/starbooks/userhome");
+				return;
 			}
 			RequestDispatcher view = req.getRequestDispatcher("jsp/login.jsp");
 			view.forward(req, resp);
