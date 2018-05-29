@@ -22,7 +22,7 @@
     <div class="container">
         <h1>User Page</h1>
         <em></em>
-        <h2><a href="/starbooks/resource/index.jsp">Home</a><label>/</label>User Page</a></h2>
+        <h2><a href="/starbooks/jsp/index.jsp">Home</a><label>/</label>User Page</a></h2>
     </div>
 </div>
 <p></p>
