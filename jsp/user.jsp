@@ -35,8 +35,7 @@
                 <p></p>
                 <p class="index_hr"></p>
                 <div>
-                    <span class="img"><img src="/starbooks/resource/user/<%= user.getUser_id() %>.jpg" alt="user" /></span>
-                    <!--随机头像6个已上传，不用调用数据库-->
+                    <span class="img"><img src="/starbooks/resource/user/<%= user.getUser_id() %>.jpg" onerror="this.src='/starbooks/resource/images/randomUser<%=(int)(1+Math.random()*(6-1+1))%>.png'" alt="user" /></span>
                     <span class="user">User Name :</span>
                     <span class="user_id"><%= user.getUser_name() %></span>
                     <span class="user">User Gender</span>
@@ -62,6 +61,24 @@
                 </div>
 
                 <%
+                if(orders.size()==0){
+                out.println("<div>");
+                        out.println("<span class='order_title'>");
+                        out.println("Empty order~");
+                        out.println("</span>");
+                        out.println("</span>");
+                        out.println("<span class='order_time'>");
+                        out.println("Empty order~");
+                        out.println("</span>");
+                        out.println("<span class='order_status'>");
+                        out.println("Buy something~");
+                        out.println("</span>");
+                        out.println("<span class='order_price'>");
+                        out.println("Go~");
+                        out.println("</span>");
+                        out.println("</div>");
+
+                }else{
                     for(Order order : orders){
                         out.println("<div>");
                         out.println("<span class='order_title'>");
@@ -99,11 +116,12 @@
                         }
                         out.println("</div>");
                     }
-
+                }
 
                 %>
 
 
+                 <p class="index_hr"></p>
 
 
 
