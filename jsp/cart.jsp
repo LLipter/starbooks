@@ -1,4 +1,6 @@
 <%@page import="model.*"%>
+<%@page import="listener.*"%>
+<%@page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,99 +16,122 @@
 
 <body>
     <%@ include file="header.jsp" %>
-	
-	<div class="banner-top">
-    <div class="container">
-        <h1>Starbooks</h1>
-        <em></em>
-        <h2><a href="/starbooks/jsp/index.jsp">Shopping Cart</a></h2>
-    </div>
-</div>
+
 
 <!--以上为导航栏-->
 
-<div class = "container">
-<div class="w_100_l">
-<div class="main">
-
-
-	
-	<div class = "content">
-		<h1 class = "title_shoppingcart">The ShoppingCart of StarBooks</h1>
-		
-		<p class="index_hr"></p>
-		
-		<ul>
-			<li><a href="#"><img src="resource/book/book_01.jpg" alt="book" /></a></li>
-			<li class="book_title">Title :</li>
-			<li class="book_quantity">Quantity :</li>
-			<li class="book_price">Price :</li>
-           	<li class="book_title"><a href="#" target="_blank">Gift cards</a></li>
-			<li class="book_quantity">1</li>
-			<li class="book_price">$20</li>
-			<form method="post" action="ShopCartServlet">
-				<button class = "remove_book" name="removeBook" type="submit">Delete</button>
-			</form>
-		</ul>
-		<p class="index_n"></p>
-		<ul>
-			<li><a href="#"><img src="resource/book/book_02.jpg" alt="book" /></a></li>
-			<li class="book_title">Title :</li>
-			<li class="book_quantity">Quantity :</li>
-			<li class="book_price">Price :</li>
-			<li class="book_title"><a href="#" target="_blank">Just Enough Research</a></li>
-			<li class="book_quantity">2</li>
-			<li class="book_price">$50</li>
-			<form method="post" action="ShopCartServlet">
-				<button class = "remove_book" name="removeBook" type="submit">Delete</button>
-			</form>
-		</ul>
-		<p class="index_n"></p>
-		<ul>
-			<li><a href="#"><img src="resource/book/book_03.jpg" alt="book" /></a></li>
-			<li class="book_title">Title :</li>
-			<li class="book_quantity">Quantity :</li>
-			<li class="book_price">Price :</li>
-            <li class="book_title"><a href="#" target="_blank">Content Strategy for Mobile</a></li>
-			<li class="book_quantity">1</li>
-			<li class="book_price">$15</li>
-			<form method="post" action="ShopCartServlet">
-				<button class = "remove_book" name="removeBook" type="submit">Delete</button>
-			</form>
+<div class="banner-top">
+	<div class="container">
+		<h1>Checkout</h1>
+		<em></em>
+		<h2><a href="/starbooks/jsp/index.jsp">Home</a><label>/</label>Shopping Cart</a></h2>
 	</div>
-	
-	<p class="index_hr"></p>
-	<p class = "total_price">Total Price: $85</p>
-	
-	<form class = "button" method="post" action="ShopCartServlet">
+</div>
+<!--login-->
+	<script>$(document).ready(function(c) {
+					$('.close1').on('click', function(c){
+						$('.cart-header').fadeOut('slow', function(c){
+							$('.cart-header').remove();
+						});
+						});	  
+					});
+			   </script>
+<script>$(document).ready(function(c) {
+					$('.close2').on('click', function(c){
+						$('.cart-header1').fadeOut('slow', function(c){
+							$('.cart-header1').remove();
+						});
+						});	  
+					});
+			   </script>
+			   <script>$(document).ready(function(c) {
+					$('.close3').on('click', function(c){
+						$('.cart-header2').fadeOut('slow', function(c){
+							$('.cart-header2').remove();
+						});
+						});	  
+					});
+			   </script>
+<div class="container">
+	<div class="check-out">
+	<div class="bs-example4" data-example-id="simple-responsive-table">
+    <div class="table-responsive">
+    	    <table class="table-heading simpleCart_shelfItem">
+		  <tr>
+			<th class="table-grid">Item</th>
+					
+			<th>Prices</th>
+			<th >Quantity </th>
+			<th>Subtotal</th>
+		  </tr>
+		  <tr class="cart-header">
 
-		<button class = "clear_cart" name="clearCart" type="submit">Clear The Cart</button>
-		
-		<button class = "pay_cart" name="pay" type="submit">Pay</button>
+			<td class="ring-in"><a href="single.html" class="at-in"><img src="images/ch.jpg" class="img-responsive" alt=""></a>
+			<div class="sed">
+				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
+				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
+			
+			</div>
+			<div class="clearfix"> </div>
+			<div class="close1"> </div></td>
+			<td>2</td>
+			<td>FREE SHIPPING</td>
+			<td class="item_price">$100.00</td>
+			
+		  </tr>
 
-	</form>
-	
+
+
+		  <tr class="cart-header1">
+		  <td class="ring-in"><a href="single.html" class="at-in"><img src="images/ch2.jpg" class="img-responsive" alt=""></a>
+			<div class="sed">
+				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
+				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="close2"> </div></td></td>
+			<td>2</td>
+			<td>FREE SHIPPING</td>
+			<td class="item_price">$100.00</td>
+			
+		  </tr>
+
+
+
+		  <tr class="cart-header2">
+		  <td class="ring-in"><a href="single.html" class="at-in"><img src="images/ch1.jpg" class="img-responsive" alt=""></a>
+			<div class="sed">
+				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
+				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="close3" name="removeBook" type="submit"> </div></td></td>
+			<td>$100.00</td>
+			<td>2</td>
+			<td class="item_price">$100.00</td>
+			
+		  </tr>
+		  
+	</table>
+	</div>
+	</div>
+	<div class="produced">
+	<a href="single.html" class="hvr-skew-backward">Produced To Buy</a>
+	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	<a href="single.html" class="hvr-skew-backward">Clear the Cart</a>
+	 </div>
+   </div>
 </div>
-</div>
-</div>
+
+
+
+
 
 <p class = "blank_cart"></p>
 
-<div class="footer">
-	<div class="footer-bottom">
-		<div class="container">
-            <ul class="footer-bottom-top">
-                <li><a href="resource/#"><img src="resource/images/f1.png" class="img-responsive" alt=""></a></li>
-                <li><a href="resource/#"><img src="resource/images/f2.png" class="img-responsive" alt=""></a></li>
-                <li><a href="resource/#"><img src="resource/images/f3.png" class="img-responsive" alt=""></a></li>
-            </ul>
-            <p class="footer-class">Copyright &copy; 2018.Company name All rights reserved &nbsp;<a href="index.html" target="_blank" title="StarBook">StarBook</a> &emsp;Published by Group </p>
-        <div class="clearfix"> </div>
-        </div>
-    </div>
-</div>
+
  
-<p></p>
+
 
 <%@ include file="footer.jsp" %>
 
