@@ -47,5 +47,5 @@
     });
 </script>
 <script src="/starbooks/resource/js/simpleCart.min.js"> </script>
-<script src="/starbooks/tresource/js/bootstrap.min.js"></script>
+<script src="/starbooks/resource/js/bootstrap.min.js"></script>
 <!--这一段保留 不用管-->
