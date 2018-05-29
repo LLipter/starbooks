@@ -83,7 +83,7 @@
                              
                                out.println("<h3>"+book.getBook_name()+"</h3>");
                                out.println("<p class='in-para'>");
-                               out.println("Designed by"+book.getAuthor()+"</p>");
+                               out.println("Designed by   "+book.getAuthor()+"</p>");
                                out.println("<div class='price_single'>");
                                out.println("<span class='reducedfrom item_price'>"+book.getPrice()+" RMB"+"</span>");
                                
