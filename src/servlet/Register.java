@@ -89,6 +89,7 @@ public class Register extends HttpServlet{
 				
 				HttpSession session = req.getSession();
 				session.setAttribute("user",user);
+				resp.sendRedirect("/starbooks/userhome");
 			}
 			RequestDispatcher view = req.getRequestDispatcher("jsp/register.jsp");
 			view.forward(req, resp);

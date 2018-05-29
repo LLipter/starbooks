@@ -1,4 +1,7 @@
 <%@page import="model.*"%>
+<%@page import="listener.*"%>
+<%@page import="java.util.*"%>
+<%@page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -32,22 +35,23 @@
                 <p></p>
                 <p class="index_hr"></p>
                 <div>
-                    <span class="img"><img src="/starbooks/resource/images/randomUser6.png" alt="user" /></span>
+                    <span class="img"><img src="/starbooks/resource/user/<%= user.getUser_id() %>.jpg" alt="user" /></span>
                     <!--随机头像6个已上传，不用调用数据库-->
                     <span class="user">User Name :</span>
-                    <span class="user_id">Null</span>
+                    <span class="user_id"><%= user.getUser_name() %></span>
                     <span class="user">User Gender</span>
-                    <span class="user_gender">male</span>
+                    <span class="user_gender"><%= user.getGender() == 1 ? "male" : "female" %></span>
                     <span class="user">User Birthday</span>
-                    <span class="user_birthday">2018-01-01</span>
+                    <span class="user_birthday"><%= user.getBirthday() %></span>
                     <span class="user">User Address :</span>
-                    <span class="user_address">WHU.ISS</span>
+                    <span class="user_address"><%= user.getAddress() %></span>
                     <span class="user">User Phone :</span>
-                    <span class="user_phone">116511231</span>
+                    <span class="user_phone"><%= user.getPhone() %></span>
                     <span class="user">User Email :</span>
-                    <span class="user_email">xxxxxxxx@163.com</span>
+                    <span class="user_email"><%= user.getEmail() %></span>
                 </div>
 
+                <% ArrayList<Order> orders = DatabaseUtility.getOrder(user); %>
                 <p class="index_hr"></p>
                 <br/><br/>
                 <div>
@@ -56,137 +60,55 @@
                     <span class="order_status0">Order Status:</span>
                     <span class="order_price0">Total Price:</span>
                 </div>
-                <div>
-                    <span class="order_title">book_order1.order_id</span>
-                    <span class="order_time">book_order1.create_time</span>
-                    <span class="order_status">book_order1.order_status</span>
-                    <span class="order_price">total price</span>
-                    <button class="return">Apply For Return</button>
-                    <p class="index_n"></p>
-                    <div>
-                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
-                        <span class="book_title">Title :</span>
-                        <span class="book_quantity">Quantity :</span>
-                        <span class="book_price">Price :</span>
-                        <span class="book_title"><a href="#" target="_blank">Just Enough Research</a></span>
-                        <span class="book_quantity">2</span>
-                        <span class="book_price">$50</span>
-                    </div>
-                    <p class="index_n"></p>
-                    <div>
-                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
-                        <span class="book_title">Title :</span>
-                        <span class="book_quantity">Quantity :</span>
-                        <span class="book_price">Price :</span>
-                        <span class="book_title"><a href="#" target="_blank">Just Enough Research</a></span>
-                        <span class="book_quantity">2</span>
-                        <span class="book_price">$50</span>
-                    </div>
-                    <p class="index_n"></p>
-                    <div>
-                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
-                        <span class="book_title">Title :</span>
-                        <span class="book_quantity">Quantity :</span>
-                        <span class="book_price">Price :</span>
-                        <span class="book_title"><a href="#" target="_blank">Content Strategy for Mobile</a></span>
-                        <span class="book_quantity">1</span>
-                        <span class="book_price">$15</span>
-                    </div>
-                    <p class="index_n"></p>
-                </div>
-                <div>
-                    <span class="order_title0">Order:</span>
-                    <span class="order_time0">Create Time:</span>
-                    <span class="order_status0">Order Status:</span>
-                    <span class="order_price0">Total Price:</span>
-                    <!--<button class="apply-for-return">Apply For Return</button>-->
-                </div>
-                <div>
-                    <span class="order_title">book_order2.order_id</span>
-                    <span class="order_time">book_order2.create_time</span>
-                    <span class="order_status">book_order2.order_status</span>
-                    <span class="order_price">total price</span>
-                    <button class="return">Apply For Return</button>
-                    <p class="index_n"></p>
-                    <div>
-                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
-                        <span class="book_title">Title :</span>
-                        <span class="book_quantity">Quantity :</span>
-                        <span class="book_price">Price :</span>
-                        <span class="book_title"><a href="#" target="_blank">Just Enough Research</a></span>
-                        <span class="book_quantity">2</span>
-                        <span class="book_price">$50</span>
-                    </div>
-                    <p class="index_n"></p>
-                    <div>
-                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
-                        <span class="book_title">Title :</span>
-                        <span class="book_quantity">Quantity :</span>
-                        <span class="book_price">Price :</span>
-                        <span class="book_title"><a href="#" target="_blank">Just Enough Research</a></span>
-                        <span class="book_quantity">2</span>
-                        <span class="book_price">$50</span>
-                    </div>
-                    <p class="index_n"></p>
-                    <div>
-                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
-                        <span class="book_title">Title :</span>
-                        <span class="book_quantity">Quantity :</span>
-                        <span class="book_price">Price :</span>
-                        <span class="book_title"><a href="#" target="_blank">Content Strategy for Mobile</a></span>
-                        <span class="book_quantity">1</span>
-                        <span class="book_price">$15</span>
-                    </div>
-                    <p class="index_n"></p>
-                </div>
-                <div>
-                    <span class="order_title0">Order:</span>
-                    <span class="order_time0">Create Time:</span>
-                    <span class="order_status0">Order Status:</span>
-                    <span class="order_price0">Total Price:</span>
-                    <!--<button class="apply-for-return">Apply For Return</button>-->
-                </div>
-                <div>
-                    <span class="order_title">book_order3.order_id</span>
-                    <span class="order_time">book_order3.create_time</span>
-                    <span class="order_status">book_order3.order_status</span>
-                    <span class="order_price">total price</span>
-                    <button class="return">Apply For Return</button>
-                    <p class="index_n"></p>
-                    <div>
-                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
-                        <span class="book_title">Title :</span>
-                        <span class="book_quantity">Quantity :</span>
-                        <span class="book_price">Price :</span>
-                        <span class="book_title"><a href="#" target="_blank">Just Enough Research</a></span>
-                        <span class="book_quantity">2</span>
-                        <span class="book_price">$50</span>
-                    </div>
-                    <p class="index_n"></p>
-                    <div>
-                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
-                        <span class="book_title">Title :</span>
-                        <span class="book_quantity">Quantity :</span>
-                        <span class="book_price">Price :</span>
-                        <span class="book_title"><a href="#" target="_blank">Just Enough Research</a></span>
-                        <span class="book_quantity">2</span>
-                        <span class="book_price">$50</span>
-                    </div>
-                    <p class="index_n"></p>
-                    <div>
-                        <span class="img_book"><a href="#"><img src="/starbooks/resource/book/image/5a45dc0cNf1c081f0.jpg" alt="book" /></a></span>
-                        <span class="book_title">Title :</span>
-                        <span class="book_quantity">Quantity :</span>
-                        <span class="book_price">Price :</span>
-                        <span class="book_title"><a href="#" target="_blank">Content Strategy for Mobile</a></span>
-                        <span class="book_quantity">1</span>
-                        <span class="book_price">$15</span>
-                    </div>
-                    <p class="index_n"></p>
-                </div>
+
+                <%
+                    for(Order order : orders){
+                        out.println("<div>");
+                        out.println("<span class='order_title'>");
+                        out.println(order.getOrder_id());
+                        out.println("</span>");
+                        out.println("<span class='order_time'>");
+                        out.println(order.getCreated_time());
+                        out.println("</span>");
+                        out.println("<span class='order_status'>");
+                        out.println(order.getOrder_status());
+                        out.println("</span>");
+                        out.println("<span class='order_price'>");
+                        out.println(order.getTotalPrice());
+                        out.println("</span>");
+                        out.println("<button class='return'>Apply For Return</button>");
+                        for(Item item : order){
+                            out.println("<p class='index_n'></p>");
+                            out.println("<div>");
+                            out.println("<span class='img_book'><img src='/starbooks/resource/book/image/");
+                            out.println(item.getBook().getRes_url());
+                            out.println(".jpg'/></span>");
+                            out.println("<span class='book_title'>Title :</span>");
+                            out.println("<span class='book_quantity'>Quantity :</span>");
+                            out.println("<span class='book_price'>Price :</span>");
+                            out.println("<span class='book_title'>");
+                            out.println(item.getBook().getBook_name());
+                            out.println("</span>");
+                            out.println("<span class='book_quantity'>");
+                            out.println(item.getQuantity());
+                            out.println("</span>");
+                            out.println("<span class='book_price'>");
+                            out.println(item.getBook().getPrice());
+                            out.println("</span>");
+                            out.println("</div>");
+                        }
+                        out.println("</div>");
+                    }
+
+
+                %>
+
+
+
+
+
             </div>
 
-            <p class="index_hr"></p>
 
         </div>
     </div>

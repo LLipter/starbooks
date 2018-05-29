@@ -67,9 +67,14 @@ public class DatabaseUtility implements ServletContextListener {
 	}
 	
 	public static int registerUser(User user) throws SQLException{
-		PreparedStatement ps = con.prepareStatement("INSERT INTO user(user_name,passwd) VALUES(?,?)");
+		PreparedStatement ps = con.prepareStatement("INSERT INTO user(user_name,passwd,gender,birthday,address,phone,email) VALUES(?,?,?,?,?,?,?)");
 		ps.setString(1, user.getUser_name());
 		ps.setString(2, user.getPasswd());
+		ps.setInt(3, user.getGender());
+		ps.setDate(4, user.getBirthday());
+		ps.setString(5, user.getAddress());
+		ps.setString(6, user.getPhone());
+		ps.setString(7, user.getEmail());
 		return ps.executeUpdate();	// the number of rows that are changed
 	}
 	
@@ -120,10 +125,10 @@ public class DatabaseUtility implements ServletContextListener {
 		ResultSet rs = ps.executeQuery();
 		ArrayList<Order> ret = new ArrayList<Order>();
 		while(rs.next()) {
+			int order_id = rs.getInt("order_id");
 			Timestamp created_time = rs.getTimestamp("created_time");
 			int order_status = rs.getInt("order_status");
-			Order order = new Order(created_time,order_status);
-			int order_id = rs.getInt("order_id");
+			Order order = new Order(order_id,created_time,order_status);
 			PreparedStatement subps = con.prepareStatement("SELECT * FROM item WHERE order_id = ?");
 			subps.setInt(1, order_id);
 			ResultSet subrs = subps.executeQuery();
