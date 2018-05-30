@@ -94,6 +94,16 @@
       <url-pattern>/pay</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+      <servlet-name>cancelorder</servlet-name>
+      <servlet-class>servlet.CancelOrder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>cancelorder</servlet-name>
+      <url-pattern>/cancelorder</url-pattern>
+  </servlet-mapping>
+
+
   <listener>
     <listener-class>
       listener.DatabaseUtility

@@ -91,7 +91,7 @@
                                 <a class="color3" href="/starbooks/userhome">User</a>
                             </li>
                             <li>
-                                <a class="color4" href="/starbooks/CartCenter">Cart</a>
+                                <a class="color4" href="/starbooks/jsp/cart.jsp">Cart</a>
                             </li>
                         </ul>
                     </div>

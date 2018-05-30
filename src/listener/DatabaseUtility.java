@@ -159,7 +159,7 @@ public class DatabaseUtility implements ServletContextListener {
 		return rs.getInt("order_id");
 	}
 	
-	public static int pay(User user,Order order)throws SQLException{
+	public static int pay(User user,Order order) throws SQLException{
 		PreparedStatement ps = con.prepareStatement("INSERT INTO book_order(user_id,receiver_name,address,email,phone,post_code) VALUES(?,?,?,?,?,?)");
 		ps.setInt(1, user.getUser_id());
 		ps.setString(2, order.getReceiver_name());
@@ -178,6 +178,12 @@ public class DatabaseUtility implements ServletContextListener {
 		}
 		
 		return order.size() + 1; // number of records inserted 
+	}
+	
+	public static int cancelOrder(int order_id) throws SQLException{
+		PreparedStatement ps = con.prepareStatement("UPDATE book_order SET order_status = 0 WHERE order_id = ?");
+		ps.setInt(1, order_id);
+		return ps.executeUpdate();
 	}
 	
 

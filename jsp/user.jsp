@@ -12,6 +12,30 @@
     <link type="text/css" rel="stylesheet" href="/starbooks/resource/css/user.css" />
 
     <%@ include file="include.jsp" %>
+
+
+    <script>
+            function cancelOrder(button){
+        
+                var form = document.createElement("form");  
+                form.action = '/starbooks/cancelorder';  
+                form.method = "post";  
+                form.style.display = "none";  
+        
+                var order_id = document.createElement("textarea");  
+                order_id.name = 'order_id';  
+                order_id.value = button.nextSibling.innerHTML;
+                form.appendChild(order_id);  
+        
+                document.body.appendChild(form);  
+                form.submit();  
+                // console.log(button);
+                // console.log(button.nextSibling.nextSibling);
+                // console.log(button.nextSibling.nextSibling.innerHTML);
+                
+            }
+        
+        </script>
 </head>
 <body>
 
@@ -93,7 +117,11 @@
                         out.println("<span class='order_price'>");
                         out.println(order.getTotalPrice());
                         out.println("</span>");
-                        out.println("<button class='return'>Apply For Return</button>");
+                        if(order.getOrder_status() == 1){
+
+                            out.print("<button class='return' onclick='cancelOrder(this)'>Cancel</button>");
+                            out.println("<div  class='order_id' style='display: none'>" + order.getOrder_id() + "</div>");
+                        }
                         for(Item item : order){
                             out.println("<p class='index_n'></p>");
                             out.println("<div>");
