@@ -64,7 +64,7 @@
                                         out.println("<a href='/starbooks/jsp/single.jsp?book_id=" + book.getBook_id() + "'>" + book.getBook_name() + "</a>");
                                         out.println("</p>");
                                         out.println("<p class='book_inline'>" + book.getAuthor() +"</p>");
-                                        out.println("<a class='book_buy' href='#' target='_blank'>ADD TO CART</a>");
+                                        out.println("<a class='book_buy' href='/starbooks/AddBook?book_id="+book.getBook_id()+"' target='_blank'>ADD TO CART</a>");
                                         out.println("</dt>");
                                         out.println("</dl>");
                                         out.println("</li>");

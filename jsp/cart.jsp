@@ -52,7 +52,7 @@
 						});	  
 					});
 			   </script>
-<div class="container">
+  <div class="container">
 	<div class="check-out">
 	<div class="bs-example4" data-example-id="simple-responsive-table">
     <div class="table-responsive">
@@ -62,8 +62,8 @@
 					
 			<th>Prices</th>
 			<th >Quantity </th>
-			<th>Subtotal</th>
 		  </tr>
+
 		  <tr class="cart-header">
 
 			<td class="ring-in"><a href="single.html" class="at-in"><img src="images/ch.jpg" class="img-responsive" alt=""></a>
@@ -80,45 +80,45 @@
 			
 		  </tr>
 
+<%
+            Order cart = (Order) session.getAttribute("cart");
+            if(cart!=null){
+            int i=1;
+
+            for(Item item : cart){
+            out.println("<tr class='cart-header"+i+"'>");
+
+            out.println("<td class='ring-in'>");
+
+            out.println("<a href='/starbooks/jsp/single.jsp?book_id=" + item.getBook().getBook_id() + " ' class='at-in'>");
+             out.println(	"<img src='/starbooks/resource/book/image/" + item.getBook().getRes_url() + ".jpg'");
+
+             out.println("class='img-responsive' alt=''>"+"</a>");
+             out.println("<div class='sed'>");
+             out.println("<h5><a href='/starbooks/jsp/single.jsp?book_id=" + item.getBook().getBook_id() +"' >");
+            out.println(item.getBook().getBook_name()+"</a></h5>");
+             out.println("<p>"+item.getBook().getAuthor()+" </p>");
+             out.println("</div>");
+             out.println("<div class='clearfix'> </div>");
+             out.println("<div class='close2'> </div></td></td>");
+             out.println("<td>"+item.getBook().getPrice()+"</td>");
+             out.println("<td>"+item.getQuantity()+"</td>");
+             out.println("</tr>");
 
 
-		  <tr class="cart-header1">
-		  <td class="ring-in"><a href="single.html" class="at-in"><img src="images/ch2.jpg" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close2"> </div></td></td>
-			<td>2</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			
-		  </tr>
+             }
+         }
+		  %>
 
 
-
-		  <tr class="cart-header2">
-		  <td class="ring-in"><a href="single.html" class="at-in"><img src="images/ch1.jpg" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close3" name="removeBook" type="submit"> </div></td></td>
-			<td>$100.00</td>
-			<td>2</td>
-			<td class="item_price">$100.00</td>
-			
-		  </tr>
-		  
 	</table>
 	</div>
 	</div>
 	<div class="produced">
-	<a href="single.html" class="hvr-skew-backward">Produced To Buy</a>
+	<a href="/starbooks/jsp/pay.jsp" class="hvr-skew-backward">Produced To Buy</a>
 	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	<a href="single.html" class="hvr-skew-backward">Clear the Cart</a>
+	<!--依旧需要调用函数-->
 	 </div>
    </div>
 </div>
@@ -128,10 +128,10 @@
 
 
 <p class = "blank_cart"></p>
+<p class = "blank_cart"></p>
 
 
  
-
 
 <%@ include file="footer.jsp" %>
 

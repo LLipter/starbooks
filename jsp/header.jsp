@@ -1,4 +1,5 @@
 <!--头部-->
+<%@page import= "model.*" %>
 <div class="header">
     <div class="container">
         <div class="head">
@@ -90,7 +91,7 @@
                                 <a class="color3" href="/starbooks/userhome">User</a>
                             </li>
                             <li>
-                                <a class="color4" href="#">Cart</a>
+                                <a class="color4" href="/starbooks/jsp/cart.jsp">Cart</a>
                             </li>
                         </ul>
                     </div>
@@ -99,7 +100,7 @@
             </div>
             <div class="col-sm-2 search-right">
                 <div class="cart box_1">
-                    <a href="resource/checkout.html">
+                    <a href="/starbooks/jsp/cart.jsp">
                         <h3>
                             <div class="total">
                                 <span class="simpleCart_total"></span>
@@ -108,7 +109,7 @@
                         </h3>
                     </a>
                     <p>
-                        <a href="/starbooks/resource/javascript:;" class="simpleCart_empty">Empty Cart</a>
+                        <a href="/starbooks/jsp/cart.jsp" class="simpleCart_empty">Empty Cart</a>
                     </p>
 
                 </div>
