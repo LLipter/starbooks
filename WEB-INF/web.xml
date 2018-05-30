@@ -58,14 +58,14 @@
     <url-pattern>/userhome</url-pattern>
   </servlet-mapping>
 
-<servlet>
-    <servlet-name>AddBook</servlet-name>
-    <servlet-class>servlet.AddBook</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>AddBook</servlet-name>
-    <url-pattern>/AddBook</url-pattern>
-</servlet-mapping>
+  <servlet>
+      <servlet-name>addbook</servlet-name>
+      <servlet-class>servlet.AddBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>addbook</servlet-name>
+      <url-pattern>/addbook</url-pattern>
+  </servlet-mapping>
 
   <listener>
     <listener-class>

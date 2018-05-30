@@ -36,10 +36,19 @@
 			});
 		});
 		</script>
+
+		<script>
+			function addBook(){
+				var book_id = document.getElementById('book_id').innerHTML
+				var quentity = document.getElementById('quentity').innerHTML
+				$.get('/starbooks/addbook', {'book_id':book_id, 'quentity':quentity});
+			}
+		</script>
 		
 	</head>
 
 	<body>
+		<div style='display:none' id='book_id'><%= request.getParameter("book_id") %></div>
 		<%@ include file="header.jsp" %>
 			<div class="banner-top">
 				<div class="container">
@@ -100,7 +109,7 @@
 									<div class="quantity-select">
 										<div class="entry value-minus">&nbsp;</div>
 										<div class="entry value">
-											<span>1</span>
+											<span id='quentity'>1</span>
 										</div>
 										<div class="entry value-plus active">&nbsp;</div>
 									</div>
@@ -118,9 +127,8 @@
 										if (newVal >= 1) divUpd.text(newVal);
 									});
 								</script>
-							
-			<%					out.println("<a href='/starbooks/AddBook?book_id="+book.getBook_id()+"'class='add-to item_add hvr-skew-backward'>");
-		                         out.println("Add to cart</a>");%>
+								
+							<a onclick=addBook() class='add-to item_add hvr-skew-backward'>Add to cart</a>
 
 								<div class="clearfix"> </div>
 							</div>

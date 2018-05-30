@@ -11,61 +11,32 @@ import listener.DatabaseUtility;
 
 
 public class AddBook extends  HttpServlet {
-	private  Item item;
-	private Order cart;
+	
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-	
-		HttpSession session1 = req.getSession();
-		User user = (User)session1.getAttribute("user");
-		if(user == null) {
-			RequestDispatcher view = req.getRequestDispatcher("jsp/login.jsp");
-			view.forward(req, resp);
-			
-		}
-	
-		
-		String bookId = req.getParameter("book_id");
-		int bookId_int = Integer.parseInt(bookId);
-
-		try{
-			Book book = DatabaseUtility.getBook(bookId_int );
-			HttpSession session = req.getSession();
-	        
-			cart=new Order();
-			item = new Item(bookId_int, book);
-			
-			
-			boolean iffound=false;
-			if(session.getAttribute("cart") != null) {
-			cart = (Order) session.getAttribute("cart");
-			for(Item it:cart) {
-				if(it.getBook().getBook_id()==book.getBook_id()) {
-					
-					it.setQuantity(it.getQuantity()+1);
-				   iffound=true;
+		try {
+			int book_id = Integer.parseInt(req.getParameter("book_id"));
+			int quentity = Integer.parseInt(req.getParameter("quentity"));
+			Book book = DatabaseUtility.getBook(book_id);
+			Order cart = (Order)req.getSession().getAttribute("cart");
+			if(cart == null)
+				cart = new Order();
+			boolean isFound = false;
+			for(Item item : cart) {
+				if(item.getBook().getBook_id() == book.getBook_id()) {
+					item.setQuantity(item.getQuantity() + quentity);
+					isFound = true;
+					break;
 				}
-				
 			}
-			if(!iffound)
-			cart.AddItems(item);
-			
-			}
-			else {
-				session.setAttribute("cart", cart);
-			    cart = (Order) session.getAttribute("cart");
-			    cart.AddItems(item);
-			}
-			
+			if(!isFound)
+				cart.AddItems(new Item(1,book));
 			RequestDispatcher view = req.getRequestDispatcher("jsp/cart.jsp");
 			view.forward(req, resp);
-		} catch (SQLException ex){
-			PrintWriter out = resp.getWriter();
-			out.println("Add book failed");
-			out.println(ex.getMessage());
-			ex.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+
 
 		}
 	}
