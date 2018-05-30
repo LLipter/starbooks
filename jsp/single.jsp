@@ -119,7 +119,8 @@
 									});
 								</script>
 							
-								<a href="/starbooks/AddBook" class="add-to item_add hvr-skew-backward">Add to cart</a>
+			<%					out.println("<a href='/starbooks/AddBook?book_id="+book.getBook_id()+"'class='add-to item_add hvr-skew-backward'>");
+		                         out.println("Add to cart</a>");%>
 
 								<div class="clearfix"> </div>
 							</div>
