@@ -5,23 +5,22 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Order implements Iterable<Item>{
+public class Order implements Iterable<Item> {
 
-    private ArrayList<Item> items;
-    private int order_id;
-    private Timestamp created_time;
-    private int order_status;
-    private String receiver_name;
-    private String address;
-    private String email;
-    private String phone;
-    private String post_code;
-    
-    
-    public Order() {
-    	// do nothing
-    	items=new ArrayList<Item>() ;
-    }
+	private ArrayList<Item> items;
+	private int order_id;
+	private Timestamp created_time;
+	private int order_status;
+	private String receiver_name;
+	private String address;
+	private String email;
+	private String phone;
+	private String post_code;
+
+	public Order() {
+		// do nothing
+		items = new ArrayList<Item>();
+	}
 
 	public Order(int order_id, Timestamp created_time, int order_status, String receiver_name, String address,
 			String email, String phone, String post_code) {
@@ -47,23 +46,23 @@ public class Order implements Iterable<Item>{
 	public Timestamp getCreated_time() {
 		return created_time;
 	}
-	
+
 	public double getTotalPrice() {
 		double ret = 0;
-		for(Item item : this) {
+		for (Item item : this) {
 			ret += item.getQuantity() * item.getBook().getPrice();
 		}
 		return ret;
 	}
 
 	public void AddItems(Item item) {
-        items.add(item);
-    }
-	
+		items.add(item);
+	}
+
 	public void removeItem(Item item) {
 		items.remove(item);
 	}
-	
+
 	public void removeItem(int index) {
 		items.remove(index);
 	}
@@ -80,7 +79,7 @@ public class Order implements Iterable<Item>{
 	public void setOrder_id(int order_id) {
 		this.order_id = order_id;
 	}
-	
+
 	public int size() {
 		return items.size();
 	}
@@ -125,5 +124,4 @@ public class Order implements Iterable<Item>{
 		this.post_code = post_code;
 	}
 
-	
 }

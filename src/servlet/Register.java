@@ -17,23 +17,23 @@ import org.apache.commons.io.IOUtils;
 import listener.DatabaseUtility;
 import model.User;
 
-public class Register extends HttpServlet{
+public class Register extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		FileItem portrait = null;
-		HashMap<String,String> map = new HashMap<String,String>(); 
+		HashMap<String, String> map = new HashMap<String, String>();
 		try {
 			DiskFileItemFactory factory = new DiskFileItemFactory();
 			ServletFileUpload fileUpload = new ServletFileUpload(factory);
 			List<FileItem> files = fileUpload.parseRequest(req);
-			for (FileItem file : files){
-				if(file.isFormField()) {
+			for (FileItem file : files) {
+				if (file.isFormField()) {
 					String key = file.getFieldName();
 					String value = file.getString();
 					map.put(key, value);
-				}else {
+				} else {
 					portrait = file;
 				}
 			}
@@ -49,38 +49,38 @@ public class Register extends HttpServlet{
 		String address = map.get("address");
 		String phone = map.get("phone");
 		String email = map.get("email");
-		
+
 		try {
 			User user = DatabaseUtility.getUser(userName);
-			if(userName.equals(""))
+			if (userName.equals(""))
 				req.setAttribute("registerResult", "用户名不能为空");
-			else if(passwd.equals(""))
+			else if (passwd.equals(""))
 				req.setAttribute("registerResult", "密码不能为空");
-			else if(!passwd.equals(passwdConfirm))
+			else if (!passwd.equals(passwdConfirm))
 				req.setAttribute("registerResult", "两次密码不相同");
-			else if(birthday == null)
+			else if (birthday == null)
 				req.setAttribute("registerResult", "生日不能为空");
-			else if(address.equals(""))
+			else if (address.equals(""))
 				req.setAttribute("registerResult", "地址不能为空");
-			else if(phone.equals(""))
+			else if (phone.equals(""))
 				req.setAttribute("registerResult", "手机号不能为空");
-			else if(email.equals(""))
+			else if (email.equals(""))
 				req.setAttribute("registerResult", "邮箱不能为空");
-            else if(portrait.getSize() == 0)
+			else if (portrait.getSize() == 0)
 				req.setAttribute("registerResult", "头像不能为空");
-			else if(user != null)
+			else if (user != null)
 				req.setAttribute("registerResult", "用户名已存在，请重新输入");
 			else {
-				user = new User(userName,passwd,gender,birthday,address,phone,email);
+				user = new User(userName, passwd, gender, birthday, address, phone, email);
 				DatabaseUtility.registerUser(user);
-				user = DatabaseUtility.getUser(user.getUser_name());	// get user_id
-                String path = getServletContext().getRealPath("/") + "resource/user/" + user.getUser_id() + ".jpg";
-                File file = new File(path);  
-                portrait.write(file);
-				
+				user = DatabaseUtility.getUser(user.getUser_name()); // get user_id
+				String path = getServletContext().getRealPath("/") + "resource/user/" + user.getUser_id() + ".jpg";
+				File file = new File(path);
+				portrait.write(file);
+
 				HttpSession session = req.getSession();
-				session.setAttribute("user",user);
-                resp.sendRedirect("/starbooks/userhome");
+				session.setAttribute("user", user);
+				resp.sendRedirect("/starbooks/userhome");
 			}
 			RequestDispatcher view = req.getRequestDispatcher("jsp/register.jsp");
 			view.forward(req, resp);
@@ -95,5 +95,5 @@ public class Register extends HttpServlet{
 			out.println(e.getMessage());
 		}
 	}
-	
+
 }

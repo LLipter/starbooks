@@ -3,7 +3,7 @@ package model;
 import java.sql.*;
 
 public class User {
-	
+
 	public final static int ADMIN = 10;
 
 	private final int user_id;
@@ -16,8 +16,7 @@ public class User {
 	private String address;
 	private String phone;
 	private String email;
-	
-	
+
 	public User(String user_name, String passwd, int gender, Date birthday, String address, String phone,
 			String email) {
 		this.user_id = -1;
@@ -31,8 +30,6 @@ public class User {
 		this.phone = phone;
 		this.email = email;
 	}
-
-
 
 	public User(int user_id, String user_name, String passwd, Timestamp registerTime, int privilege, int gender,
 			Date birthday, String address, String phone, String email) {
@@ -120,13 +117,4 @@ public class User {
 		return registerTime;
 	}
 
-
-	
-	
-
-	
-	
-
-	
-	
 }

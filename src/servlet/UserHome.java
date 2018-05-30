@@ -16,11 +16,11 @@ public class UserHome extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
-		User user = (User)session.getAttribute("user");
-		if(user == null) {
+		User user = (User) session.getAttribute("user");
+		if (user == null) {
 			RequestDispatcher view = req.getRequestDispatcher("jsp/login.jsp");
 			view.forward(req, resp);
-		}else {
+		} else {
 			RequestDispatcher view = req.getRequestDispatcher("jsp/user.jsp");
 			view.forward(req, resp);
 		}

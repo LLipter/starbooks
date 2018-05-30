@@ -9,9 +9,8 @@ import model.*;
 
 import listener.DatabaseUtility;
 
+public class CancelOrder extends HttpServlet {
 
-public class CancelOrder extends  HttpServlet {
-	
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
@@ -23,7 +22,5 @@ public class CancelOrder extends  HttpServlet {
 			e.printStackTrace();
 		}
 
-		}
 	}
-
-
+}
