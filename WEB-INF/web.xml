@@ -76,6 +76,15 @@
       <url-pattern>/removebook</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+      <servlet-name>clearcart</servlet-name>
+      <servlet-class>servlet.ClearCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>clearcart</servlet-name>
+      <url-pattern>/clearcart</url-pattern>
+  </servlet-mapping>
+
   <listener>
     <listener-class>
       listener.DatabaseUtility

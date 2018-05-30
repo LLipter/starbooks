@@ -126,9 +126,9 @@
 	</div>
 	</div>
 	<div class="produced">
-	<a href="/starbooks/jsp/pay.jsp" class="hvr-skew-backward">Produced To Buy</a>
+	<a href="/starbooks/jsp/pay.jsp" class="hvr-skew-backward">Pay</a>
 	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-	<a href="single.html" class="hvr-skew-backward">Clear the Cart</a>
+	<a href="/starbooks/clearcart" class="hvr-skew-backward">Clear the Cart</a>
 	<!--依旧需要调用函数-->
 	 </div>
    </div>
