@@ -44,8 +44,6 @@ public class Register extends HttpServlet{
 		} catch (FileUploadException e1) {
 			e1.printStackTrace();
 		}
-		
-		
 
 		String userName = map.get("user_name");
 		String passwd = map.get("passwd");
@@ -72,7 +70,7 @@ public class Register extends HttpServlet{
 				req.setAttribute("registerResult", "手机号不能为空");
 			else if(email.equals(""))
 				req.setAttribute("registerResult", "邮箱不能为空");
-			else if(portrait.getSize() == 0)
+			else if(portrait == null)
 				req.setAttribute("registerResult", "头像不能为空");
 			else if(user != null)
 				req.setAttribute("registerResult", "用户名已存在，请重新输入");
@@ -91,7 +89,6 @@ public class Register extends HttpServlet{
 				
 				HttpSession session = req.getSession();
 				session.setAttribute("user",user);
-				resp.sendRedirect("/starbooks/userhome");
 			}
 			RequestDispatcher view = req.getRequestDispatcher("jsp/register.jsp");
 			view.forward(req, resp);
