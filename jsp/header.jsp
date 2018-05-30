@@ -103,7 +103,7 @@
                     <a href="/starbooks/CartCenter">
                         <h3>
                             <div class="total">
-                                <span class="simpleCart_total">
+                                <span class="price">
                                     <%
                                         Order cart = (Order) session.getAttribute("cart");
                                         if(cart == null)

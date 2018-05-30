@@ -39,10 +39,26 @@
 
 		<script>
 			function addBook(){
-				var book_id = document.getElementById('book_id').innerHTML
-				var quentity = document.getElementById('quentity').innerHTML
-				$.get('/starbooks/addbook', {'book_id':book_id, 'quentity':quentity});
+
+				var form = document.createElement("form");  
+				form.action = '/starbooks/addbook';  
+				form.method = "get";  
+				form.style.display = "none";  
+
+				var book_id = document.createElement("textarea");  
+				book_id.name = 'book_id';  
+				book_id.value = document.getElementById('book_id').innerHTML;  
+				form.appendChild(book_id);  
+
+				var quentity = document.createElement("textarea");  
+				quentity.name = 'quentity';  
+				quentity.value = document.getElementById('quentity').innerHTML;  
+				form.appendChild(quentity);  
+
+				document.body.appendChild(form);  
+				form.submit();  
 			}
+  
 		</script>
 		
 	</head>
@@ -118,17 +134,17 @@
 								<!--this two script method change the total price with no fresh F5-->
 								<script>
 									$('.value-plus').on('click', function () {
-										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) + 1;
+										var divUpd = $(this).parent().find('#quentity'), newVal = parseInt(divUpd.text(), 10) + 1;
 										divUpd.text(newVal);
 									});
 
 									$('.value-minus').on('click', function () {
-										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) - 1;
+										var divUpd = $(this).parent().find('#quentity'), newVal = parseInt(divUpd.text(), 10) - 1;
 										if (newVal >= 1) divUpd.text(newVal);
 									});
 								</script>
 								
-							<a onclick=addBook() class='add-to item_add hvr-skew-backward'>Add to cart</a>
+							<button onclick=addBook() class='add-to item_add hvr-skew-backward'>Add to cart</button>
 
 								<div class="clearfix"> </div>
 							</div>

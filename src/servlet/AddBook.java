@@ -31,6 +31,7 @@ public class AddBook extends  HttpServlet {
 			}
 			if(!isFound)
 				cart.AddItems(new Item(1,book));
+			req.getSession().setAttribute("cart",cart);
 			RequestDispatcher view = req.getRequestDispatcher("jsp/cart.jsp");
 			view.forward(req, resp);
 		} catch (SQLException e) {
