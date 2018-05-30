@@ -14,6 +14,7 @@ public class Order implements Iterable<Item>{
     
     public Order() {
     	// do nothing
+    	items=new ArrayList<Item>() ;
     }
 
     public Order(int order_id,Timestamp created_time, int order_status) {
@@ -44,7 +45,7 @@ public class Order implements Iterable<Item>{
 	}
 
 	public void AddItems(Item item) {
-        this.items.add(item);
+        items.add(item);
     }
 	
 	public void removeItem(Item item) {
