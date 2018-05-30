@@ -64,24 +64,9 @@
 			<th >Quantity </th>
 		  </tr>
 
-		  <tr class="cart-header">
-
-			<td class="ring-in"><a href="single.html" class="at-in"><img src="images/ch.jpg" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close1"> </div></td>
-			<td>2</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			
-		  </tr>
 
 <%
-            Order cart = (Order) session.getAttribute("cart");
+            
             if(cart!=null){
             int i=1;
 

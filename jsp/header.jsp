@@ -103,7 +103,17 @@
                     <a href="/starbooks/CartCenter">
                         <h3>
                             <div class="total">
-                                <span class="simpleCart_total"></span>
+                                <span class="simpleCart_total">
+                                    <%
+                                        Order cart = (Order) session.getAttribute("cart");
+                                        if(cart == null)
+                                            out.print("$0.00");
+                                        else
+                                            out.print("$" + cart.getTotalPrice());
+                                    %>
+
+
+                                </span>
                             </div>
                             <img src="/starbooks/resource/images/cart.png" alt="" />
                         </h3>
