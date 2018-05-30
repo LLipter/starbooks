@@ -67,6 +67,15 @@
       <url-pattern>/addbook</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+      <servlet-name>removebook</servlet-name>
+      <servlet-class>servlet.RemoveBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>removebook</servlet-name>
+      <url-pattern>/removebook</url-pattern>
+  </servlet-mapping>
+
   <listener>
     <listener-class>
       listener.DatabaseUtility

@@ -100,7 +100,7 @@
             </div>
             <div class="col-sm-2 search-right">
                 <div class="cart box_1">
-                    <a href="/starbooks/CartCenter">
+                    <a href="/starbooks/jsp/cart.jsp">
                         <h3>
                             <div class="total">
                                 <span class="price">
@@ -119,7 +119,7 @@
                         </h3>
                     </a>
                     <p>
-                        <a href="/starbooks/CartCenter" class="simpleCart_empty">Empty Cart</a>
+                        <a href="/starbooks/jsp/cart.jsp" class="simpleCart_empty">Cart</a>
                     </p>
 
                 </div>

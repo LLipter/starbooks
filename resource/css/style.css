@@ -1310,8 +1310,8 @@ a.at-in {
 .close1, .close2, .close3 {
   background: url('../images/close.png') no-repeat 0px 0px ;
   cursor: pointer;
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   position: absolute;
   right: 5px;
   bottom: 10px;

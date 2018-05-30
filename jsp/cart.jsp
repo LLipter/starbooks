@@ -12,6 +12,31 @@
 <link type="text/css" rel="stylesheet" href="/starbooks/resource/css/cart.css" />
 
 <%@ include file="include.jsp" %>
+
+<script>
+	function removeBook(button){
+
+		var form = document.createElement("form");  
+		form.action = '/starbooks/removebook';  
+		form.method = "get";  
+		form.style.display = "none";  
+
+		var book_id = document.createElement("textarea");  
+		book_id.name = 'book_id';  
+		book_id.value = button.nextSibling.innerHTML;
+		form.appendChild(book_id);  
+
+		document.body.appendChild(form);  
+		form.submit();  
+		// console.log(button);
+		// console.log(button.nextSibling.nextSibling);
+		// console.log(button.nextSibling.nextSibling.innerHTML);
+		
+	}
+
+</script>
+
+
 </head>
 
 <body>
@@ -85,7 +110,8 @@
              out.println("<p>"+item.getBook().getAuthor()+" </p>");
              out.println("</div>");
              out.println("<div class='clearfix'> </div>");
-             out.println("<div class='close2'> </div></td></td>");
+             out.print("<div class='close2' onclick='removeBook(this)'></div>");
+			 out.println("<div  class='book_id' style='display: none'>" + item.getBook().getBook_id() + "</div></td>");
              out.println("<td>"+item.getBook().getPrice()+"</td>");
              out.println("<td>"+item.getQuantity()+"</td>");
              out.println("</tr>");
