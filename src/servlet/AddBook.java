@@ -26,16 +26,19 @@ public class AddBook extends  HttpServlet {
 			item = new Item(bookId_int, book);
 			
 			
-			
+			boolean iffound=false;
 			if(session.getAttribute("cart") != null) {
 			cart = (Order) session.getAttribute("cart");
 			for(Item it:cart) {
 				if(it.getBook().getBook_id()==book.getBook_id()) {
 					
 					it.setQuantity(it.getQuantity()+1);
+				   iffound=true;
 				}
-				else cart.AddItems(item);
+				
 			}
+			if(!iffound)
+			cart.AddItems(item);
 			
 			}
 			else {
