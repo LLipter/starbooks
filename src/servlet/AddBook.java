@@ -6,6 +6,7 @@ import javax.servlet.http.*;
 import java.sql.SQLException;
 
 import model.*;
+
 import listener.DatabaseUtility;
 
 
@@ -14,6 +15,16 @@ public class AddBook extends  HttpServlet {
 	private Order cart;
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	
+		HttpSession session1 = req.getSession();
+		User user = (User)session1.getAttribute("user");
+		if(user == null) {
+			RequestDispatcher view = req.getRequestDispatcher("jsp/login.jsp");
+			view.forward(req, resp);
+			
+		}
+	
 		
 		String bookId = req.getParameter("book_id");
 		int bookId_int = Integer.parseInt(bookId);

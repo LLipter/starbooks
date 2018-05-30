@@ -119,7 +119,7 @@
 									});
 								</script>
 							
-								<a href="resource/#" class="add-to item_add hvr-skew-backward">Add to cart</a>
+								<a href="/starbooks/AddBook" class="add-to item_add hvr-skew-backward">Add to cart</a>
 
 								<div class="clearfix"> </div>
 							</div>
