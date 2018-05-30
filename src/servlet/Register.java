@@ -71,7 +71,6 @@ public class Register extends HttpServlet{
 			else if(email.equals(""))
 				req.setAttribute("registerResult", "邮箱不能为空");
             else if(portrait.getSize() == 0)
-			
 				req.setAttribute("registerResult", "头像不能为空");
 			else if(user != null)
 				req.setAttribute("registerResult", "用户名已存在，请重新输入");
