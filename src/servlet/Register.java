@@ -21,7 +21,6 @@ public class Register extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		PrintWriter out = resp.getWriter();
 		
 		FileItem portrait = null;
 		HashMap<String,String> map = new HashMap<String,String>(); 
@@ -37,9 +36,6 @@ public class Register extends HttpServlet{
 				}else {
 					portrait = file;
 				}
-//				out.println(file.getFieldName());
-//				out.println(file.getString());
-//				out.println(file.getName());
 			}
 		} catch (FileUploadException e1) {
 			e1.printStackTrace();
@@ -81,11 +77,6 @@ public class Register extends HttpServlet{
                 String path = getServletContext().getRealPath("/") + "resource/user/" + user.getUser_id() + ".jpg";
                 File file = new File(path);  
                 portrait.write(file);
-				
-				// used for test 
-				req.setAttribute("registerResult", "register successfully");
-				req.setAttribute("user_name", userName);
-				req.setAttribute("passwd", passwd);
 				
 				HttpSession session = req.getSession();
 				session.setAttribute("user",user);

@@ -130,7 +130,12 @@ public class DatabaseUtility implements ServletContextListener {
 			int order_id = rs.getInt("order_id");
 			Timestamp created_time = rs.getTimestamp("created_time");
 			int order_status = rs.getInt("order_status");
-			Order order = new Order(order_id,created_time,order_status);
+			String receiver_name = rs.getString("receiver_name");
+			String address = rs.getString("address");
+			String email = rs.getString("email");
+			String phone = rs.getString("phone");
+			String post_code = rs.getString("post_code");
+			Order order = new Order(order_id,created_time,order_status,receiver_name,address,email,phone,post_code);
 			PreparedStatement subps = con.prepareStatement("SELECT * FROM item WHERE order_id = ?");
 			subps.setInt(1, order_id);
 			ResultSet subrs = subps.executeQuery();
@@ -143,6 +148,36 @@ public class DatabaseUtility implements ServletContextListener {
 			ret.add(order);
 		}
 		return ret;
+	}
+	
+	private static int getLastestOrderID(User user) throws SQLException{
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM book_order WHERE user_id = ? ORDER BY created_time DESC LIMIT 1");
+		ps.setInt(1, user.getUser_id());
+		ResultSet rs = ps.executeQuery();
+		if(!rs.next())
+			return -1;// no such order
+		return rs.getInt("order_id");
+	}
+	
+	public static int pay(User user,Order order)throws SQLException{
+		PreparedStatement ps = con.prepareStatement("INSERT INTO book_order(user_id,receiver_name,address,email,phone,post_code) VALUES(?,?,?,?,?,?)");
+		ps.setInt(1, user.getUser_id());
+		ps.setString(2, order.getReceiver_name());
+		ps.setString(3, order.getAddress());
+		ps.setString(4, order.getEmail());
+		ps.setString(5, order.getPhone());
+		ps.setString(6, order.getPost_code());
+		ps.executeUpdate();
+		int order_id = getLastestOrderID(user);
+		for(Item item : order) {
+			PreparedStatement subps = con.prepareStatement("INSERT INTO item(book_id,order_id,quentity) VALUES(?,?,?)");
+			subps.setInt(1, item.getBook().getBook_id());
+			subps.setInt(2, order_id);
+			subps.setInt(3, item.getQuantity());
+			subps.executeUpdate();
+		}
+		
+		return order.size() + 1; // number of records inserted 
 	}
 	
 

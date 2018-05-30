@@ -26,9 +26,6 @@ public class Login extends HttpServlet{
 			}else if(admin != null && user.getPrivilege() < User.ADMIN)
 				req.setAttribute("loginResult", "No enough privilege");
 			else{
-				req.setAttribute("loginResult", "login successfully");
-				req.setAttribute("user_name", userName);
-				req.setAttribute("passwd", passwd);
 				HttpSession session = req.getSession();
 				session.setAttribute("user",user);
 				if(admin != null) {

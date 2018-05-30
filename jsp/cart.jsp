@@ -126,7 +126,11 @@
 	</div>
 	</div>
 	<div class="produced">
-	<a href="/starbooks/jsp/pay.jsp" class="hvr-skew-backward">Pay</a>
+	<%
+		if(cart != null && cart.size() > 0)
+			out.println("<a href='/starbooks/jsp/pay.jsp' class='hvr-skew-backward'>Pay</a>");
+	%>
+	
 	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	<a href="/starbooks/clearcart" class="hvr-skew-backward">Clear the Cart</a>
 	<!--依旧需要调用函数-->

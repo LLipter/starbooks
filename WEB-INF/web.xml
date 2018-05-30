@@ -85,6 +85,15 @@
       <url-pattern>/clearcart</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+      <servlet-name>pay</servlet-name>
+      <servlet-class>servlet.Pay</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>pay</servlet-name>
+      <url-pattern>/pay</url-pattern>
+  </servlet-mapping>
+
   <listener>
     <listener-class>
       listener.DatabaseUtility

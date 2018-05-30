@@ -37,6 +37,13 @@ CREATE TABLE book_order(
 )default charset=utf8; 
 
 INSERT INTO book_order(user_id) VALUES(1);
+INSERT INTO book_order(user_id) VALUES(1);
+
+ALTER TABLE book_order ADD receiver_name VARCHAR(50);
+ALTER TABLE book_order ADD address VARCHAR(100);
+ALTER TABLE book_order ADD email VARCHAR(50);
+ALTER TABLE book_order ADD phone VARCHAR(50);
+ALTER TABLE book_order ADD post_code VARCHAR(50);
 
 CREATE TABLE item(
     item_id INT auto_increment,
@@ -49,3 +56,5 @@ CREATE TABLE item(
 )default charset=utf8;
 
 INSERT INTO item(book_id,order_id,quentity) VALUES(1,1,2);
+
+
