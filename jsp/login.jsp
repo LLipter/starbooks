@@ -17,7 +17,7 @@
 			<script type="text/javascript">
 				$(function () {
 					//改变div的高度
-					$("#login_conatiner").height($(window).height() - 80 - 76 - 250);
+					$("#login_conatiner").height($(window).height() - 76 - 250);
 				});
 			</script>
 	</head>
