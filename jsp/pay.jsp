@@ -57,7 +57,7 @@
 
 
 				</p></label> 
-			</form>
+			
 		</div>
     </div>
 		
@@ -95,7 +95,7 @@
 	<span><p class = "total_price">Total Price: <%= cart.getTotalPrice() %></span>
 	
 	
-	<button class = "pay_cart" name="pay" type="submit">Pay</button>
+	<button class = "pay_cart" name="pay" type="submit">Pay</button></form>
 	<p class = "blank_pay"></p>
 	</div>
 </div>
