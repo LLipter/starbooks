@@ -1,4 +1,5 @@
 <%@page import="model.*"%>
+<%@page contentType="text/html;charset=UTF-8" %>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 	<html>
 
@@ -70,12 +71,7 @@
 								<% 
 									String res = (String) request.getAttribute("loginResult");
 									if(res != null){
-										if(res.equals("login successfully")){
-											out.println("Hello, " + (String)request.getAttribute("user_name"));
-											out.println("your password is " + (String)request.getAttribute("passwd"));
-										}else{
-											out.println(res);
-										}
+										out.println(res);
 									}
 								%>
 							</p>

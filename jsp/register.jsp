@@ -99,12 +99,7 @@
 									<% 
 										String res = (String) request.getAttribute("registerResult");
 										if(res != null){
-											if(res.equals("register successfully")){
-												out.println("Hello, " + (String)request.getAttribute("user_name"));
-												out.println("your password is " + (String)request.getAttribute("passwd"));
-											}else{
-												out.println(res);
-											}
+											out.println(res);
 										}
 									%>
 
