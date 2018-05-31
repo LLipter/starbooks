@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>UI for Admin</title>
-		<link href = "/starbooks/resource/css/reset.css" rel = "stylesheet" type = "text/css"/>
+		<link href = "/starbooks/resource/css/reset.css" rel = "stylesheet" type="text/css"/>
 		<link href = "/starbooks/resource/css/admin.css" rel = "stylesheet" type="text/css"/>
 		<!--默认查看上架书籍 点击文本替换为下架书籍-->
 		<%@ include file="include.jsp" %>
@@ -45,8 +45,6 @@
 			</div>
 			<p class = "admin_hr"></p>
 			<div class = "content">
-				<!--
-				<a class = "admin_add" href = "#" target = "_blank">Add books</a> -->
 				<!--添加和修改跳转到同一书籍信息界面-->
 				<a class = "admin_add" href = "#"><button>Add books</button></a>
 				<input class = "book_status" type="button" id = "statusBtn" onclick = "statusChange()" value = "Books on Shelf"/>
@@ -79,26 +77,7 @@
                 </ul>
 
 
-				<!--
-				<ul>
-					<li>
-						<dl>
-							<dd>
-								<a href = "#">
-									<img alt = "book" src = "/starbooks/resource/book/book_01.jpg"/>
-								</a>
-							</dd>
-							<dt>
-								<p class = "book_title">
-									<a href = "#" target = "_blank">Gift cards</a>
-								</p>
-								<p class = "book_inline">$25, $50, and $100</p>
-								<button type = "button">Remove </button>
-								<a href = "#"><button>Modify</button></a>
-							</dt>
-						</dl>
-					</li>
-					-->
+				
 			</div>
 		</div>
 
