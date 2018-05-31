@@ -57,7 +57,7 @@
 
 
 				</p></label> 
-			
+			</form>
 		</div>
     </div>
 		
@@ -92,28 +92,13 @@
 	</div>
 	
 	<p class="index_h"></p>
-	<p class = "total_price"><%= cart.getTotalPrice() %></span>
+	<span><p class = "total_price">Total Price: <%= cart.getTotalPrice() %></span>
 	
 	
-	<button class = "pay_cart" name="pay" type="submit">Pay</button></form>
+	<button class = "pay_cart" name="pay" type="submit">Pay</button>
 	<p class = "blank_pay"></p>
 	</div>
 </div>
-
-<div class="footer">
-	<div class="footer-bottom">
-		<div class="container">
-            <ul class="footer-bottom-top">
-                <li><a href="resource/#"><img src="resource/images/f1.png" class="img-responsive" alt=""></a></li>
-                <li><a href="resource/#"><img src="resource/images/f2.png" class="img-responsive" alt=""></a></li>
-                <li><a href="resource/#"><img src="resource/images/f3.png" class="img-responsive" alt=""></a></li>
-            </ul>
-            <p class="footer-class">Copyright &copy; 2018.Company name All rights reserved &nbsp;<a href="index.html" target="_blank" title="StarBook">StarBook</a> &emsp;Published by Group </p>
-        <div class="clearfix"> </div>
-        </div>
-    </div>
-</div>
- 
 <p></p>
 
 <%@ include file="footer.jsp" %>

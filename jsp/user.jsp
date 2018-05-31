@@ -75,18 +75,26 @@
                 </div>
 
                 <% ArrayList<Order> orders = DatabaseUtility.getOrder(user); %>
-                <p class="index_hr"></p>
-                <br/><br/>
-                <div>
-                    <span class="order_title0">Order:</span>
-                    <span class="order_time0">Create Time:</span>
-                    <span class="order_status0">Order Status:</span>
-                    <span class="order_price0">Total Price:</span>
-                </div>
+                <%--<p class="index_hr"></p>--%>
+                <%--<br/><br/>--%>
+                <%--<div>--%>
+                    <%--<span class="order_title0">Order:</span>--%>
+                    <%--<span class="order_time0">Create Time:</span>--%>
+                    <%--<span class="order_status0">Order Status:</span>--%>
+                    <%--<span class="order_price0">Total Price:</span>--%>
+                <%--</div>--%>
 
                 <%
                 if(orders.size()==0){
-                out.println("<div>");
+                    out.println("<p class='index_hr'></p>");
+                        out.println("<br/><br/>");
+                        out.println("<div>");
+                        out.println("<span class='order_title0'>Order:</span>");
+                        out.println("<span class='order_time0'>Create Time:</span>");
+                        out.println("<span class='order_status0'>Order Status:</span>");
+                        out.println("<span class='order_price0'>Total Price:</span>");
+                        out.println("</div>");
+                        out.println("<div>");
                         out.println("<span class='order_title'>");
                         out.println("Empty order~");
                         out.println("</span>");
@@ -104,6 +112,14 @@
 
                 }else{
                     for(Order order : orders){
+                        out.println("<p class='index_hr'></p>");
+                        out.println("<br/><br/>");
+                        out.println("<div>");
+                        out.println("<span class='order_title0'>Order:</span>");
+                        out.println("<span class='order_time0'>Create Time:</span>");
+                        out.println("<span class='order_status0'>Order Status:</span>");
+                        out.println("<span class='order_price0'>Total Price:</span>");
+                        out.println("</div>");
                         out.println("<div>");
                         out.println("<span class='order_title'>");
                         out.println(order.getOrder_id());
@@ -112,7 +128,11 @@
                         out.println(order.getCreated_time());
                         out.println("</span>");
                         out.println("<span class='order_status'>");
-                        out.println(order.getOrder_status());
+                        if(order.getOrder_status()==1){
+                            out.println("Normal");
+                        }else{
+                            out.println("Cancelled");
+                        }
                         out.println("</span>");
                         out.println("<span class='order_price'>");
                         out.println(order.getTotalPrice());

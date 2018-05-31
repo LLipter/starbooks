@@ -7,21 +7,23 @@
 .index_hr{ width:960px; border-bottom:5px solid #f2f1e2; float:left; margin-top:35px; margin-left:10px;}
 .index_h{ width:960px; border-bottom:5px solid #f2f1e2; float:left; margin-left:10px;}
 
-.book_title0{ width:300px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-top:10px;}
-.book_quantity0{ width:100px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-left:100px;margin-top:10px;}
-.book_price0{ width:100px; font:18px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-left:200px;margin-top:10px;}
-.book_title{ width:300px; font:18px/25px Arial; display:inline; float:left;margin-bottom:10px;}
-.book_quantity{ width:100px; font:18px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:100px;}
-.book_price{ width:100px; font:18px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:200px;}
+.book_title0{ width:300px; font:16px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-top:10px;}
+.book_quantity0{ width:80px; font:16px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-left:200px;margin-top:10px;}
+.book_price0{ width:100px; font:16px/25px Arial; display:inline; float:left; color:#998f77;margin-bottom:10px;margin-left:200px;margin-top:10px;}
+.book_quantity{ width:80px; height: 50px;font:16px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:200px;margin-top: 10px;}
+.book_price{ width:100px; height: 50px;font:16px/25px Arial;  display:inline; float:left;margin-bottom:10px;margin-left:200px;margin-top: 10px;}
+.book_title{ width:300px; height: 50px;font:16px/25px Arial; display:inline; float:left;margin-bottom:10px;margin-top: 10px;}
 
 .total_price{ width:190px; height:auto;font:18px/50px Arial, Helvetica, sans-serif; color:#666; overflow:hidden;text-align:right;}
 
-.pay_cart{ border:1px solid #64991e; background:#FF6633; padding:5px 8px; text-decoration:none; color:#fff;
- -webkit-border-radius:3px;display:inline; text-transform:uppercase; letter-spacing:0.1em; 
- font-size: 15px;float:right;margin-top:10px;
-}
+/*.pay_cart{ border:1px solid #64991e; background:#FF6633; padding:5px 8px; text-decoration:none; color:#fff;*/
+ /*-webkit-border-radius:3px;display:inline; text-transform:uppercase; letter-spacing:0.1em; */
+ /*font-size: 15px;float:right;margin-top:10px;*/
+/*}*/
+.pay_cart{ width:200px; font:18px/25px Arial; display:inline; float:right; background:#FF6633;color: #fff;margin-right:50px;margin-top:5px;margin-bottom:5px;}
 
-.blank_pay{width:auto;height:150px;}
+
+.blank_pay{width:auto;margin-top:50px;height: 50px;}
 
 
 .personal_container{
