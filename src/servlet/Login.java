@@ -28,8 +28,8 @@ public class Login extends HttpServlet {
 				HttpSession session = req.getSession();
 				session.setAttribute("user", user);
 				if (admin != null) {
-					RequestDispatcher view = req.getRequestDispatcher("jsp/admin.jsp");
-					view.forward(req, resp);
+					resp.sendRedirect("/starbooks/jsp/admin.jsp");
+					return;
 				}
 				resp.sendRedirect("/starbooks/userhome");
 				return;
@@ -45,10 +45,5 @@ public class Login extends HttpServlet {
 
 	}
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doPost(req, resp);
-	}
 
 }
