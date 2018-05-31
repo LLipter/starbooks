@@ -28,16 +28,16 @@
 				<table class = "admin_table">
 					<thead>
 						<tr>
-							<th>off-line stores</th><!--whatever-->
-							<th>inventory</th>
+							<th>上架书数量</th><!--whatever-->
+							<th>下架书数量</th>
 							<th>total user number</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<th>10</th>
-							<th>100</th>
-							<th>1000</th>
+							<th><%= DatabaseUtility.getNumberOfBook(1) %></th>
+							<th><%= DatabaseUtility.getNumberOfBook(0) %></th>
+							<th><%= DatabaseUtility.getNumberOfUser() %></th>
 						</tr>
 						</tbody>
 				</table>

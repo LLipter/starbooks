@@ -119,6 +119,14 @@ public class DatabaseUtility implements ServletContextListener {
 		rs.next();
 		return rs.getInt("res");
 	}
+	
+	public static int getNumberOfBook(int book_status) throws SQLException {
+		PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) AS res FROM book WHERE book_status = ?");
+		ps.setInt(1, book_status);
+		ResultSet rs = ps.executeQuery();
+		rs.next();
+		return rs.getInt("res");
+	}
 
 	public static ArrayList<Order> getOrder(User user) throws SQLException {
 		PreparedStatement ps = con.prepareStatement("SELECT * FROM book_order WHERE user_id = ?");
