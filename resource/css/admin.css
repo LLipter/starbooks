@@ -100,12 +100,12 @@ body{background:#fff;}
 			  margin-right: 10px;
 			  float: right;}
 
-.content ul{width: 100%;
+.content ul{width: 940px;
 			height: auto;
 			float: left;
 			overflow: hidden;}
 
-.content ul li{width: 370px;
+.content ul li{width: 300px;
 			   height: auto;
 			   display: inline;
 			   overflow: hidden;
@@ -127,6 +127,9 @@ body{background:#fff;}
 .content ul li dt .book_title{width: 190px;
 							  font: 16px/25px Arial;
 							  color: #eb4c89;}
+.content ul li dl dd .book_image{width: 100px;
+							  height: 154px;
+}
 
 .content ul li dt .book_title a{text-decoration: none;
 								color: #eb4c89;}
@@ -154,6 +157,7 @@ body{background:#fff;}
 								float: left;
 								display: inline;
 								margin-bottom: 5px;}
+
 
 
 /*
