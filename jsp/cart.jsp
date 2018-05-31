@@ -18,7 +18,7 @@
 
 		var form = document.createElement("form");  
 		form.action = '/starbooks/removebook';  
-		form.method = "get";  
+		form.method = "post";  
 		form.style.display = "none";  
 
 		var book_id = document.createElement("textarea");  

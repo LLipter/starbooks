@@ -42,7 +42,7 @@
 
 				var form = document.createElement("form");  
 				form.action = '/starbooks/addbook';  
-				form.method = "get";  
+				form.method = "post";  
 				form.style.display = "none";  
 
 				var book_id = document.createElement("textarea");  
@@ -50,10 +50,10 @@
 				book_id.value = document.getElementById('book_id').innerHTML;  
 				form.appendChild(book_id);  
 
-				var quentity = document.createElement("textarea");  
-				quentity.name = 'quentity';  
-				quentity.value = document.getElementById('quentity').innerHTML;  
-				form.appendChild(quentity);  
+				var quantity = document.createElement("textarea");  
+				quantity.name = 'quantity';  
+				quantity.value = document.getElementById('quantity').innerHTML;  
+				form.appendChild(quantity);  
 
 				document.body.appendChild(form);  
 				form.submit();  
@@ -125,7 +125,7 @@
 									<div class="quantity-select">
 										<div class="entry value-minus">&nbsp;</div>
 										<div class="entry value">
-											<span id='quentity'>1</span>
+											<span id='quantity'>1</span>
 										</div>
 										<div class="entry value-plus active">&nbsp;</div>
 									</div>
@@ -134,12 +134,12 @@
 								<!--this two script method change the total price with no fresh F5-->
 								<script>
 									$('.value-plus').on('click', function () {
-										var divUpd = $(this).parent().find('#quentity'), newVal = parseInt(divUpd.text(), 10) + 1;
+										var divUpd = $(this).parent().find('#quantity'), newVal = parseInt(divUpd.text(), 10) + 1;
 										divUpd.text(newVal);
 									});
 
 									$('.value-minus').on('click', function () {
-										var divUpd = $(this).parent().find('#quentity'), newVal = parseInt(divUpd.text(), 10) - 1;
+										var divUpd = $(this).parent().find('#quantity'), newVal = parseInt(divUpd.text(), 10) - 1;
 										if (newVal >= 1) divUpd.text(newVal);
 									});
 								</script>

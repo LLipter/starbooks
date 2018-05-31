@@ -32,9 +32,10 @@ public class Pay extends HttpServlet {
 		try {
 			User user = (User) req.getSession().getAttribute("user");
 			Order order = (Order) req.getSession().getAttribute("cart");
-			if (user == null)
+			if (user == null) {
+				req.setAttribute("loginResult", "付款前必须登录");
 				req.getRequestDispatcher("jsp/login.jsp").forward(req, resp);
-			else if (receiverName.equals(""))
+			} else if (receiverName.equals(""))
 				req.setAttribute("payResult", "用户名不能为空");
 			else if (address.equals(""))
 				req.setAttribute("payResult", "地址不能为空");
