@@ -18,16 +18,10 @@
                 form.method = "post";  
                 form.style.display = "none";  
         
-                var book_id = document.createElement("text");  
+                var book_id = document.createElement("textarea");  
                 book_id.name = 'book_id';  
                 book_id.value = bookid;
-                form.appendChild(book_id); 
-
-                var book_status = document.createElement("text");  
-                book_status.name = 'book_status';  
-                book_status.value = '0';
-                form.style.display = "none"; 
-                form.appendChild(book_status);   
+                form.appendChild(book_id);  
         
                 document.body.appendChild(form);  
                 form.submit();  
@@ -94,7 +88,7 @@
                                         out.println("<a href='/starbooks/jsp/single.jsp?book_id=" + book.getBook_id() + "'>" + book.getBook_name() + "</a>");
                                         out.println("</p>");
                                         out.println("<p class='book_inline'>" + book.getAuthor() +"</p>");
-                                        out.println("<button type='button' onclick='removeBook(this,"+book.getBook_id()+")'>Remove</button></a>");
+                                        out.println("<button type='button' onclick='removeBook(this,"+book.getBook_id()+")'>Remove</button>");
 
                                         out.println("<a href='/starbooks/jsp/bookInfo.jsp?Modify=true"+"&book_id="+book.getBook_id()+"'><button>Modify</button></a> ");
                                         out.println("</dt>");

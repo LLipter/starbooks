@@ -78,6 +78,19 @@ public class DatabaseUtility implements ServletContextListener {
 		ps.setString(7, user.getEmail());
 		return ps.executeUpdate(); // the number of rows that are changed
 	}
+	
+	public static int setBook(Book book) throws SQLException {
+		PreparedStatement ps = con.prepareStatement(
+				"INSERT INTO book(book_id,book_name,author,publisher,price,res_url,book_status) VALUES(?,?,?,?,?,?,?)");
+		ps.setInt(1, book.getBook_id());
+		ps.setString(2, book.getBook_name());
+		ps.setString(3, book.getAuthor());
+		ps.setString(4, book.getPublisher());
+		ps.setDouble(5, book.getPrice());
+		ps.setString(6, book.getRes_url());
+		ps.setInt(7, book.getBook_status());
+		return ps.executeUpdate(); // the number of rows that are changed
+	}
 
 	public static Book getBook(int book_id) throws SQLException {
 		PreparedStatement ps = con.prepareStatement("SELECT * FROM book WHERE book_id = ?");
@@ -119,14 +132,14 @@ public class DatabaseUtility implements ServletContextListener {
 		rs.next();
 		return rs.getInt("res");
 	}
-	
-	public static int getNumberOfBook(int book_status) throws SQLException {
-		PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) AS res FROM book WHERE book_status = ?");
-		ps.setInt(1, book_status);
-		ResultSet rs = ps.executeQuery();
-		rs.next();
-		return rs.getInt("res");
-	}
+    
+    public static int getNumberOfBook(int book_status) throws SQLException {
+        PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) AS res FROM book WHERE book_status = ?");
+        ps.setInt(1, book_status);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        return rs.getInt("res");
+    }
 
 	public static ArrayList<Order> getOrder(User user) throws SQLException {
 		PreparedStatement ps = con.prepareStatement("SELECT * FROM book_order WHERE user_id = ?");
@@ -190,6 +203,17 @@ public class DatabaseUtility implements ServletContextListener {
 		return order.size() + 1; // number of records inserted
 	}
 
+	public static int bookStatus(int book_id,int aim_status ) throws SQLException {
+		PreparedStatement ps = con.prepareStatement("UPDATE book SET book_status = ? WHERE book_id = ?");
+		if(aim_status==0)
+			ps.setInt(1,0);
+			else if(aim_status==1)
+			ps.setInt(1,1);
+		ps.setInt(2, book_id);
+		
+		return ps.executeUpdate();
+	}
+	
 	public static int cancelOrder(int order_id) throws SQLException {
 		PreparedStatement ps = con.prepareStatement("UPDATE book_order SET order_status = 0 WHERE order_id = ?");
 		ps.setInt(1, order_id);
