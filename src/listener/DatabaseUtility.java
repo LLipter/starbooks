@@ -79,16 +79,33 @@ public class DatabaseUtility implements ServletContextListener {
 		return ps.executeUpdate(); // the number of rows that are changed
 	}
 	
-	public static int setBook(Book book) throws SQLException {
+	public static int updateBook(Book book) throws SQLException {
+		book.updateText();
 		PreparedStatement ps = con.prepareStatement(
-				"INSERT INTO book(book_id,book_name,author,publisher,price,res_url,book_status) VALUES(?,?,?,?,?,?,?)");
-		ps.setInt(1, book.getBook_id());
-		ps.setString(2, book.getBook_name());
-		ps.setString(3, book.getAuthor());
-		ps.setString(4, book.getPublisher());
-		ps.setDouble(5, book.getPrice());
-		ps.setString(6, book.getRes_url());
-		ps.setInt(7, book.getBook_status());
+				"UPDATE book SET "
+				+ "book_name = ?,author = ?,publisher = ?,price = ?,book_status = ? "
+				+ "WHERE book_id = ?");
+		ps.setString(1, book.getBook_name());
+		ps.setString(2, book.getAuthor());
+		ps.setString(3, book.getPublisher());
+		ps.setDouble(4, book.getPrice());
+		ps.setInt(5, book.getBook_status());
+		ps.setInt(6, book.getBook_id());
+		return ps.executeUpdate(); // the number of rows that are changed
+	}
+	
+	
+	public static int setBook(Book book) throws SQLException {
+		book.updateText();
+		book.generateRes_url();
+		PreparedStatement ps = con.prepareStatement(
+				"INSERT INTO book(book_name,author,publisher,price,res_url,book_status) VALUES(?,?,?,?,?,?)");
+		ps.setString(1, book.getBook_name());
+		ps.setString(2, book.getAuthor());
+		ps.setString(3, book.getPublisher());
+		ps.setDouble(4, book.getPrice());
+		ps.setString(5, book.getRes_url());
+		ps.setInt(6, book.getBook_status());
 		return ps.executeUpdate(); // the number of rows that are changed
 	}
 
@@ -205,12 +222,8 @@ public class DatabaseUtility implements ServletContextListener {
 
 	public static int bookStatus(int book_id,int aim_status ) throws SQLException {
 		PreparedStatement ps = con.prepareStatement("UPDATE book SET book_status = ? WHERE book_id = ?");
-		if(aim_status==0)
-			ps.setInt(1,0);
-			else if(aim_status==1)
-			ps.setInt(1,1);
+		ps.setInt(1,aim_status);
 		ps.setInt(2, book_id);
-		
 		return ps.executeUpdate();
 	}
 	

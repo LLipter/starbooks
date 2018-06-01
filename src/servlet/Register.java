@@ -37,8 +37,8 @@ public class Register extends HttpServlet {
 					portrait = file;
 				}
 			}
-		} catch (FileUploadException e1) {
-			e1.printStackTrace();
+		} catch (FileUploadException e) {
+			e.printStackTrace();
 		}
 
 		String userName = map.get("user_name");

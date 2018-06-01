@@ -1,17 +1,18 @@
 package model;
 
 import java.io.*;
+import java.util.Random;
 
 import listener.DatabaseUtility;
 
 public class Book {
 
-	private final int book_id;
+	private int book_id;
 	private String book_name;
 	private String author;
 	private String publisher;
 	private double price;
-	private final String res_url;
+	private String res_url;
 	private int book_status;
 	private String description;
 	private String information;
@@ -19,7 +20,6 @@ public class Book {
 
 	public Book() {
 		book_id = -1;
-		res_url = "no such url";
 		// do nothing
 	}
 
@@ -62,6 +62,51 @@ public class Book {
 		this.setInformation(getText(info_url));
 		this.setReviews(getText(review_url));
 
+	}
+	
+	private void setText(String url,String content) {
+		try {
+			FileWriter of = new FileWriter(url,false);
+			of.write(content);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void updateText() {
+		String desc_url = String.format("%sresource/book/description/%s.txt", DatabaseUtility.basePath,
+				this.getRes_url());
+		String info_url = String.format("%sresource/book/information/%s.txt", DatabaseUtility.basePath,
+				this.getRes_url());
+		String review_url = String.format("%sresource/book/reviews/%s.txt", DatabaseUtility.basePath,
+				this.getRes_url());
+		this.setText(desc_url, this.getDescription());
+		this.setText(info_url, this.getInformation());
+		this.setText(review_url, this.getReviews());
+	}
+	
+	public void generateRes_url() {
+		char[] randomChar = new char[20];
+		Random rd = new Random(System.currentTimeMillis());
+		for(int i=0;i<20;i++) {
+			int res = rd.nextInt(36);
+			if(res < 26)
+				randomChar[i] = (char) (res + 'a');
+			else
+				randomChar[i] = (char) (res - 26 + '0');
+		}
+		this.setRes_url(String.valueOf(randomChar));
+	}
+	
+	
+	
+
+	public void setBook_id(int book_id) {
+		this.book_id = book_id;
+	}
+
+	public void setRes_url(String res_url) {
+		this.res_url = res_url;
 	}
 
 	public String getBook_name() {
