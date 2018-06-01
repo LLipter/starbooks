@@ -18,6 +18,7 @@
 					$("#login_conatiner").height($(window).height() - 200);
 				});
 			</script>
+	
 	</head>
 
 
@@ -43,44 +44,80 @@
 
 			<div class="login_container" id="login_conatiner">
 				<div class="login">
-					<form action="/starbooks/login" method="post" class="white-pink">
+					<form action="/starbooks/BookInfo" method="post" class="white-pink">
 						<h1>
 							Edit Book Info
 							<span>Please fill all the texts in the fields.
 							</span>
 						</h1>
-						<label>
-							<span>Book id</span>
-							<input type="text" name="user_name" />
-						</label>
+						
+						<% 
+						
+						String modify=request.getParameter("Modify");
+						if(modify!=null){
+						int bookid=Integer.parseInt(request.getParameter("book_id"));
+
+						out.println("<label>");
+						out.println("<span>Book id</span>");
+						out.println("<input type='text' name='book_id' value="+bookid+">");
+						out.println("</label>");
+						}
+						else{
+						out.println("<label>");
+						out.println("<span>Book id</span>");
+						out.println("<input type='text' name='book_id' />");
+						out.println("</label>");
+					}
+						%>
 						<label>
 							<span>Title:</span>
-							<input type="password" name="passwd" />
+							<input type="text" name="book_title" />
 						</label>
 						<label>
 							<span>Author:</span>
-							<input type="password" name="passwd" />
-							<label>
+							<input type="text" name="book_Author" />
+						</label>
+						<label>
 								<span>Publisher</span>
-								<input type="text" name="user_name" />
-								<label>
+								<input type="text" name="book_publisher" />
+						</label>
+						<label>
 									<span>Price</span>
-									<input type="text" name="user_name" />
+									<input type="text" name="book_price" />
+						</label>
+						<label>
+								<span>Resource</span>
+								<input type="text" name="book_resource" />
+							</label>
+						<label>
+						    <span>Status</span>
+						       <select name="status">
+						            <option >
+						             avaliable
+						             </option>
+						            <option >
+						            unavaliable
+						            </option>
+						      </select>
+						</label>
 									<label>
-										<span>Status</span>
-										<select name="status">
-											<option>
-												active
-											</option>
-											<option>
-												inactive
-											</option>
-										</select>
-									</label>
-									<label>
-										<p class="message">
-										</p>
-									</label>
+								
+
+								<p class="message">
+
+									<% 
+										String res = (String) request.getAttribute("BookInfoResult");
+										if(res != null){
+											out.println(res);
+										}
+									%>
+
+
+
+								</p>
+							</label>
+							
+									
 									<label>
 										<div class="button_container">
 											<input type="submit" class="button" value="Confirm" />
