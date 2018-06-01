@@ -38,3 +38,6 @@ INSERT INTO book(book_name,author,publisher,price,res_url)
 VALUES('别说你懂思维导图','赵国庆','人民邮电出版社',115.5,'5534a2f1Nc75bbd54');
 INSERT INTO book(book_name,author,publisher,price,res_url) 
 VALUES('荒野之歌','[英] 罗莎蒙德·基德曼·考克斯','北京联合出版公司',171.0,'5928e0c3Nde50bdae');
+
+
+UPDATE book SET book_name = 'C程序设计语言 计算机科学丛书(第2版新版)',author = '[美]BRIAN W KERN',publisher = '机械工业出版社' WHERE book_id = 4;

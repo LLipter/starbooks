@@ -43,6 +43,7 @@ body{
 .white-pink {
     margin-left:auto;
     margin-right:auto;
+    margin-bottom: 50px;
     max-width: 600px;
     background: #FFF;
     padding: 30px 30px 20px 30px;
@@ -96,7 +97,7 @@ body{
 .white-pink textarea{
     height:100px;
     padding: 5px 0px 0px 5px;
-    width: 70%;
+    width: 60%;
 }
 .white-pink .button {
     -moz-box-shadow:inset 0px 1px 0px 0px #fbafe3;

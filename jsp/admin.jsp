@@ -23,10 +23,10 @@
                 book_id.value = bookid;
                 form.appendChild(book_id);  
 				
-				var aim_status = document.createElement("textarea");  
-                aim_status.name = 'aim_status';  
-                aim_status.value = aim_status;
-                form.appendChild(aim_status); 
+				var status = document.createElement("textarea");  
+                status.name = 'aim_status';  
+                status.value = aim_status;
+                form.appendChild(status); 
         
                 document.body.appendChild(form);  
                 form.submit();  
