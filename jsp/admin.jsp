@@ -11,7 +11,7 @@
 		<link href = "/starbooks/resource/css/admin.css" rel = "stylesheet" type="text/css"/>
 
 		<script>
-            function removeBook(button,bookid){
+            function changeStatus(bookid,aim_status){
         
                 var form = document.createElement("form");  
                 form.action = '/starbooks/ChangeStatus';  
@@ -22,11 +22,31 @@
                 book_id.name = 'book_id';  
                 book_id.value = bookid;
                 form.appendChild(book_id);  
+				
+				var aim_status = document.createElement("textarea");  
+                aim_status.name = 'aim_status';  
+                aim_status.value = aim_status;
+                form.appendChild(aim_status); 
         
                 document.body.appendChild(form);  
                 form.submit();  
                            
             }
+
+			function changeBook(status){
+				var form = document.createElement("form");  
+                form.action = '/starbooks/jsp/admin.jsp';  
+                form.method = "get";  
+                form.style.display = "none";  
+				
+				var book_status = document.createElement("textarea");  
+                book_status.name = 'book_status';  
+                book_status.value = status;
+                form.appendChild(book_status); 
+        
+                document.body.appendChild(form);  
+                form.submit(); 
+			}
         
         </script>
 		<!--默认查看上架书籍 点击文本替换为下架书籍-->
@@ -62,7 +82,6 @@
 						</tr>
 						</tbody>
 				</table>
-				<!--不知道能不能实现...-->
 			</div>
 			<p class = "admin_hr"></p>
 			<div class = "content">
@@ -70,11 +89,21 @@
 				<a class = "admin_add" href = "#" target = "_blank">Add books</a> -->
 				<!--添加和修改跳转到同一书籍信息界面-->
 				<a class = "admin_add" href = "/starbooks/jsp/bookInfo.jsp"><button>Add books</button></a>
-				<input class = "book_status" type="button" id = "statusBtn" onclick = "statusChange()" value = "Books on Shelf"/>
+				<%
+					int book_status = 1;
+					if(request.getParameter("book_status") != null){
+						book_status = Integer.parseInt(request.getParameter("book_status"));
+					}
+					if(book_status == 1)
+						out.println("<input class = 'book_status' type='button' id = 'statusBtn' onclick = 'changeBook(0)' value = '查看下架书'/>");
+					else
+						out.println("<input class = 'book_status' type='button' id = 'statusBtn' onclick = 'changeBook(1)' value = '查看上架书'/>");
 
+				%>
+				
 				<ul>
 					<%
-                                    ArrayList<Book> books = DatabaseUtility.getAllBooks(1);
+                                    ArrayList<Book> books = DatabaseUtility.getAllBooks(book_status);
                                     for(Book book : books){
                                         out.println("<li>");
                                         out.println("<dl>");
@@ -87,8 +116,12 @@
                                         out.println("<p class='book_title'>");
                                         out.println("<a href='/starbooks/jsp/single.jsp?book_id=" + book.getBook_id() + "'>" + book.getBook_name() + "</a>");
                                         out.println("</p>");
-                                        out.println("<p class='book_inline'>" + book.getAuthor() +"</p>");
-                                        out.println("<button type='button' onclick='removeBook(this,"+book.getBook_id()+")'>Remove</button>");
+										out.println("<p class='book_inline'>" + book.getAuthor() +"</p>");
+										if(book_status == 1)
+											out.println("<button type='button' onclick='changeStatus("+book.getBook_id() + ",0)'>下架</button>");
+										else
+											out.println("<button type='button' onclick='changeStatus("+book.getBook_id() + ",1)'>上架</button>");
+
 
                                         out.println("<a href='/starbooks/jsp/bookInfo.jsp?Modify=true"+"&book_id="+book.getBook_id()+"'><button>Modify</button></a> ");
                                         out.println("</dt>");
