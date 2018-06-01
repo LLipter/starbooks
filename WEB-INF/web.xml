@@ -103,6 +103,23 @@
       <url-pattern>/cancelorder</url-pattern>
   </servlet-mapping>
 
+<servlet>
+    <servlet-name>ChangeStatus</servlet-name>
+    <servlet-class>servlet.ChangeStatus</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ChangeStatus</servlet-name>
+    <url-pattern>/ChangeStatus</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>BookInfo</servlet-name>
+    <servlet-class>servlet.BookInfo</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>BookInfo</servlet-name>
+    <url-pattern>/BookInfo</url-pattern>
+</servlet-mapping>
 
   <listener>
     <listener-class>
