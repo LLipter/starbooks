@@ -70,36 +70,33 @@
 									<input type="hidden" name='book_id' value='<%= book.getBook_id() %>' />
 									<label>
 										<span>Title:</span>
-										<input type="text" name="book_title" value='<%= book.getBook_name() %>' />
+										<input type="text" name="book_title" value='<%if(modify != null) out.print(book.getBook_name()); %>' />
 									</label>
 									<label>
 										<span>Author:</span>
-										<input type="text" name="book_Author" value='<%= book.getAuthor() %>' />
+										<input type="text" name="book_Author" value='<%if(modify != null) out.print(book.getAuthor()); %>' />
 									</label>
 									<label>
 										<span>Publisher</span>
-										<input type="text" name="book_publisher" value='<%= book.getPublisher() %>' />
+										<input type="text" name="book_publisher" value='<%if(modify != null) out.print(book.getPublisher()); %>' />
 									</label>
 									<label>
 										<span>Price</span>
-										<input type="text" name="book_price" value='<%= book.getPrice() %>' />
+										<input type="text" name="book_price" value='<%if(modify != null) out.print(book.getPrice()); %>' />
 									</label>
 									<label>
 										<span>Description</span>
-										<textarea rows="10" cols="20" name="description" warp="soft">
-								<%= book.getDescription() %>
+										<textarea rows="10" cols="20" name="description" warp="soft"><%if(modify != null) out.print(book.getDescription()); %>
 								</textarea>
 									</label>
 									<label>
 										<span>Information</span>
-										<textarea rows="10" cols="20" name="information" warp="soft">
-								<%= book.getInformation() %>
+										<textarea rows="10" cols="20" name="information" warp="soft"><%if(modify != null) out.print(book.getInformation()); %>
 								</textarea>
 									</label>
 									<label>
 										<span>Reviews</span>
-										<textarea rows="10" cols="20" name="review" warp="soft">
-								<%= book.getReviews() %>
+										<textarea rows="10" cols="20" name="review" warp="soft"><%if(modify != null) out.print(book.getReviews()); %>
 								</textarea>
 									</label>
 

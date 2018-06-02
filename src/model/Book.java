@@ -40,7 +40,9 @@ public class Book {
 		String line = null;
 		String ret = "";
 		try {
-			input = new BufferedReader(new FileReader(url));
+			FileInputStream fis = new FileInputStream(url);
+			InputStreamReader isr = new InputStreamReader(fis,"UTF-8");//这里略做改动 处理乱码问题
+			input = new BufferedReader(isr);
 			while ((line = input.readLine()) != null)
 				ret += line;
 			input.close();
@@ -64,13 +66,14 @@ public class Book {
 
 	}
 	
-	private void setText(String url,String content) {
-		try {
-			FileWriter of = new FileWriter(url,false);
-			of.write(content);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	private void setText(String url,String text) throws IOException{
+		File writename = new File(url); // 相对路径，如果没有则要建立一个新的output。txt文件
+		OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(writename),"UTF-8");
+		writename.createNewFile(); // 创建新文件
+		BufferedWriter out = new BufferedWriter(osw);
+		out.write(text); // \r\n即为换行
+		out.flush(); // 把缓存区内容压入文件
+		out.close(); // 最后记得关闭文件
 	}
 	
 	public void updateText() {
@@ -80,9 +83,14 @@ public class Book {
 				this.getRes_url());
 		String review_url = String.format("%sresource/book/reviews/%s.txt", DatabaseUtility.basePath,
 				this.getRes_url());
-		this.setText(desc_url, this.getDescription());
-		this.setText(info_url, this.getInformation());
-		this.setText(review_url, this.getReviews());
+		try {
+			this.setText(desc_url, this.getDescription());
+			this.setText(info_url, this.getInformation());
+			this.setText(review_url, this.getReviews());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	public void generateRes_url() {

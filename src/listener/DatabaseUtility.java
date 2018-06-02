@@ -11,7 +11,8 @@ public class DatabaseUtility implements ServletContextListener {
 
 	private static final String userName = "starbooks";
 	private static final String password = "admin";
-	private static final String host = "jdbc:mysql://www.irran.top:3306/starbooks";
+	private static final String url = "jdbc:mysql://www.irran.top:3306/starbooks?"
+			+ "user=starbooks&password=admin&useUnicode=true&characterEncoding=UTF8";
 	private static final String driverName = "com.mysql.jdbc.Driver";
 	private static Connection con = null;
 	public static String basePath = null;
@@ -26,7 +27,7 @@ public class DatabaseUtility implements ServletContextListener {
 			e.printStackTrace();
 		}
 		try {
-			con = DriverManager.getConnection(host, userName, password);
+			con = DriverManager.getConnection(url);
 			ServletContext sc = sce.getServletContext();
 			sc.setAttribute("DBCon", con);
 
@@ -123,6 +124,7 @@ public class DatabaseUtility implements ServletContextListener {
 		String res_url = rs.getString("res_url");
 		int book_status = rs.getInt("book_status");
 		return new Book(book_id, book_name, author, publisher, price, res_url, book_status);
+
 	}
 
 	public static ArrayList<Book> getAllBooks(int book_status) throws SQLException {
