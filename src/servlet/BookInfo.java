@@ -91,7 +91,7 @@ public class BookInfo extends HttpServlet {
 					}else {
 						DatabaseUtility.updateBook(book);
 					}
-					resp.sendRedirect("jsp/admin.jsp");
+					resp.sendRedirect("/starbooks/jsp/admin.jsp");
 					return;
 				}
 				if(book_id == -1) 
