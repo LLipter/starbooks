@@ -75,6 +75,7 @@ public class BookInfo extends HttpServlet {
 					book.setAuthor(book_Author);
 					book.setPublisher(book_publisher);
 					book.setPrice(book_price);
+					//这里不太对
 					book.setRes_url(res_url);
 					book.setDescription(description);
 					book.setInformation(information);
@@ -83,14 +84,14 @@ public class BookInfo extends HttpServlet {
 					// add new book
 					if(book_id == -1) {
 						DatabaseUtility.setBook(book);
-						String path = getServletContext().getRealPath("/") + "resource/book/images/" + book.getRes_url() + ".jpg";
+						String path = getServletContext().getRealPath("/") + "resource/book/image/" + book.getRes_url() + ".jpg";
 						File file = new File(path);
 						cover.write(file);
 					// update existing book
 					}else {
 						DatabaseUtility.updateBook(book);
 					}
-					resp.sendRedirect("/starbooks/jsp/admin.jsp");
+					resp.sendRedirect("jsp/admin.jsp");
 					return;
 				}
 				if(book_id == -1) 
