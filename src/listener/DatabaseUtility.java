@@ -97,8 +97,9 @@ public class DatabaseUtility implements ServletContextListener {
 	
 	
 	public static int setBook(Book book) throws SQLException {
-		book.updateText();
+		//下两行改换了一下顺序 之前逻辑不对导致bug
 		book.generateRes_url();
+		book.updateText();
 		PreparedStatement ps = con.prepareStatement(
 				"INSERT INTO book(book_name,author,publisher,price,res_url,book_status) VALUES(?,?,?,?,?,?)");
 		ps.setString(1, book.getBook_name());
