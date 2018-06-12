@@ -16,22 +16,9 @@
 						var a = document.body.innerHTML;
 						document.body.innerHTML = a.replace("&#65279;", ""); 
 					</script>
-
-					<!-- <script type="text/javascript">
-					$(function () {
-						//改变div的高度
-						$("#login_conatiner").height($(window).height());
-					});
-				</script> -->
-
 			</head>
-
-
 			<body>
-
 				<%@ include file="header.jsp" %>
-
-
 					<div class="banner-top">
 						<div class="container">
 							<h1>Edit</h1>
@@ -42,11 +29,6 @@
 							</h2>
 						</div>
 					</div>
-
-
-
-
-
 					<div class="login_container" id="login_conatiner">
 						<div class="login">
 							<form action="/starbooks/BookInfo" method="post" class="white-pink" enctype="multipart/form-data">
@@ -56,8 +38,7 @@
 									</span>
 								</h1>
 
-								<% 
-						
+								<% 	
 						String modify=request.getParameter("Modify");
 						Book book = new Book();
 						if(modify!=null){
@@ -99,7 +80,6 @@
 										<textarea rows="10" cols="20" name="review" warp="soft"><%if(modify != null) out.print(book.getReviews()); %>
 								</textarea>
 									</label>
-
 									<label>
 										<span>Status</span>
 										<select name="status">
@@ -110,40 +90,26 @@
 											out.println("<option>avaliable</option><option selected='selected'>unavaliable</option>");
 
 										%>
-
-
 										</select>
 									</label>
 									<label>
-
 											<% 
 											if(book.getBook_id() == -1) 
 												out.println("<span>Cover</span><input type='file' name='cover' accept='.jpg' />");
 	
 											%>
-
-										
-										
 									</label>
 									<br/>
 									<label>
-
-
 										<p class="message">
-
 											<% 
 										String res = (String) request.getAttribute("BookInfoResult");
 										if(res != null){
 											out.println(res);
 										}
 									%>
-
-
-
 										</p>
 									</label>
-
-
 									<label>
 										<div class="button_container">
 											<input type="submit" class="button" value="Confirm" />
@@ -154,10 +120,6 @@
 							</form>
 						</div>
 					</div>
-
-
-
-
 					<%@ include file="footer.jsp" %>
 			</body>
 
