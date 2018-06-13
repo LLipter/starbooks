@@ -69,9 +69,9 @@
 				<table class = "admin_table">
 					<thead>
 						<tr>
-						    <th>上架书数量</th><!--whatever-->
-							<th>下架书数量</th>
-							<th>总用户数</th>
+						    <th>Number of books removed</th><!--whatever-->
+							<th>Number of books on shelve</th>
+							<th>Total user number</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -88,16 +88,16 @@
 				<!--
 				<a class = "admin_add" href = "#" target = "_blank">Add books</a> -->
 				<!--添加和修改跳转到同一书籍信息界面-->
-				<a class = "admin_add" href = "/starbooks/jsp/bookInfo.jsp"><button>添加书籍</button></a>
+				<a class = "admin_add" href = "/starbooks/jsp/bookInfo.jsp"><button>Add books</button></a>
 				<%
 					int book_status = 1;
 					if(request.getParameter("book_status") != null){
 						book_status = Integer.parseInt(request.getParameter("book_status"));
 					}
 					if(book_status == 1)
-						out.println("<input class = 'book_status' type='button' id = 'statusBtn' onclick = 'changeBook(0)' value = '查看下架书'/>");
+						out.println("<input class = 'book_status' type='button' id = 'statusBtn' onclick = 'changeBook(0)' value = 'View books off shelve'/>");
 					else
-						out.println("<input class = 'book_status' type='button' id = 'statusBtn' onclick = 'changeBook(1)' value = '查看上架书'/>");
+						out.println("<input class = 'book_status' type='button' id = 'statusBtn' onclick = 'changeBook(1)' value = 'View books on shelve'/>");
 
 				%>
 				
@@ -118,12 +118,12 @@
                                         out.println("</p>");
 										out.println("<p class='book_inline'>" + book.getAuthor() +"</p>");
 										if(book_status == 1)
-											out.println("<button type='button' onclick='changeStatus("+book.getBook_id() + ",0)'>下架</button>");
+											out.println("<button type='button' onclick='changeStatus("+book.getBook_id() + ",0)'>Unshelve</button>");
 										else
-											out.println("<button type='button' onclick='changeStatus("+book.getBook_id() + ",1)'>上架</button>");
+											out.println("<button type='button' onclick='changeStatus("+book.getBook_id() + ",1)'>Shelve</button>");
 
 
-                                        out.println("<a href='/starbooks/jsp/bookInfo.jsp?Modify=true"+"&book_id="+book.getBook_id()+"'><button>修改</button></a> ");
+                                        out.println("<a href='/starbooks/jsp/bookInfo.jsp?Modify=true"+"&book_id="+book.getBook_id()+"'><button>Modify</button></a> ");
                                         out.println("</dt>");
                                         out.println("</dl>");
                                         out.println("</li>");
