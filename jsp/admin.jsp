@@ -118,7 +118,7 @@
                                         out.println("</p>");
 										out.println("<p class='book_inline'>" + book.getAuthor() +"</p>");
 										if(book_status == 1)
-											out.println("<button type='button' onclick='changeStatus("+book.getBook_id() + ",0)'>Unshelve</button>");
+											out.println("<button type='button' onclick='changeStatus("+book.getBook_id() + ",0)'>Remove</button>");
 										else
 											out.println("<button type='button' onclick='changeStatus("+book.getBook_id() + ",1)'>Shelve</button>");
 
