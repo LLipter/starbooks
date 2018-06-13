@@ -1,19 +1,2 @@
-﻿书 名：TCP/IP 详解(卷1:协议)+TCP/IP 详解(卷1:实现)+TCP/IP 详解(卷3:TCP事务协议)  全3册
-
-作 者: （美）史蒂文斯（W.Richard Stevens） 著，范建华 等译
-
-I S B N :TZH11042（9787111075660、9787111075677、9787111075684）
-
-出 版 社:机械工业出版社
-
-出版时间:2014年11月第1版
-
-印刷时间:2014年11月第43次
-
-页 数：全3册
-
-开 本：16开
-
-包 装：平装
-
-原 价：158元
+Book name: TCP/IP Detailed Solution(Volume 1: Protocol) + TCP/IP Detailed Solution(Volume 1: Implementation) + TCP/IP Detailed Solution(Volume 3: TCP Protocol) All 3 volumes:(US) Stevens(W. Richard Stevens) Author, Fanjianhua et al. translation I S B N: TZH11042(9787111075660, 9787111075677, 978111075684) Release: Machinery Industry Press Publishing Time: November 2014 First Edition Printing Time: November 2014 Number of pages: All 3 volumes opened: 16 packages: flat price: 158 yuan:
+								

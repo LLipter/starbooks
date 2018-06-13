@@ -1,7 +1,2 @@
-﻿本书是为“数据结构”课程编写的教材，也可作为学习数据结构及其算法的C程序设计的参考教材。
-
-本书的前半部分从抽象数据类型的角度讨论各种基本类型的数据结构及其应用；后半部分主要讨论查找和排序的各种实现方法及其综合分析比较。其内容和章节编排与1992年4月出版的《数据结构》（第二版）基本一致，但在本书中更突出了抽象数据类型的概念。全书采用类C语言作为数据结构和算法的描述语言。
-
-本书概念表述严谨，逻辑推理严密，语言精练，用词达意，并有配套出版的《数据结构题集》（c语言版），既便于教学，又便于自学。
-
-本书可作为计算机类专业或信息类相关专业的本科或专科教材，也可供从事计算机工程与应用工作的科技工作者参考。
+﻿This book is a textbook written for the "data structure" course and can also be used as a reference material for learning data structure and its algorithm C programming. The first half of this book discusses the basic data structures and their applications from the perspective of abstract data types; The latter part mainly discusses the various implementation methods of search and sorting and their comprehensive analysis and comparison. Its content and chapter layout are basically consistent with the "Data Structure"(second edition) published in April 1992, but the concept of abstract data types is more prominent in this book. The book uses the C-like language as a description language for data structures and algorithms. The concept of this book is rigorous, logical reasoning is strict, the language is refined, the words are used, and there is a supporting publication of the "Data Structure Collection"(C language version), which is not only easy to teach but also easy to self-study. This book can be used as a undergraduate or specialist teaching material for computer majors or information related majors. It can also be used as a reference for science and technology workers engaged in computer engineering and application work.								
+								

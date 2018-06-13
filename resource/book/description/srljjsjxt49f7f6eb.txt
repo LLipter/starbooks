@@ -1,4 +1,2 @@
-﻿和第2版相比，本版内容上的变化是，从以IA32和x86-64为基础转变为完全以x86-64为基础。主要更新如下：
-基于x86-64，大量地重写代码，首次介绍对处理浮点数据的程序的机器级支持。
-处理器体系结构修改为支持64位字和操作的设计。
-引入更多的功能单元和更复杂的控制逻辑，使基于程序数据流表示的程序性能模型预测更加可靠。
+﻿Compared with the second edition, the change in the content of this edition is to change from IA32 and x86-64 to x86-64. The main updates are as follows: based on x86-64, a large number of rewrite codes, the first introduction to machine-level support for programs that process floating-point data. The processor architecture was modified to support 64-bit word and operation design. More functional units and more complex control logic are introduced to make program performance model prediction based on program data flow representation more reliable.
+								
