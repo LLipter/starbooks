@@ -19,7 +19,15 @@
                 </li>
             </ul>
             <p class="footer-class">
-                <a href="/starbooks/jsp/login.jsp?admin=true" target="_blank">For Administrator</a>&nbsp;&nbsp;Copyright &copy; 2018. &nbsp;
+                <%
+                    if(user != null && user.getPrivilege() >= User.ADMIN)
+                        out.println("<a href='/starbooks/jsp/admin.jsp' target='_blank'>");
+                    else
+                        out.println("<a href='/starbooks/jsp/login.jsp?admin=true' target='_blank'>");
+
+                %>
+
+                For Administrator</a>&nbsp;&nbsp;Copyright &copy; 2018. &nbsp;
                 <a href="/starbooks/jsp/index.jsp" target="_blank"
                     title="StarBook">StarBook</a> &emsp;Published by Group 13</p>
             <div class="clearfix"> </div>
