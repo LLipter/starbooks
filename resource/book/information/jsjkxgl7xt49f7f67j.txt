@@ -1,21 +1,2 @@
-﻿书名:计算机科学概论（英文版·第5版）
-
-定价：69元
-
-作者:(美)Dale
-
-出版社：机械工业出版社
-
-出版日期：2015-02-01
-
-ISBN：9787111448136
-
-字数：
-
-页码：
-
-版次：1
-
-装帧：平装
-
-开本：32开
+Title: Introduction to Computer Science(English Version 5) Pricing: 69 yuan Author:(US) Dale Publishing House: Machinery Industry Press Published Date: 2015-02-01 ISBN: 9787111448136 Words: Page number: Edition: 1 Assembly: Paperback: 32 Open								
+								

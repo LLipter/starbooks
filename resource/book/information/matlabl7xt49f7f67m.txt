@@ -1,21 +1,2 @@
-﻿书名:MATLAB信号处理（科学与工程计算技术丛书）
-
-定价：79元
-
-作者:沈再阳
-
-出版社：清华大学出版社
-
-出版日期：2017-09-01
-
-ISBN：9787302467373
-
-字数：
-
-页码：
-
-版次：1
-
-装帧：平装-胶订
-
-开本：16开
+Title: MATLAB Signal Processing(Science and Engineering Computing Technology Series) Pricing: 79 Yuan Author: Shen Zaiyang Publishing House: Tsinghua University Press Publication Date: 2017-09-01 ISBN: 9787302467373 Words: Page Number: Edition: 1 Frame: Paperback-Glue Open Book: 16 Open																
+								

@@ -1,21 +1,2 @@
-﻿书 名：机器学习
-
-作 者: （美）米歇尔（Mitchell，T.M.） 著；曾华军 等译
-
-I S B N :9787111109938
-
-出 版 社:机械工业出版社
-
-出版时间:2014年12月第1版
-
-印刷时间:2014年12月第19次
-
-页 数：282
-
-开 本：16开
-
-包 装：平装  
-
-重 量：460克    
-
-原 价：35元 
+Book name: Machine learning writer:(United States) Mitchell, T.M. ) Author; Cenghuajun et al. translation I S B N :978711109938 Release: Machinery Industry Publishing House Publication Time: December 2014 First Edition Printing Time: December 2014 Page 19 Number: 282 Opening: 16 Open Pack: Paperweight: 460 grams Original Price: 35 yuan 
+								

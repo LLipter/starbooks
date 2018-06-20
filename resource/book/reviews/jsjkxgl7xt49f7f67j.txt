@@ -1,1 +1,2 @@
-﻿本书贯穿了计算机系统的各个方面，常适合作 为计算机专业的计算机导论课程教材。为后续专业课 程打下坚实的基础；同时还适合作为计算机专业的 计算机总论课程教材，提供计算机系统全面完整的介 绍。
+This book runs through all aspects of computer systems and is often used as a computer professional Jisuanjidaolun course material. Lay a solid foundation for the follow-up professional course; At the same time, it is also suitable as a computer science course textbook for computer science, providing a comprehensive and complete computer system.								
+								

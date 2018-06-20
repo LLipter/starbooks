@@ -1,2 +1,2 @@
-﻿超级畅销书全新升级，第1版两年内印刷近10次，Java图书领域公认的经典著作，繁体版台湾发行
-基于JDK1.7，围绕内存管理、执行子系统、程序编译与优化、高效并发等核心主题对JVM进行全面而深入的分析，深刻揭示JVM的工作原理
+﻿Super bestsellers have been upgraded. The first edition was printed nearly 10 times in two years. Java books are recognized as classics. The traditional version of Taiwan is based on JDK 1.7. The JVM is comprehensively and deeply analyzed around the core themes of memory management, execution subsystem, program compilation and optimization, and efficient concurrent, and profoundly reveals the working principles of JVM.
+								
